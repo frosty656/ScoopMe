@@ -1,20 +1,58 @@
 //
-//  ContentView.swift
+//  Testing.swift
 //  ScoopMe
 //
-//  Created by Jacob Frost on 9/12/19.
+//  Created by Jacob Frost on 9/16/19.
 //  Copyright © 2019 Jacob Frost. All rights reserved.
 //
 
 import SwiftUI
+import MapKit
+
+struct Locations: Hashable {
+    let name: String
+    let distance: Int
+    let longitude: Double
+    let latitude: Double
+    
+//  let location: CLLocationCoordinate2D
+}
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello World")
+    
+    var locationList = [
+        Locations(name: "Target", distance: 3, longitude: -71.460710, latitude: 43.045370),
+        Locations(name: "Walmart", distance: 4, longitude: -71.474460, latitude: 43.040800)
+        
+    ]
+    
+    
+var body: some View {
+    
+    HStack(){
+        NavigationView{
+            List(locationList, id: \.name) { place in
+                HStack {
+                    Text(place.name)
+                    Spacer()
+                    Text("\(place.distance) mi")
+                    Spacer()
+                    NavigationLink(destination: LocationDetails(location: place)){
+                        Text("more")
+                    }
+                    
+                    }.padding(4)
+                    
+              }.navigationBarTitle(Text("Rides"))
+                .font(.system(size: 24))
+
+            }
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+
+struct Testing_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }

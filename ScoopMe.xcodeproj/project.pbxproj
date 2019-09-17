@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E7278232AAEA9008665A7 /* AppDelegate.swift */; };
 		582E727B232AAEA9008665A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E727A232AAEA9008665A7 /* SceneDelegate.swift */; };
-		582E727D232AAEA9008665A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E727C232AAEA9008665A7 /* ContentView.swift */; };
 		582E727F232AAEAC008665A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 582E727E232AAEAC008665A7 /* Assets.xcassets */; };
 		582E7282232AAEAC008665A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 582E7281232AAEAC008665A7 /* Preview Assets.xcassets */; };
 		582E7285232AAEAC008665A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 582E7283232AAEAC008665A7 /* LaunchScreen.storyboard */; };
 		582E7290232AAEAC008665A7 /* ScoopMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E728F232AAEAC008665A7 /* ScoopMeTests.swift */; };
 		582E729B232AAEAC008665A7 /* ScoopMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E729A232AAEAC008665A7 /* ScoopMeUITests.swift */; };
+		588FB5FF233126890075BC27 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FB5FE233126890075BC27 /* MapView.swift */; };
+		588FB60123312ED10075BC27 /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FB60023312ED10075BC27 /* LocationDetails.swift */; };
+		58EFB43C2330234200327ABC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EFB43B2330234200327ABC /* ContentView.swift */; };
+		58EFB43E2330235100327ABC /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EFB43D2330235100327ABC /* Image.swift */; };
+		58EFB4402330442E00327ABC /* testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EFB43F2330442E00327ABC /* testing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,6 @@
 		582E7275232AAEA9008665A7 /* ScoopMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoopMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		582E7278232AAEA9008665A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		582E727A232AAEA9008665A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		582E727C232AAEA9008665A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		582E727E232AAEAC008665A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		582E7281232AAEAC008665A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		582E7284232AAEAC008665A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,11 @@
 		582E7296232AAEAC008665A7 /* ScoopMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoopMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		582E729A232AAEAC008665A7 /* ScoopMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoopMeUITests.swift; sourceTree = "<group>"; };
 		582E729C232AAEAC008665A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		588FB5FE233126890075BC27 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		588FB60023312ED10075BC27 /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
+		58EFB43B2330234200327ABC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		58EFB43D2330235100327ABC /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		58EFB43F2330442E00327ABC /* testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +109,15 @@
 			children = (
 				582E7278232AAEA9008665A7 /* AppDelegate.swift */,
 				582E727A232AAEA9008665A7 /* SceneDelegate.swift */,
-				582E727C232AAEA9008665A7 /* ContentView.swift */,
+				58EFB43B2330234200327ABC /* ContentView.swift */,
+				58EFB43D2330235100327ABC /* Image.swift */,
+				588FB5FE233126890075BC27 /* MapView.swift */,
+				588FB60023312ED10075BC27 /* LocationDetails.swift */,
 				582E727E232AAEAC008665A7 /* Assets.xcassets */,
 				582E7283232AAEAC008665A7 /* LaunchScreen.storyboard */,
 				582E7286232AAEAC008665A7 /* Info.plist */,
 				582E7280232AAEAC008665A7 /* Preview Content */,
+				58EFB43F2330442E00327ABC /* testing.swift */,
 			);
 			path = ScoopMe;
 			sourceTree = "<group>";
@@ -267,9 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58EFB43C2330234200327ABC /* ContentView.swift in Sources */,
+				588FB5FF233126890075BC27 /* MapView.swift in Sources */,
+				58EFB43E2330235100327ABC /* Image.swift in Sources */,
 				582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */,
+				588FB60123312ED10075BC27 /* LocationDetails.swift in Sources */,
 				582E727B232AAEA9008665A7 /* SceneDelegate.swift in Sources */,
-				582E727D232AAEA9008665A7 /* ContentView.swift in Sources */,
+				58EFB4402330442E00327ABC /* testing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

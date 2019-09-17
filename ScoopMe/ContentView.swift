@@ -32,13 +32,16 @@ var body: some View {
     HStack(){
         NavigationView{
             List(locationList, id: \.name) { place in
-                HStack {
+                HStack(spacing: 20) {
                     Text(place.name)
+                        .frame(width: 150)
+                    
                     Spacer()
+                    
                     Text("\(place.distance) mi")
-                    Spacer()
+                    
                     NavigationLink(destination: LocationDetails(location: place)){
-                        Text("more")
+                        Text("")
                     }
                     
                     }.padding(4)

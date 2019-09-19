@@ -1,0 +1,47 @@
+//
+//  Profile.swift
+//  ScoopMe
+//
+//  Created by Jacob Frost on 9/17/19.
+//  Copyright © 2019 Jacob Frost. All rights reserved.
+//
+
+import SwiftUI
+
+struct Profile: View {
+    var info: User
+    var body: some View {
+        VStack(){
+            ProfilePicture(image: Image("User"))
+                
+                .frame(width: 300, height: 150)
+            HStack(){
+                
+                VStack(){
+                
+                    Text((info.firstName) + " " + (info.lastName))
+                    Text(info.dorm)
+                }
+                
+                Spacer()
+                
+                VStack(){
+                    Text("\(info.car)")
+                    Text("\(info.seats)")
+                    
+                }
+            }
+            .font(.system(size: 24))
+            
+            Spacer()
+            
+        }.padding()
+        
+    }
+}
+
+struct Profile_Previews: PreviewProvider {
+    static var previews: some View {
+        Profile(info: User(firstName: "Jacob", lastName: "Frost", dorm: "Kingston", car: "Ford Escape", licencePlate: "23jfm", seats: 4, age: 21))
+    }
+}

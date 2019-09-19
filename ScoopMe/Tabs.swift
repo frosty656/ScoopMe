@@ -14,17 +14,17 @@ struct Tabs : View {
        TabView {
             Text("The First Tab")
                 .tabItem {
-                    Image(systemName: "1.square.fill")
-                    Text("First")
+                    Image(systemName: "house")
+                    Text("Home")
                 }
             ContentView()
                 .tabItem {
-                    Image(systemName: "2.square.fill")
+                    Image(systemName: "mappin.and.ellipse")
                     Text("Locations")
                 }
             Profile(info: User(firstName: "Jacob", lastName: "Frost", dorm: "Kingston", car: "Ford Escape", licencePlate: "23jfm", seats: 4, age: 21))
                 .tabItem {
-                    Image(systemName: "3.square.fill")
+                    Image(systemName: "person")
                     Text("Profile")
                 }
         }

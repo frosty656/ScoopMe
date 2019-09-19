@@ -15,6 +15,7 @@ struct Profile: View {
             ProfilePicture(image: Image("User"))
                 
                 .frame(width: 300, height: 150)
+                .offset(x: -100, y: 0)
             HStack(){
                 
                 VStack(){
@@ -34,6 +35,15 @@ struct Profile: View {
             .font(.system(size: 24))
             
             Spacer()
+            
+            List(){
+                Text("Target")
+                Text("Walmart")
+                
+            }
+        .navigationBarTitle(Text("Previous rides"))
+            .font(.system(size: 24))
+        
             
         }.padding()
         

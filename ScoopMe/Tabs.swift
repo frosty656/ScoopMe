@@ -22,7 +22,7 @@ struct Tabs : View {
                     Image(systemName: "mappin.and.ellipse")
                     Text("Locations")
                 }
-            Profile(info: User(firstName: "Jacob", lastName: "Frost", dorm: "Kingston", car: "Ford Escape", licencePlate: "23jfm", seats: 4, age: 21))
+        Profile(info:CurrentUser.currentuser)
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")

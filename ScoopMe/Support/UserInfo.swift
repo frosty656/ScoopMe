@@ -21,6 +21,10 @@ struct User: Hashable {
 //        let profilePicture: Image?
 //        let carImage: Image?
 }
+
+struct CurrentUser{
+    static var currentuser = User(firstName: "Jacob", lastName: "Frost", dorm: "Kingston", car: "Ford Escape", licencePlate: "23jfm", seats: 4, age: 21)
+}
         
     
 struct UserInfo: View {

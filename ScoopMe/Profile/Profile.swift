@@ -34,8 +34,6 @@ struct Profile: View {
             }
             .font(.system(size: 24))
             
-            Spacer()
-            
             List(){
                 Text("Target")
                 Text("Walmart")
@@ -52,6 +50,7 @@ struct Profile: View {
 
 struct Profile_Previews: PreviewProvider {
     static var previews: some View {
-        Profile(info: User(firstName: "Jacob", lastName: "Frost", dorm: "Kingston", car: "Ford Escape", licencePlate: "23jfm", seats: 4, age: 21))
+        Profile(info: CurrentUser.currentuser)
+        //Profile(info: User(firstName: "Jacob", lastName: "Frost", dorm: "Kingston", car: "Ford Escape", licencePlate: "23jfm", seats: 4, age: 21))
     }
 }

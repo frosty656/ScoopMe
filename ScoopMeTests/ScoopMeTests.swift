@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import ScoopMe
+
 
 class ScoopMeTests: XCTestCase {
 

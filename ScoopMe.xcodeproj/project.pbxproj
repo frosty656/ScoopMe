@@ -15,7 +15,6 @@
 		582E7285232AAEAC008665A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 582E7283232AAEAC008665A7 /* LaunchScreen.storyboard */; };
 		582E7290232AAEAC008665A7 /* ScoopMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E728F232AAEAC008665A7 /* ScoopMeTests.swift */; };
 		582E729B232AAEAC008665A7 /* ScoopMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E729A232AAEAC008665A7 /* ScoopMeUITests.swift */; };
-		585B0B3F23351478004D1691 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585B0B3E23351478004D1691 /* SessionStore.swift */; };
 		588FB5FF233126890075BC27 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FB5FE233126890075BC27 /* MapView.swift */; };
 		588FB60123312ED10075BC27 /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FB60023312ED10075BC27 /* LocationDetails.swift */; };
 		58D44AFC23317DD00051A764 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D44AFB23317DCF0051A764 /* Tabs.swift */; };
@@ -24,7 +23,6 @@
 		58D8654E23314AA100796F54 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8654D23314AA100796F54 /* Profile.swift */; };
 		58D8655123314BE400796F54 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8655023314BE400796F54 /* ProfilePicture.swift */; };
 		58EFB43C2330234200327ABC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EFB43B2330234200327ABC /* ContentView.swift */; };
-		58EFB4402330442E00327ABC /* testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EFB43F2330442E00327ABC /* testing.swift */; };
 		AAA6C6A4CF789D1605362F89 /* Pods_ScoopMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D1C40940F4A23B71906D5C /* Pods_ScoopMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +59,6 @@
 		582E7296232AAEAC008665A7 /* ScoopMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoopMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		582E729A232AAEAC008665A7 /* ScoopMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoopMeUITests.swift; sourceTree = "<group>"; };
 		582E729C232AAEAC008665A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		585B0B3E23351478004D1691 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		588FB5FE233126890075BC27 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		588FB60023312ED10075BC27 /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
 		58D44AFB23317DCF0051A764 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
@@ -70,7 +67,6 @@
 		58D8654D23314AA100796F54 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		58D8655023314BE400796F54 /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
 		58EFB43B2330234200327ABC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		58EFB43F2330442E00327ABC /* testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testing.swift; sourceTree = "<group>"; };
 		5C2A55CF75AB6006843FEBA4 /* Pods-ScoopMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoopMe.release.xcconfig"; path = "Target Support Files/Pods-ScoopMe/Pods-ScoopMe.release.xcconfig"; sourceTree = "<group>"; };
 		A36C28C5F7317BE78B9ECCB7 /* Pods-ScoopMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoopMe.debug.xcconfig"; path = "Target Support Files/Pods-ScoopMe/Pods-ScoopMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,8 +145,6 @@
 				582E7283232AAEAC008665A7 /* LaunchScreen.storyboard */,
 				582E7286232AAEAC008665A7 /* Info.plist */,
 				582E7280232AAEAC008665A7 /* Preview Content */,
-				58EFB43F2330442E00327ABC /* testing.swift */,
-				585B0B3E23351478004D1691 /* SessionStore.swift */,
 			);
 			path = ScoopMe;
 			sourceTree = "<group>";
@@ -225,7 +219,7 @@
 				582E7271232AAEA9008665A7 /* Sources */,
 				582E7272232AAEA9008665A7 /* Frameworks */,
 				582E7273232AAEA9008665A7 /* Resources */,
-				C35DCAA76F752D94F63B188C /* [CP] Embed Pods Frameworks */,
+				CD3ACFC22CD87562835CC960 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -366,7 +360,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C35DCAA76F752D94F63B188C /* [CP] Embed Pods Frameworks */ = {
+		CD3ACFC22CD87562835CC960 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -392,7 +386,6 @@
 			files = (
 				58EFB43C2330234200327ABC /* ContentView.swift in Sources */,
 				58D8654E23314AA100796F54 /* Profile.swift in Sources */,
-				585B0B3F23351478004D1691 /* SessionStore.swift in Sources */,
 				588FB5FF233126890075BC27 /* MapView.swift in Sources */,
 				58D44AFF2333E55F0051A764 /* Home.swift in Sources */,
 				582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */,
@@ -401,7 +394,6 @@
 				58D44AFC23317DD00051A764 /* Tabs.swift in Sources */,
 				588FB60123312ED10075BC27 /* LocationDetails.swift in Sources */,
 				582E727B232AAEA9008665A7 /* SceneDelegate.swift in Sources */,
-				58EFB4402330442E00327ABC /* testing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

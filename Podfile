@@ -6,6 +6,6 @@ target 'ScoopMe' do
   use_frameworks!
 
   # Pods for ScoopMe
-	pod 'Firebase/Core'
+pod 'Firebase/Core'
 
 end

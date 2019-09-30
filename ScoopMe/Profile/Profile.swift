@@ -51,6 +51,6 @@ struct Profile: View {
 struct Profile_Previews: PreviewProvider {
     static var previews: some View {
         Profile(info: CurrentUser.currentuser)
-        //Profile(info: User(firstName: "Jacob", lastName: "Frost", dorm: "Kingston", car: "Ford Escape", licencePlate: "23jfm", seats: 4, age: 21))
+        
     }
 }

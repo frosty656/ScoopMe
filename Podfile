@@ -8,6 +8,6 @@ target 'ScoopMe' do
   # Pods for ScoopMe
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
-pod 'Firebase/Database'
+pod 'Firebase/Firestore'
 
 end

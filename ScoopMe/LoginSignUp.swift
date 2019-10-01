@@ -8,21 +8,20 @@
 
 import SwiftUI
 import Firebase
+import FirebaseAuth
 
 struct LoginSignUp: View {
     
-    @State var username = ""
+    @State var email = ""
     @State var password = ""
-    
-    
     
     var body: some View {
         
         VStack(){
-            TextField("Username", text: $username)
+            TextField("SNHU Email", text: $email)
             TextField("Password", text: $password)
             
-            Button(action: {NewRideRequest()}) {
+            Button(action: {CreateUser(email: self.email, password: self.password)}) {
                 Text("Login")
             }
         }

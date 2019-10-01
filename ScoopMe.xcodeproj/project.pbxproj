@@ -15,9 +15,10 @@
 		582E7285232AAEAC008665A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 582E7283232AAEAC008665A7 /* LaunchScreen.storyboard */; };
 		582E7290232AAEAC008665A7 /* ScoopMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E728F232AAEAC008665A7 /* ScoopMeTests.swift */; };
 		582E729B232AAEAC008665A7 /* ScoopMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E729A232AAEAC008665A7 /* ScoopMeUITests.swift */; };
-		587F3EAE233D2D5C0064479B /* UploadToFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587F3EAD233D2D5C0064479B /* UploadToFirebase.swift */; };
 		588FB5FF233126890075BC27 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FB5FE233126890075BC27 /* MapView.swift */; };
 		588FB60123312ED10075BC27 /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FB60023312ED10075BC27 /* LocationDetails.swift */; };
+		58A5288A2343AA8100EF8873 /* ManageRideRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A528892343AA8100EF8873 /* ManageRideRequests.swift */; };
+		58A5288C2343AC7200EF8873 /* CreateNewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5288B2343AC7200EF8873 /* CreateNewUser.swift */; };
 		58C08AD8233A689B004CFFA7 /* LoginSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C08AD7233A689B004CFFA7 /* LoginSignUp.swift */; };
 		58D44AFC23317DD00051A764 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D44AFB23317DCF0051A764 /* Tabs.swift */; };
 		58D44AFF2333E55F0051A764 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D44AFE2333E55F0051A764 /* Home.swift */; };
@@ -61,9 +62,10 @@
 		582E7296232AAEAC008665A7 /* ScoopMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoopMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		582E729A232AAEAC008665A7 /* ScoopMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoopMeUITests.swift; sourceTree = "<group>"; };
 		582E729C232AAEAC008665A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		587F3EAD233D2D5C0064479B /* UploadToFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadToFirebase.swift; sourceTree = "<group>"; };
 		588FB5FE233126890075BC27 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		588FB60023312ED10075BC27 /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
+		58A528892343AA8100EF8873 /* ManageRideRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRideRequests.swift; sourceTree = "<group>"; };
+		58A5288B2343AC7200EF8873 /* CreateNewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewUser.swift; sourceTree = "<group>"; };
 		58C08AD7233A689B004CFFA7 /* LoginSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignUp.swift; sourceTree = "<group>"; };
 		58D44AFB23317DCF0051A764 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		58D44AFE2333E55F0051A764 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		582E7277232AAEA9008665A7 /* ScoopMe */ = {
 			isa = PBXGroup;
 			children = (
+				58A528882343AA5400EF8873 /* Interacting With Firebase */,
 				58039ED3233510E100A307E7 /* GoogleService-Info.plist */,
 				58D44AFD2333E54A0051A764 /* Home */,
 				58D8654F23314BC700796F54 /* Profile */,
@@ -142,7 +145,6 @@
 				582E7278232AAEA9008665A7 /* AppDelegate.swift */,
 				582E727A232AAEA9008665A7 /* SceneDelegate.swift */,
 				58EFB43B2330234200327ABC /* ContentView.swift */,
-				587F3EAD233D2D5C0064479B /* UploadToFirebase.swift */,
 				58C08AD7233A689B004CFFA7 /* LoginSignUp.swift */,
 				588FB5FE233126890075BC27 /* MapView.swift */,
 				588FB60023312ED10075BC27 /* LocationDetails.swift */,
@@ -179,6 +181,15 @@
 				582E729C232AAEAC008665A7 /* Info.plist */,
 			);
 			path = ScoopMeUITests;
+			sourceTree = "<group>";
+		};
+		58A528882343AA5400EF8873 /* Interacting With Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				58A528892343AA8100EF8873 /* ManageRideRequests.swift */,
+				58A5288B2343AC7200EF8873 /* CreateNewUser.swift */,
+			);
+			path = "Interacting With Firebase";
 			sourceTree = "<group>";
 		};
 		58D44AFD2333E54A0051A764 /* Home */ = {
@@ -391,12 +402,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				58EFB43C2330234200327ABC /* ContentView.swift in Sources */,
+				58A5288C2343AC7200EF8873 /* CreateNewUser.swift in Sources */,
 				58D8654E23314AA100796F54 /* Profile.swift in Sources */,
 				588FB5FF233126890075BC27 /* MapView.swift in Sources */,
 				58D44AFF2333E55F0051A764 /* Home.swift in Sources */,
 				582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */,
 				58D8655123314BE400796F54 /* ProfilePicture.swift in Sources */,
-				587F3EAE233D2D5C0064479B /* UploadToFirebase.swift in Sources */,
+				58A5288A2343AA8100EF8873 /* ManageRideRequests.swift in Sources */,
 				58D8654C23314A6E00796F54 /* UserInfo.swift in Sources */,
 				58C08AD8233A689B004CFFA7 /* LoginSignUp.swift in Sources */,
 				58D44AFC23317DD00051A764 /* Tabs.swift in Sources */,

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B6B8F2A33E43B8D0A9AD485 /* Pods_ScoopMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E5824FA3AB6E32242D50A0 /* Pods_ScoopMe.framework */; };
 		58039ED4233510E100A307E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58039ED3233510E100A307E7 /* GoogleService-Info.plist */; };
+		581EE7F12357512000194AD5 /* AddInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581EE7F02357512000194AD5 /* AddInformation.swift */; };
 		582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E7278232AAEA9008665A7 /* AppDelegate.swift */; };
 		582E727B232AAEA9008665A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E727A232AAEA9008665A7 /* SceneDelegate.swift */; };
 		582E727F232AAEAC008665A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 582E727E232AAEAC008665A7 /* Assets.xcassets */; };
@@ -26,7 +28,6 @@
 		58D8654E23314AA100796F54 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8654D23314AA100796F54 /* Profile.swift */; };
 		58D8655123314BE400796F54 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8655023314BE400796F54 /* ProfilePicture.swift */; };
 		58EFB43C2330234200327ABC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EFB43B2330234200327ABC /* ContentView.swift */; };
-		AAA6C6A4CF789D1605362F89 /* Pods_ScoopMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D1C40940F4A23B71906D5C /* Pods_ScoopMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		31D1C40940F4A23B71906D5C /* Pods_ScoopMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScoopMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35E5824FA3AB6E32242D50A0 /* Pods_ScoopMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScoopMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58039ED3233510E100A307E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		581EE7F02357512000194AD5 /* AddInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInformation.swift; sourceTree = "<group>"; };
 		582E7275232AAEA9008665A7 /* ScoopMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoopMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		582E7278232AAEA9008665A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		582E727A232AAEA9008665A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,8 +75,8 @@
 		58D8654D23314AA100796F54 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		58D8655023314BE400796F54 /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
 		58EFB43B2330234200327ABC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5C2A55CF75AB6006843FEBA4 /* Pods-ScoopMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoopMe.release.xcconfig"; path = "Target Support Files/Pods-ScoopMe/Pods-ScoopMe.release.xcconfig"; sourceTree = "<group>"; };
-		A36C28C5F7317BE78B9ECCB7 /* Pods-ScoopMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoopMe.debug.xcconfig"; path = "Target Support Files/Pods-ScoopMe/Pods-ScoopMe.debug.xcconfig"; sourceTree = "<group>"; };
+		660541C020DBACFE814768C8 /* Pods-ScoopMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoopMe.release.xcconfig"; path = "Target Support Files/Pods-ScoopMe/Pods-ScoopMe.release.xcconfig"; sourceTree = "<group>"; };
+		67CE699587D3FB3D674A2A36 /* Pods-ScoopMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoopMe.debug.xcconfig"; path = "Target Support Files/Pods-ScoopMe/Pods-ScoopMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAA6C6A4CF789D1605362F89 /* Pods_ScoopMe.framework in Frameworks */,
+				0B6B8F2A33E43B8D0A9AD485 /* Pods_ScoopMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,10 +108,18 @@
 		1F0B887632C1EB6EB45A3A0D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A36C28C5F7317BE78B9ECCB7 /* Pods-ScoopMe.debug.xcconfig */,
-				5C2A55CF75AB6006843FEBA4 /* Pods-ScoopMe.release.xcconfig */,
+				67CE699587D3FB3D674A2A36 /* Pods-ScoopMe.debug.xcconfig */,
+				660541C020DBACFE814768C8 /* Pods-ScoopMe.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4FA9D1910CBC79378DC6DC4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35E5824FA3AB6E32242D50A0 /* Pods_ScoopMe.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		582E726C232AAEA9008665A7 = {
@@ -120,7 +130,7 @@
 				582E7299232AAEAC008665A7 /* ScoopMeUITests */,
 				582E7276232AAEA9008665A7 /* Products */,
 				1F0B887632C1EB6EB45A3A0D /* Pods */,
-				A013EE37EEB4866153ED6143 /* Frameworks */,
+				4FA9D1910CBC79378DC6DC4A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +198,7 @@
 			children = (
 				58A528892343AA8100EF8873 /* ManageRideRequests.swift */,
 				58A5288B2343AC7200EF8873 /* CreateNewUser.swift */,
+				581EE7F02357512000194AD5 /* AddInformation.swift */,
 			);
 			path = "Interacting With Firebase";
 			sourceTree = "<group>";
@@ -217,14 +228,6 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		A013EE37EEB4866153ED6143 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				31D1C40940F4A23B71906D5C /* Pods_ScoopMe.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,11 +235,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 582E729F232AAEAC008665A7 /* Build configuration list for PBXNativeTarget "ScoopMe" */;
 			buildPhases = (
-				0EC38F65F8B46DA6CDACDCFF /* [CP] Check Pods Manifest.lock */,
+				386403BE58930A80891F4020 /* [CP] Check Pods Manifest.lock */,
 				582E7271232AAEA9008665A7 /* Sources */,
 				582E7272232AAEA9008665A7 /* Frameworks */,
 				582E7273232AAEA9008665A7 /* Resources */,
-				CD3ACFC22CD87562835CC960 /* [CP] Embed Pods Frameworks */,
+				50E4438B5580CF4170D45B04 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -355,7 +358,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0EC38F65F8B46DA6CDACDCFF /* [CP] Check Pods Manifest.lock */ = {
+		386403BE58930A80891F4020 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -377,7 +380,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CD3ACFC22CD87562835CC960 /* [CP] Embed Pods Frameworks */ = {
+		50E4438B5580CF4170D45B04 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -401,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				581EE7F12357512000194AD5 /* AddInformation.swift in Sources */,
 				58EFB43C2330234200327ABC /* ContentView.swift in Sources */,
 				58A5288C2343AC7200EF8873 /* CreateNewUser.swift in Sources */,
 				58D8654E23314AA100796F54 /* Profile.swift in Sources */,
@@ -576,7 +580,7 @@
 		};
 		582E72A0232AAEAC008665A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A36C28C5F7317BE78B9ECCB7 /* Pods-ScoopMe.debug.xcconfig */;
+			baseConfigurationReference = 67CE699587D3FB3D674A2A36 /* Pods-ScoopMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -596,7 +600,7 @@
 		};
 		582E72A1232AAEAC008665A7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C2A55CF75AB6006843FEBA4 /* Pods-ScoopMe.release.xcconfig */;
+			baseConfigurationReference = 660541C020DBACFE814768C8 /* Pods-ScoopMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

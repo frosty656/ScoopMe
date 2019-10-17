@@ -34,7 +34,7 @@ var body: some View {
             List(locationList, id: \.name) { place in
                 HStack(spacing: 20) {
                     Text(place.name)
-                        .frame(width: 150)
+                     //   .frame(width: 150)
                     
                     Spacer()
                     

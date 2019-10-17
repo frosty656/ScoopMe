@@ -9,8 +9,12 @@
 import SwiftUI
 
 struct Home: View {
+    let locations = getTopLocations()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        VStack(){
+            //List(content: locations)
+            Text("List goes here")
+        }
     }
 }
 

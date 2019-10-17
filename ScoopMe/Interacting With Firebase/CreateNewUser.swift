@@ -11,7 +11,6 @@ import FirebaseFirestore
 import FirebaseCore
 import FirebaseAuth
 
-
 func CreateUser(email: String, password: String){
     
     Auth.auth().createUser(withEmail: email, password: password){ authResult, error in
@@ -22,7 +21,6 @@ func CreateUser(email: String, password: String){
         }
     }
 }
-
 
 func CreateDriverDetails(licencePlate: String, licence: String, car: String, color: String){
     

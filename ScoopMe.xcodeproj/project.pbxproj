@@ -28,6 +28,8 @@
 		58D8654E23314AA100796F54 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8654D23314AA100796F54 /* Profile.swift */; };
 		58D8655123314BE400796F54 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8655023314BE400796F54 /* ProfilePicture.swift */; };
 		58EFB43C2330234200327ABC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EFB43B2330234200327ABC /* ContentView.swift */; };
+		92193FE12358D9EC0082FA2A /* FancyLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92193FE02358D9EC0082FA2A /* FancyLogin.swift */; };
+		92193FE32358DA830082FA2A /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92193FE22358DA830082FA2A /* WelcomePage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		58EFB43B2330234200327ABC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		660541C020DBACFE814768C8 /* Pods-ScoopMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoopMe.release.xcconfig"; path = "Target Support Files/Pods-ScoopMe/Pods-ScoopMe.release.xcconfig"; sourceTree = "<group>"; };
 		67CE699587D3FB3D674A2A36 /* Pods-ScoopMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoopMe.debug.xcconfig"; path = "Target Support Files/Pods-ScoopMe/Pods-ScoopMe.debug.xcconfig"; sourceTree = "<group>"; };
+		92193FE02358D9EC0082FA2A /* FancyLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyLogin.swift; sourceTree = "<group>"; };
+		92193FE22358DA830082FA2A /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,9 +157,11 @@
 				58D8654F23314BC700796F54 /* Profile */,
 				58D8654A23314A3F00796F54 /* Support */,
 				582E7278232AAEA9008665A7 /* AppDelegate.swift */,
+				92193FE02358D9EC0082FA2A /* FancyLogin.swift */,
 				582E727A232AAEA9008665A7 /* SceneDelegate.swift */,
 				58EFB43B2330234200327ABC /* ContentView.swift */,
 				58C08AD7233A689B004CFFA7 /* LoginSignUp.swift */,
+				92193FE22358DA830082FA2A /* WelcomePage.swift */,
 				588FB5FE233126890075BC27 /* MapView.swift */,
 				588FB60023312ED10075BC27 /* LocationDetails.swift */,
 				58D44AFB23317DCF0051A764 /* Tabs.swift */,
@@ -409,6 +415,7 @@
 				58A5288C2343AC7200EF8873 /* CreateNewUser.swift in Sources */,
 				58D8654E23314AA100796F54 /* Profile.swift in Sources */,
 				588FB5FF233126890075BC27 /* MapView.swift in Sources */,
+				92193FE32358DA830082FA2A /* WelcomePage.swift in Sources */,
 				58D44AFF2333E55F0051A764 /* Home.swift in Sources */,
 				582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */,
 				58D8655123314BE400796F54 /* ProfilePicture.swift in Sources */,
@@ -418,6 +425,7 @@
 				58D44AFC23317DD00051A764 /* Tabs.swift in Sources */,
 				588FB60123312ED10075BC27 /* LocationDetails.swift in Sources */,
 				582E727B232AAEA9008665A7 /* SceneDelegate.swift in Sources */,
+				92193FE12358D9EC0082FA2A /* FancyLogin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

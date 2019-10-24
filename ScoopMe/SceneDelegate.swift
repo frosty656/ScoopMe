@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents.
         
         //Login Page
-        let contentView = LoginSignUp()
+        let contentView = Tabs()
         
         //user is already logged in so go to the home page
         

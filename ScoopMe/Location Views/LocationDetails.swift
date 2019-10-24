@@ -10,11 +10,14 @@ import SwiftUI
 import MapKit
 
 struct LocationDetails: View {
-    var location: Locations
+    var location: LocationData
+    
     var body: some View {
+        NavigationView{
         VStack(){
-            MapView(coordinate: CLLocationCoordinate2D(
-                latitude: location.latitude, longitude: location.longitude))
+            MapView(
+                latitude: location.latitude,
+                longitude: location.longitude)
                 .frame(height: 250)
                 .padding()
             Text("\(location.name)")
@@ -46,11 +49,12 @@ struct LocationDetails: View {
             
             
         }
+        }
     }
 }
 
 struct LocationDetails_Previews: PreviewProvider {
     static var previews: some View {
-        LocationDetails(location: Locations(name: "Target", distance: 3, longitude: -71.460710, latitude: 43.045370))
+        LocationDetails(location: LocationData(id: "Temp", name: "Target", longitude: 3, latitude: -71.460710, distance: 43.045370))
     }
 }

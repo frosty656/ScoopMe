@@ -7,11 +7,16 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct Profile: View {
-    var info: User
+    //Should query database for this information
+    @ObservedObject var userInfo = getUserProfile()
+    
+    
+    
     var body: some View {
-        VStack(){
+        VStack  (){
             ProfilePicture(image: Image("User"))
                 
                 .frame(width: 300, height: 150)
@@ -19,28 +24,22 @@ struct Profile: View {
             HStack(){
                 
                 VStack(){
-                
-                    Text((info.firstName) + " " + (info.lastName))
-                    Text(info.dorm)
+
+                    Text((userInfo.data.first!.firstName) + " " + (userInfo.data.first!.lastName))
+                    Text(userInfo.data.first!.dorm)
                 }
                 
                 Spacer()
-                
-                VStack(){
-                    Text("\(info.car)")
-                    Text("\(info.seats)")
-                    
-                }
             }
             .font(.system(size: 24))
             
-            List(){
-                Text("Target")
-                Text("Walmart")
-                
-            }
-        .navigationBarTitle(Text("Previous rides"))
-            .font(.system(size: 24))
+//            List(){
+//                Text("Target")
+//                Text("Walmart")
+//
+//            }
+//        .navigationBarTitle(Text("Previous rides"))
+//            .font(.system(size: 24))
         
             
         }.padding()
@@ -50,7 +49,7 @@ struct Profile: View {
 
 struct Profile_Previews: PreviewProvider {
     static var previews: some View {
-        Profile(info: CurrentUser.currentuser)
+        Profile();
         
     }
 }

@@ -17,12 +17,12 @@ struct Tabs : View {
                     Image(systemName: "house")
                     Text("Home")
                 }
-            ContentView()
+            LocationView()
                 .tabItem {
                     Image(systemName: "mappin.and.ellipse")
                     Text("Locations")
                 }
-        Profile(info:CurrentUser.currentuser)
+        Profile()
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")

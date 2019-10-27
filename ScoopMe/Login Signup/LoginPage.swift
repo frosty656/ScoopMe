@@ -20,18 +20,19 @@ struct LoginPage: View {
             VStack(){
                 TextField("SNHU Email", text: $email)
                 SecureField("Password", text: $password)
-                
+
                 Button(action: {CreateUser(email: self.email, password: self.password)}) {
                     Text("Login")
                 }
-                NavigationLink(destination: Text("Create Account")){
-                    CreateAccount()
+                NavigationLink(destination: CreateAccount()){
+                    Text("Create Account")
+                        .navigationBarTitle("")
+                    .navigationBarHidden(true)
                 }
             }.padding()
         }
     }
 }
-
 
 
 struct LoginSignUp_Previews: PreviewProvider {

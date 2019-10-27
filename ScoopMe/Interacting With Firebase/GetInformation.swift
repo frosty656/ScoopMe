@@ -32,6 +32,11 @@ class getUserProfile : ObservableObject {
     init(){
         let db = Firebase.Firestore.firestore().collection("Users")
 
+        if currentUser == nil {
+            print("User Not singed in")
+            return
+        }
+        
         db.document(currentUser!).addSnapshotListener{
             (snap, err) in
             if err != nil{

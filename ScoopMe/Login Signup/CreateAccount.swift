@@ -25,10 +25,12 @@ struct CreateAccount: View {
                 
                 
                 Button(action: {createAccount(username: self.email, password: self.password, confirmPassword: self.passwordConfirm)}) {
-                    Text("Login")
+                    Text("Create Account")
                 }
-                NavigationLink(destination: Text("Login")){
-                    LoginPage()
+                NavigationLink(destination: LoginPage()){
+                    Text("Login")
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
                 }
                 
             }

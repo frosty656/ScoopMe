@@ -17,9 +17,17 @@ func CreateUser(email: String, password: String){
         if error == nil {
             print("User was created successfully")
         } else {
-            print("User creation failed: ")
+            print("\(error!.localizedDescription)")
         }
     }
+}
+
+func logIn(email: String, password: String, handler: @escaping AuthDataResultCallback) {
+    Auth.auth().signIn(withEmail: email, password: password, completion: handler)
+}
+
+func logOut() {
+        try! Auth.auth().signOut()
 }
 
 func CreateDriverDetails(licencePlate: String, licence: String, car: String, color: String){

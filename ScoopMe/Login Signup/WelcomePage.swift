@@ -48,7 +48,7 @@ struct WelcomePage: View {
                     }
                         
                     .padding()
-                    NavigationLink(destination: LoginSignUp()){
+                    NavigationLink(destination: LoginPage()){
                         Text("Already have an account? Click Here")
                         .foregroundColor(.blue)
                     }

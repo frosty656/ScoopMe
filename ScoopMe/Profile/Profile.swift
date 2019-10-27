@@ -27,6 +27,7 @@ struct Profile: View {
 
                     Text((userInfo.data.first!.firstName) + " " + (userInfo.data.first!.lastName))
                     Text(userInfo.data.first!.dorm)
+                    Text("Hello")
                 }
                 
                 Spacer()
@@ -49,7 +50,7 @@ struct Profile: View {
 
 struct Profile_Previews: PreviewProvider {
     static var previews: some View {
-        Profile();
+        Profile()
         
     }
 }

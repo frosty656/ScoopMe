@@ -13,7 +13,6 @@ import FirebaseAuth
 
 
 func NewRideRequest(location: String) {
-
     
     let ref = Firestore.firestore()
     let user = Auth.auth().currentUser?.email

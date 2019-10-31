@@ -10,6 +10,7 @@ import SwiftUI
 
 struct LocationView: View {
     @ObservedObject var locationList = getLocations()
+     @State var showingLocation = false
     var body: some View {
         NavigationView{
             List{
@@ -17,18 +18,19 @@ struct LocationView: View {
                     HStack{
                         Text(i.name)
                             .frame(width: 150)
-                        
+                            .font(.system(size: 32))
+
                         Spacer()
-                        
+
                         MapView(latitude: i.latitude, longitude: i.longitude)
-                        
-                        Text("\(i.distance)")
-                        
+                            .frame(width: 50, height: 50)
+
+                        Text("\(i.distance, specifier: "%.2f") mi")
+
                         NavigationLink(destination: LocationDetails(location: i)){
                             Text("")
                         }
                     }
-                    
                 }
             }
         }

@@ -12,18 +12,11 @@ import FirebaseCore
 import FirebaseAuth
 
 func CreateUser(email: String, password: String){
-    
-    Auth.auth().createUser(withEmail: email, password: password){ authResult, error in
-        if error == nil {
-            print("User was created successfully")
-        } else {
-            print("\(error!.localizedDescription)")
-        }
-    }
+    Auth.auth().signIn(withEmail: email, password: password)
 }
 
 func logIn(email: String, password: String, handler: @escaping AuthDataResultCallback) {
-    Auth.auth().signIn(withEmail: email, password: password, completion: handler)
+    Auth.auth().createUser(withEmail: email, password: password, completion: handler)
 }
 
 func logOut() {
@@ -31,10 +24,10 @@ func logOut() {
 }
 
 func CreateDriverDetails(licencePlate: String, licence: String, car: String, color: String){
-    
+
     let ref = Firestore.firestore()
     let user = Auth.auth().currentUser?.email
-    
+
     if let unwrappedUser = user {
         ref.collection("Drivers").document(unwrappedUser).setData([
             "licencePlateNumber": licencePlate,
@@ -51,14 +44,14 @@ func CreateDriverDetails(licencePlate: String, licence: String, car: String, col
     } else {
         print("Could not unwrap email")
     }
-    
+
 }
 
 
 func CreateUserDetails(firstName: String, lastName: String, dorm: String){
     let ref = Firestore.firestore()
     let user = Auth.auth().currentUser?.email
-    
+
     if let unwrappedUser = user {
         ref.collection("Users").document(unwrappedUser).setData([
             "firstName": firstName,

@@ -19,6 +19,7 @@
 		582E7285232AAEAC008665A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 582E7283232AAEAC008665A7 /* LaunchScreen.storyboard */; };
 		582E7290232AAEAC008665A7 /* ScoopMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E728F232AAEAC008665A7 /* ScoopMeTests.swift */; };
 		582E729B232AAEAC008665A7 /* ScoopMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E729A232AAEAC008665A7 /* ScoopMeUITests.swift */; };
+		588E106923687A5800BF0693 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588E106823687A5800BF0693 /* test.swift */; };
 		588FB5FF233126890075BC27 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FB5FE233126890075BC27 /* MapView.swift */; };
 		588FB60123312ED10075BC27 /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FB60023312ED10075BC27 /* LocationDetails.swift */; };
 		5890DD6023621A7B002F7819 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5890DD5F23621A7B002F7819 /* CreateAccount.swift */; };
@@ -68,6 +69,7 @@
 		582E7296232AAEAC008665A7 /* ScoopMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoopMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		582E729A232AAEAC008665A7 /* ScoopMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoopMeUITests.swift; sourceTree = "<group>"; };
 		582E729C232AAEAC008665A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		588E106823687A5800BF0693 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		588FB5FE233126890075BC27 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		588FB60023312ED10075BC27 /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
 		5890DD5F23621A7B002F7819 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				582E7283232AAEAC008665A7 /* LaunchScreen.storyboard */,
 				582E7286232AAEAC008665A7 /* Info.plist */,
 				582E7280232AAEAC008665A7 /* Preview Content */,
+				588E106823687A5800BF0693 /* test.swift */,
 			);
 			path = ScoopMe;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				581EE7F12357512000194AD5 /* GetInformation.swift in Sources */,
+				588E106923687A5800BF0693 /* test.swift in Sources */,
 				58A5288C2343AC7200EF8873 /* CreateNewUser.swift in Sources */,
 				58D8654E23314AA100796F54 /* Profile.swift in Sources */,
 				588FB5FF233126890075BC27 /* MapView.swift in Sources */,

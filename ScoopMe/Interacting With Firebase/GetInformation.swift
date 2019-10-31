@@ -17,7 +17,8 @@ class getLocations : ObservableObject{
                     id: i.documentID,
                     name: i.get("Location") as! String,
                     longitude: i.get("longitude") as! Double,
-                    latitude: i.get("latitude") as! Double)
+                    latitude: i.get("latitude") as! Double,
+                    distance: i.get("Distance") as! Double)
                 self.data.append(nameData)
             }
         }

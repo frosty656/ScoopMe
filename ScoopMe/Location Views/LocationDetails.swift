@@ -26,7 +26,8 @@ struct LocationDetails: View {
                 .padding(.bottom, -45)
             
             HStack(){
-                Text("Distance: \(location.distance) mi")
+                Text("\(location.distance, specifier: "%.2f")")
+                //Text("Distance \(location.distance)")
                     .font(.system(size: 30))
                 Spacer()
             }

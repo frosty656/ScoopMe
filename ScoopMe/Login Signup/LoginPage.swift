@@ -12,28 +12,47 @@ import FirebaseAuth
 
 struct LoginPage: View {
     
-    @State private var email = ""
-    @State private var password = ""
+    @Environment(\.presentationMode) var presentationMode
+    @State var emailAddress: String = ""
+    @State var password: String = ""
+    @State var errorText: String = ""
     
     var body: some View {
         NavigationView{
             VStack(){
-                TextField("SNHU Email", text: $email)
+                Text("\(errorText)")
+                
+                TextField("SNHU Email", text: $emailAddress)
                 SecureField("Password", text: $password)
 
-                Button(action: {CreateUser(email: self.email, password: self.password)}) {
+                Button(action:{
+                    self.signUserIn(email: self.emailAddress, password: self.password)
+                    if self.errorText == "" {
+                    }
+                }) {
                     Text("Login")
                 }
-                NavigationLink(destination: CreateAccount()){
-                    Text("Create Account")
-                        .navigationBarTitle("")
+                
+
+                NavigationLink("Create Account",destination: CreateAccount())
+                    .navigationBarTitle("")
                     .navigationBarHidden(true)
-                }
             }.padding()
         }
     }
-}
+   func signUserIn(email: String, password: String) {
+       Auth.auth().signIn(withEmail: email, password: password) { user, error in
+            if let error = error
+            {
+               self.errorText = error.localizedDescription
+            } else {
+                print("User singed in")
+        }
+        
 
+       }
+   }
+}
 
 struct LoginSignUp_Previews: PreviewProvider {
     static var previews: some View {

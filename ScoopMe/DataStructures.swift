@@ -3,7 +3,7 @@ struct LocationData : Identifiable {
     var name: String
     var longitude: Double
     var latitude: Double
-    var distance = 0.0
+    var distance: Double
 }
 
 struct User: Hashable {

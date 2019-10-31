@@ -11,45 +11,53 @@ import Firebase
 
 struct CreateAccount: View {
     
-    @State private var email = ""
-    @State private var password = ""
-    @State private var passwordConfirm = ""
+    @State var emailAddress: String = ""
+    @State var password: String = ""
+    @State var passwordConfirm: String = ""
+    @State var errorText: String = ""
+
     
     var body: some View {
         NavigationView{
             VStack{
                 
-                TextField("SNHU Email", text: $email)
+                Text(self.errorText)
+                
+                TextField("SNHU Email", text: $emailAddress)
                 SecureField("Password", text: $password)
                 SecureField("Password", text: $passwordConfirm)
                 
                 
-                Button(action: {createAccount(username: self.email, password: self.password, confirmPassword: self.passwordConfirm)}) {
+                Button(action: {
+                    self.CreateUser(email: self.emailAddress, password: self.password)
+                    
+                }) {
                     Text("Create Account")
                 }
-                NavigationLink(destination: LoginPage()){
-                    Text("Login")
-                    .navigationBarTitle("")
-                    .navigationBarHidden(true)
-                }
+                
+                NavigationLink("Login", destination: LoginPage())
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
                 
             }
         }
     }
-}
-
-
-func createAccount(username: String, password: String, confirmPassword: String){
-    if (username == ""){
-        //username cannot be blank
-        //return
-    }
-    if (password == ""){
-        //password cannot be blank
-        //return
-    }
-    if (username != "" && password != ""){
-        Auth.auth().createUser(withEmail: username, password: password)
+    
+    func CreateUser(email: String, password: String) {
+        self.errorText = ""
+        
+           Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            
+            guard let user = authResult?.user, error == nil else {
+             
+                let errorText: String  = error?.localizedDescription ?? "unknown error"
+                self.errorText = errorText
+                print(self.errorText)
+              return
+            }
+            
+            print("\(user.email!) created")
+        }
     }
 }
 

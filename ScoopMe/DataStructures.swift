@@ -21,3 +21,11 @@ struct Driver: Hashable
 //        let profilePicture: Image?
 //        let carImage: Image?
 }
+
+struct Ride: Identifiable {
+    let id: String
+    let driver: String
+    let riders: [String]
+    let seats: Int
+    let location: String
+}

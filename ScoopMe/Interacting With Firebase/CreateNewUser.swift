@@ -23,15 +23,14 @@ func logOut() {
         try! Auth.auth().signOut()
 }
 
-func CreateDriverDetails(licencePlate: String, licence: String, car: String, color: String){
+func CreateDriverDetails(licencePlate: String, car: String, color: String){
 
     let ref = Firestore.firestore()
-    let user = Auth.auth().currentUser?.email
+    let user = Auth.auth().currentUser?.uid
 
     if let unwrappedUser = user {
         ref.collection("Drivers").document(unwrappedUser).setData([
             "licencePlateNumber": licencePlate,
-            "licence": licence,
             "carBrand": car,
             "colorOfCar": color
         ]){ err in
@@ -50,7 +49,7 @@ func CreateDriverDetails(licencePlate: String, licence: String, car: String, col
 
 func CreateUserDetails(firstName: String, lastName: String, dorm: String){
     let ref = Firestore.firestore()
-    let user = Auth.auth().currentUser?.email
+    let user = Auth.auth().currentUser?.uid
 
     if let unwrappedUser = user {
         ref.collection("Users").document(unwrappedUser).setData([

@@ -25,6 +25,8 @@ struct LoginPage: View {
                 TextField("SNHU Email", text: $emailAddress)
                 SecureField("Password", text: $password)
 
+                //On success go to homepage
+                
                 Button(action:{
                     self.signUserIn(email: self.emailAddress, password: self.password)
                     if self.errorText == "" {

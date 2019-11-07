@@ -14,42 +14,65 @@ struct LocationDetails: View {
     
     var body: some View {
         NavigationView{
-        VStack(){
-            MapView(
-                latitude: location.latitude,
-                longitude: location.longitude)
-                .frame(height: 250)
-                .padding()
-            Text("\(location.name)")
-                .font(.system(size: 50))
-                .offset(y: -35)
-                .padding(.bottom, -45)
-            
-            HStack(){
-                Text("\(location.distance, specifier: "%.2f")")
-                //Text("Distance \(location.distance)")
-                    .font(.system(size: 30))
+            VStack(){
+                MapView(
+                    latitude: location.latitude,
+                    longitude: location.longitude)
+                    .frame(height: 250)
+                    .padding()
+                Text("\(location.name)")
+                    .font(.system(size: 50))
+                    .offset(y: -35)
+                    .padding(.bottom, -45)
+                
+                HStack(){
+                    Text("\(location.distance, specifier: "%.2f") mi")
+                    //Text("Distance \(location.distance)")
+                        .font(.system(size: 30))
+                    Spacer()
+                }
+                Spacer()
+                HStack(){
+                    Button(action: {
+                            
+                        }) {
+                        Text("  Watch  ")
+                        .fontWeight(.bold)
+                        .font(.system(size: 24))
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(40)
+                        .foregroundColor(.white)
+                        .padding(5)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color.blue, lineWidth: 3)
+                        )
+                    }
+                    Spacer()
+                    Button(action: {
+                        NewRideDeclaration(
+                            location: self.location.id,
+                            amountOfRiders: 5
+                        )
+                    }) {
+                        Text("Drive To")
+                        .fontWeight(.bold)
+                        .font(.system(size: 24))
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(40)
+                        .foregroundColor(.white)
+                        .padding(5)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color.blue, lineWidth: 3)
+                        )
+                    }
+                }.padding()
+                
                 Spacer()
             }
-            Spacer()
-            Button(action: {}) {
-                Text("Watch Location")
-                .fontWeight(.bold)
-                .font(.title)
-                .padding()
-                .background(Color.blue)
-                .cornerRadius(40)
-                .foregroundColor(.white)
-                .padding(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 40)
-                        .stroke(Color.blue, lineWidth: 5)
-                )
-            }
-                Spacer()
-            
-            
-        }
         }
     }
 }

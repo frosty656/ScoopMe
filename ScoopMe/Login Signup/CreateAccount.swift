@@ -15,6 +15,7 @@ struct CreateAccount: View {
     @State var password: String = ""
     @State var passwordConfirm: String = ""
     @State var errorText: String = ""
+    @State var becomeDriver = false // toggle state
 
     
     var body: some View {
@@ -27,7 +28,11 @@ struct CreateAccount: View {
                 SecureField("Password", text: $password)
                 SecureField("Password", text: $passwordConfirm)
                 
+                Toggle("I want to be a driver", isOn: $becomeDriver)
                 
+                //If success and wants to be driver go to create driver page
+                
+                //If success and no driver then go to homepage
                 Button(action: {
                     self.CreateUser(email: self.emailAddress, password: self.password)
                     

@@ -7,11 +7,16 @@
 //
 
 import SwiftUI
+import Firebase
+import SDWebImage
 
 struct Profile: View {
-    var info: User
+    //Should query database for this information
+    @ObservedObject var userInfo = getCurrentUserInformation()
+    
+    
     var body: some View {
-        VStack(){
+        VStack  (){
             ProfilePicture(image: Image("User"))
                 
                 .frame(width: 300, height: 150)
@@ -19,28 +24,33 @@ struct Profile: View {
             HStack(){
                 
                 VStack(){
-                
-                    Text((info.firstName) + " " + (info.lastName))
-                    Text(info.dorm)
-                }
-                
-                Spacer()
-                
-                VStack(){
-                    Text("\(info.car)")
-                    Text("\(info.seats)")
                     
+                    Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
+                    Text(userInfo.user.dorm)
+                    Text("Hello")
                 }
+                Spacer()
             }
             .font(.system(size: 24))
             
-            List(){
-                Text("Target")
-                Text("Walmart")
+            Button(action:{
+                do{
+                    try Auth.auth().signOut()
+                } catch {
+                    
+                }
                 
-            }
-        .navigationBarTitle(Text("Previous rides"))
-            .font(.system(size: 24))
+            }, label: {
+                Text("Log Out")
+            })
+            
+//            List(){
+//                Text("Target")
+//                Text("Walmart")
+//
+//            }
+//        .navigationBarTitle(Text("Previous rides"))
+//            .font(.system(size: 24))
         
             
         }.padding()
@@ -50,7 +60,7 @@ struct Profile: View {
 
 struct Profile_Previews: PreviewProvider {
     static var previews: some View {
-        Profile(info: CurrentUser.currentuser)
-        //Profile(info: User(firstName: "Jacob", lastName: "Frost", dorm: "Kingston", car: "Ford Escape", licencePlate: "23jfm", seats: 4, age: 21))
+        Profile()
+        
     }
 }

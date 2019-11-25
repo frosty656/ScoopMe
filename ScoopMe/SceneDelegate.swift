@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -20,12 +21,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+        
+        
+        //user is already logged in so go to the home page
+        
+        
+        //remove this later
+        Auth.auth().signIn(withEmail: "test@snhu.edu", password: "testpassword") { user, error in
+             if let error = error
+             {
+                print(error.localizedDescription)
+             } else {
+                 print("User singed in")
+         }
+         
+
+        }
+        
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+
+            if Auth.auth().currentUser != nil {
+                window.rootViewController = UIHostingController(rootView: Tabs())
+            }
+                else {
+                window.rootViewController = UIHostingController(rootView:
+                    Tabs())
+            }
             self.window = window
             window.makeKeyAndVisible()
         }

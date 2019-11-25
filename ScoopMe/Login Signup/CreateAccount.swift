@@ -17,7 +17,7 @@ struct CreateAccount: View {
     @State var emailAddress: String = ""
     @State var password: String = ""
     @State var passwordConfirm: String = ""
-    @State var errorText: String = ""
+    @State var errorText: String = " "
     @State var becomeDriver = false // toggle state
 
     
@@ -25,9 +25,9 @@ struct CreateAccount: View {
         NavigationView{
             VStack{
                 
-                Text(self.errorText)
+                Text("\(self.errorText)")
                 
-                UIImagePickerController
+                //UIImagePickerController
                 
                 TextField("first name", text: $firstName)
                 TextField("last name", text: $lastName)

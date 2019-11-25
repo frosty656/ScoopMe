@@ -27,7 +27,7 @@ struct CreateAccount: View {
                 
                 Text(self.errorText)
                 
-                UIImagePickerController
+                //UIImagePickerController
                 
                 TextField("first name", text: $firstName)
                 TextField("last name", text: $lastName)

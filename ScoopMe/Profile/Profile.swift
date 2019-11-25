@@ -8,11 +8,11 @@
 
 import SwiftUI
 import Firebase
+import SDWebImage
 
 struct Profile: View {
     //Should query database for this information
-    @ObservedObject var userInfo = getUserProfile()
-    
+    @ObservedObject var userInfo = getCurrentUserInformation()
     
     
     var body: some View {
@@ -24,15 +24,25 @@ struct Profile: View {
             HStack(){
                 
                 VStack(){
-
-                    Text((userInfo.data.first!.firstName) + " " + (userInfo.data.first!.lastName))
-                    Text(userInfo.data.first!.dorm)
+                    
+                    Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
+                    Text(userInfo.user.dorm)
                     Text("Hello")
                 }
-                
                 Spacer()
             }
             .font(.system(size: 24))
+            
+            Button(action:{
+                do{
+                    try Auth.auth().signOut()
+                } catch {
+                    
+                }
+                
+            }, label: {
+                Text("Log Out")
+            })
             
 //            List(){
 //                Text("Target")

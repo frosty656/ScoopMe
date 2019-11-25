@@ -1,10 +1,12 @@
 import Firebase
+import SwiftUI
 
 class getLocations : ObservableObject{
     @Published var data = [LocationData]()
     
     init(){
         let db = Firebase.Firestore.firestore().collection("Locations")
+        
         
         db.addSnapshotListener{ (snap, err) in
             if err != nil{
@@ -25,8 +27,8 @@ class getLocations : ObservableObject{
     }
 }
 
-class getUserProfile : ObservableObject {
-    @Published var data = [User]()
+class getCurrentUserInformation : ObservableObject {
+    @Published var user: User = User(firstName: "", lastName: "", dorm: "")
 
     var currentUser = Auth.auth().currentUser?.uid
 
@@ -38,7 +40,7 @@ class getUserProfile : ObservableObject {
             return
         }
         
-        db.document(currentUser!).addSnapshotListener{
+        db.document(currentUser!).getDocument{
             (snap, err) in
             if err != nil{
                 print((err?.localizedDescription)!)
@@ -46,10 +48,11 @@ class getUserProfile : ObservableObject {
             }
 
             if let document = snap {
-                self.data.append(User(
-                    firstName: document.get("firstName") as! String,
-                    lastName: document.get("lastName") as! String,
-                    dorm: document.get("dorm") as! String))
+                print("USER PROFILE INFO GATHERED")
+                self.user = User(
+                    firstName: document.get("first_name") as! String,
+                    lastName: document.get("last_name") as! String,
+                    dorm: document.get("Dorm") as! String)
             }
             else {
                 print("User does not exist")
@@ -62,7 +65,7 @@ class getCurrentRides : ObservableObject{
     @Published var data = [Ride]()
     
     init(){
-        let db = Firebase.Firestore.firestore().collection("CurrentRidesOffered")
+        let db = Firebase.Firestore.firestore().collection("Rides").whereField("LeavingTime", isGreaterThan: Timestamp())
         
         db.addSnapshotListener{ (snap, err) in
             if err != nil{
@@ -70,15 +73,94 @@ class getCurrentRides : ObservableObject{
                 return
             }
             
+            self.data.removeAll()
             for i in snap!.documents{
                 let nameData = Ride(
                     id: i.documentID,
-                    driver: i.get("driver") as! String,
-                    riders: i.get("riders") as! [String],
-                    seats: i.get("seats") as! Int,
-                    location: i.get("location") as! String
-                    )
+                    driver: i.get("Driver") as! [String: String],
+                    riders: i.get("Riders") as! [[String: String]],
+                    seats: i.get("Seats") as! Int,
+                    location: i.get("Location") as! String,
+                    leaveTime: (i.get("LeavingTime") as! Timestamp).dateValue()
+                )
                 self.data.append(nameData)
+            }
+        }
+    }
+}
+
+
+
+class getUsersName : ObservableObject{
+    @Published var user: usersName = usersName(
+    firstName: "",
+    lastName: "")
+
+    init(userID: String){
+        let db = Firebase.Firestore.firestore().collection("Users").document(userID)
+
+                db.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        self.user = (usersName(
+                            firstName: document.get("first_name") as! String,
+                            lastName: document.get("last_name") as! String))
+                    } else {
+                        //Throw error
+                        self.user = (usersName(
+                        firstName: "User Does Not Exist",
+                        lastName: ""))
+                    }
+        }
+    }
+}
+
+
+class getMulptipleUsersNames : ObservableObject{
+    @Published var user = [usersName]()
+
+    init(userID: [String]){
+        userID.forEach{
+        let db = Firebase.Firestore.firestore().collection("Users").document($0)
+                db.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        let firstName = document.get("first_name") as! String
+                        let lastName = document.get("last_name") as! String
+                        self.user.append(usersName(
+                            firstName: firstName,
+                            lastName: lastName))
+                    } else {
+                        self.user.append(usersName(
+                        //id: "",
+                        firstName: "User Does Not Exist",
+                        lastName: ""))
+                    }
+                }
+        }
+    }
+}
+
+class GetUserInformation : ObservableObject{
+    @Published var user: User = User(firstName: "", lastName: "", dorm: "")
+
+    init(currentUser: String){
+        let db = Firebase.Firestore.firestore().collection("Users")
+        
+        db.document(currentUser).getDocument{
+            (snap, err) in
+            if err != nil{
+                print((err?.localizedDescription)!)
+                return
+            }
+
+            if let document = snap {
+                print("USER PROFILE INFO GATHERED")
+                self.user = User(
+                    firstName: document.get("first_name") as! String,
+                    lastName: document.get("last_name") as! String,
+                    dorm: document.get("Dorm") as! String)
+            }
+            else {
+                print("User does not exist")
             }
         }
     }

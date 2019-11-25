@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		5810CA97235FEDD400930513 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5810CA96235FEDD400930513 /* DataStructures.swift */; };
 		5810CA99235FEE2A00930513 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5810CA98235FEE2A00930513 /* LocationView.swift */; };
 		581EE7F12357512000194AD5 /* GetInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581EE7F02357512000194AD5 /* GetInformation.swift */; };
+		581F3A62238C998100496103 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 581F3A61238C998100496103 /* SDWebImageSwiftUI */; };
+		581F3A64238C99EC00496103 /* NewRide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581F3A63238C99EC00496103 /* NewRide.swift */; };
+		581F3A66238C9A1300496103 /* RiderProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581F3A65238C9A1300496103 /* RiderProfile.swift */; };
 		582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E7278232AAEA9008665A7 /* AppDelegate.swift */; };
 		582E727B232AAEA9008665A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E727A232AAEA9008665A7 /* SceneDelegate.swift */; };
 		582E727F232AAEAC008665A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 582E727E232AAEAC008665A7 /* Assets.xcassets */; };
@@ -65,6 +68,8 @@
 		5810CA96235FEDD400930513 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		5810CA98235FEE2A00930513 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		581EE7F02357512000194AD5 /* GetInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInformation.swift; sourceTree = "<group>"; };
+		581F3A63238C99EC00496103 /* NewRide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRide.swift; sourceTree = "<group>"; };
+		581F3A65238C9A1300496103 /* RiderProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderProfile.swift; sourceTree = "<group>"; };
 		582E7275232AAEA9008665A7 /* ScoopMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoopMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		582E7278232AAEA9008665A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		582E727A232AAEA9008665A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				581F3A62238C998100496103 /* SDWebImageSwiftUI in Frameworks */,
 				0B6B8F2A33E43B8D0A9AD485 /* Pods_ScoopMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +153,7 @@
 			children = (
 				580C4B3D2370A1D400C0DFED /* ViewCurrentRides.swift */,
 				580C4B3F2370A3B400C0DFED /* RideDetails.swift */,
+				581F3A65238C9A1300496103 /* RiderProfile.swift */,
 			);
 			path = CurrentRides;
 			sourceTree = "<group>";
@@ -156,6 +163,7 @@
 			children = (
 				5810CA98235FEE2A00930513 /* LocationView.swift */,
 				588FB60023312ED10075BC27 /* LocationDetails.swift */,
+				581F3A63238C99EC00496103 /* NewRide.swift */,
 			);
 			path = "Location Views";
 			sourceTree = "<group>";
@@ -292,6 +300,9 @@
 			dependencies = (
 			);
 			name = ScoopMe;
+			packageProductDependencies = (
+				581F3A61238C998100496103 /* SDWebImageSwiftUI */,
+			);
 			productName = ScoopMe;
 			productReference = 582E7275232AAEA9008665A7 /* ScoopMe.app */;
 			productType = "com.apple.product-type.application";
@@ -364,6 +375,9 @@
 				Base,
 			);
 			mainGroup = 582E726C232AAEA9008665A7;
+			packageReferences = (
+				581F3A60238C998100496103 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 582E7276232AAEA9008665A7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -464,6 +478,7 @@
 				58B789F523748E9800D9C7D6 /* ChangeDorm.swift in Sources */,
 				58D8655123314BE400796F54 /* ProfilePicture.swift in Sources */,
 				58A5288A2343AA8100EF8873 /* ManageRideRequests.swift in Sources */,
+				581F3A64238C99EC00496103 /* NewRide.swift in Sources */,
 				58C08AD8233A689B004CFFA7 /* LoginPage.swift in Sources */,
 				58B789F223748E9800D9C7D6 /* ChangePassword.swift in Sources */,
 				58D44AFC23317DD00051A764 /* Tabs.swift in Sources */,
@@ -471,6 +486,7 @@
 				580C4B3E2370A1D400C0DFED /* ViewCurrentRides.swift in Sources */,
 				582E727B232AAEA9008665A7 /* SceneDelegate.swift in Sources */,
 				58536EA32371DBBE004B1FC5 /* CreateDriver.swift in Sources */,
+				581F3A66238C9A1300496103 /* RiderProfile.swift in Sources */,
 				58B789F423748E9800D9C7D6 /* ChangeNumber.swift in Sources */,
 				92193FE12358D9EC0082FA2A /* FancyLogin.swift in Sources */,
 				5890DD6023621A7B002F7819 /* CreateAccount.swift in Sources */,
@@ -796,6 +812,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		581F3A60238C998100496103 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		581F3A61238C998100496103 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 581F3A60238C998100496103 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 582E726D232AAEA9008665A7 /* Project object */;
 }

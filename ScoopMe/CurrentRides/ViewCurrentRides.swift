@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct ViewCurrentRides: View {
     @ObservedObject var rideList = getCurrentRides()
@@ -16,7 +17,7 @@ struct ViewCurrentRides: View {
                 ForEach(rideList.data) { i in
                     HStack{
                         Text(i.location)
-                        Text(i.driver)
+                        Text("Driver: " + (i.driver["Name"] ?? ""))
                         NavigationLink(destination: RideDetails(ride: i)){
                             Text("")
                         }

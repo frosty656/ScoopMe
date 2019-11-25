@@ -10,8 +10,9 @@ import SwiftUI
 
 struct Tabs : View {
     var body: some View {
+
        TabView {
-            Text("The First Tab")
+            ViewCurrentRides()
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")

@@ -27,36 +27,14 @@ struct LocationDetails: View {
                 
                 HStack(){
                     Text("\(location.distance, specifier: "%.2f") mi")
-                    //Text("Distance \(location.distance)")
                         .font(.system(size: 30))
                     Spacer()
                 }
                 Spacer()
                 HStack(){
-                    Button(action: {
-                            
-                        }) {
-                        Text("  Watch  ")
-                        .fontWeight(.bold)
-                        .font(.system(size: 24))
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .padding(5)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color.blue, lineWidth: 3)
-                        )
-                    }
-                    Spacer()
-                    Button(action: {
-                        NewRideDeclaration(
-                            location: self.location.id,
-                            amountOfRiders: 5
-                        )
-                    }) {
-                        Text("Drive To")
+                    
+                    NavigationLink(destination: NewRide(location: location)){
+                        Text("Drive to")
                         .fontWeight(.bold)
                         .font(.system(size: 24))
                         .padding()

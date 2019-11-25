@@ -10,19 +10,23 @@ import SwiftUI
 
 struct RideDetails: View {
     var ride: Ride
+    
     var body: some View {
         VStack(){
-            Text("Name: " + ride.driver)
+            Text("Name: " + (ride.driver["Name"] ?? ""))
             Text("Location: " + ride.location)
             Text("Seats: \(ride.seats)")
-            
-            
             Text("Passengers: ")
-            ForEach(ride.riders, id: \.self){ i in
-                VStack(){
-                    Text(i)
+            
+            List{
+                ForEach(ride.riders, id: \.self){ i in
+                    VStack(){
+                        Text("\(i["RiderName"] ?? "")")
+                        NavigationLink(destination: RiderProfile(ride: i)){Text("")}
+                        
+                    }
                 }
-            }
+            }   
             
             Button(action: {
                 joinRide(ride: self.ride)
@@ -51,10 +55,11 @@ struct RideDetails_Previews: PreviewProvider {
         RideDetails(
             ride: Ride(
                 id: "312312312312",
-                driver: "Jacob",
-                riders: ["Person1", "Person2", "Person3"],
+                driver: ["Name": "Jacob", "ID": "WOOAAHHHID"],
+                riders: [["Person1ID": "Person1ID", "Person1Name": "Person1Name"], ["Person2": "Person2", "Person2Name": "Person2Name"], ["Person3": "Person3", "Person3Name": "Person3Name"]],
                 seats: 4,
-                location: "Target")
+                location: "Target",
+                leaveTime: NSDate() as Date)
         )
     }
 }

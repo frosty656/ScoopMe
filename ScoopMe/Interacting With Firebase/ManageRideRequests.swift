@@ -7,19 +7,18 @@
 //
 import Firebase
 
-func NewRideDeclaration(location: String, amountOfRiders: Int) {
+func NewRideDeclaration(ride: Ride) {
     
     let ref = Firestore.firestore()
     let user = Auth.auth().currentUser?.uid
     
     if let unwrappedUser = user {
-        ref.collection("CurrentRidesRequested").document().setData([
-            "Location": location,
-            "Driver": unwrappedUser,
-            "Time": Calendar.current,
-            "Seats": amountOfRiders,
-            "Riders": [],
-            "isFull": false
+        ref.collection("Rides").document().setData([
+            "Location": ride.location,
+            "Driver": ["ID": unwrappedUser, "Name": Auth.auth().currentUser!.displayName],
+            "LeavingTime": ride.leaveTime,
+            "Seats": ride.seats,
+            "Riders": []
         ]){ err in
             if let err = err {
                 print("Error writing document: \(err)")
@@ -33,10 +32,14 @@ func NewRideDeclaration(location: String, amountOfRiders: Int) {
 }
 
 func joinRide(ride: Ride){
-    let db = Firebase.Firestore.firestore().collection("CurrentRidesOffered")
+    let db = Firebase.Firestore.firestore().collection("Rides")
+    let currentUser = Auth.auth().currentUser!
+    
+    
+    let item = ["RiderName": currentUser.displayName, "RiderID": currentUser.uid]
     
     db.document(ride.id).updateData(
-        ["passengers" : FieldValue.arrayUnion([Auth.auth().currentUser!.uid])]
+        ["Riders" : FieldValue.arrayUnion([item])]
     ){ err in
         if let err = err {
             print("Error updating document: \(err)")
@@ -44,6 +47,5 @@ func joinRide(ride: Ride){
             print("Document successfully updated")
         }
     }
-
-    
 }
+

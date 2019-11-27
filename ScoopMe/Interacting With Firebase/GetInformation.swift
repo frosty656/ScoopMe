@@ -165,3 +165,25 @@ class GetUserInformation : ObservableObject{
         }
     }
 }
+
+class getImage : ObservableObject {
+    @Published var data: Data = nil
+
+    init(){
+        // the path to the image
+        let id = Auth.auth().currentUser!.uid
+        let url = "\(id)"
+        let storage = Storage.storage()
+        let ref = storage.reference().child(url)
+        ref.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                print("\(error)")
+                return
+            }
+            
+            print(data)
+            self.data = data!
+            
+        }
+    }
+}

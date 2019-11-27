@@ -8,8 +8,6 @@
 
 import SwiftUI
 import Firebase
-import SDWebImage
-
 struct Profile: View {
     //Should query database for this information
     @ObservedObject var userInfo = getCurrentUserInformation()
@@ -17,7 +15,7 @@ struct Profile: View {
     
     var body: some View {
         VStack  (){
-            ProfilePicture(image: Image("User"))
+            ProfilePicture()
                 
                 .frame(width: 300, height: 150)
                 .offset(x: -100, y: 0)
@@ -27,7 +25,6 @@ struct Profile: View {
                     
                     Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
                     Text(userInfo.user.dorm)
-                    Text("Hello")
                 }
                 Spacer()
             }

@@ -8,7 +8,8 @@ struct LocationData : Identifiable {
     var distance: Double
 }
 
-struct User: Hashable {
+struct User: Identifiable {
+    let id: String
     let firstName: String
     let lastName: String
     let dorm: String

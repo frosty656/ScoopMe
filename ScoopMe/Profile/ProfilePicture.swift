@@ -11,13 +11,24 @@ import Firebase
 import SDWebImageSwiftUI
 
 struct ProfilePicture: View {
-    @State var image = ""
+    
+    @ObservedObject var imageLink: getProfileImage
+    
+    init(userID: String? = ""){
+        if userID == ""{
+            imageLink = getProfileImage()
+        } else {
+            imageLink = getProfileImage(userID: userID)
+        }
+        
+    }
 
     var body: some View {
         VStack(){
 
-            if(image != ""){
-                AnimatedImage(url: URL(string: image)!)
+            if(imageLink.pathString != ""){
+                AnimatedImage(url: URL(string: imageLink.pathString)!)
+                //.placeholder(UIImage(named: "User"))
                 .resizable()
                 .scaledToFit()
                 .clipShape(Circle())
@@ -25,16 +36,6 @@ struct ProfilePicture: View {
                 .shadow(radius: 10)
             } else {
                 
-            }
-        }.onAppear{
-            let storage = Storage.storage().reference()
-            storage.child(Auth.auth().currentUser!.uid).downloadURL{
-                (url, err) in
-                if err != nil {
-                    print(err!.localizedDescription)
-                    return
-                }
-                self.image = "\(url!)"
             }
         }
     }

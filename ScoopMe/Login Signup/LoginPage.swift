@@ -30,6 +30,7 @@ struct LoginPage: View {
                 Button(action:{
                     self.signUserIn(email: self.emailAddress, password: self.password)
                     if self.errorText == "" {
+                        
                     }
                 }) {
                     Text("Login")

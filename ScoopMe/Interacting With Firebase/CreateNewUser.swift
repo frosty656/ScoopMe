@@ -8,32 +8,32 @@
 
 import Foundation
 import FirebaseFirestore
-import FirebaseCore
+import FirebaseStorage
 import FirebaseAuth
 
 func CreateUser(email: String, password: String, handler: @escaping AuthDataResultCallback){
     Auth.auth().createUser(withEmail: email, password: password, completion: handler)
 }
 
-func logIn(email: String, password: String) {
-    Auth.auth().signIn(withEmail: email, password: password)
+func logIn(email: String, password: String, handler: @escaping AuthDataResultCallback) {
+    Auth.auth().signIn(withEmail: email, password: password, completion: handler)
 }
 
 func logOut() {
-        try! Auth.auth().signOut()
+    try! Auth.auth().signOut()
 
 }
 
-func SetUsersDisplayName(displayName: String){
+func SetUsersDisplayName(displayName: String, onError:  @escaping (_ errorMessage: String?) -> Void){
     let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
     changeRequest?.displayName = displayName
     changeRequest?.commitChanges { (error) in
-      // ...
+        onError(error?.localizedDescription)
     }
 }
 
 
-func CreateDriverDetails(licencePlate: String, car: String, color: String){
+func CreateDriverDetails(licencePlate: String, car: String, color: String,  onError:  @escaping (_ errorMessage: String?) -> Void){
 
     let ref = Firestore.firestore()
     let user = Auth.auth().currentUser?.uid
@@ -45,6 +45,7 @@ func CreateDriverDetails(licencePlate: String, car: String, color: String){
             "colorOfCar": color
         ]){ err in
             if let err = err {
+                onError(err.localizedDescription)
                 print("Error writing driver info: \(err)")
             } else {
                 print("Driver info successfully created!")
@@ -57,7 +58,7 @@ func CreateDriverDetails(licencePlate: String, car: String, color: String){
 }
 
 
-func CreateUserDetailsDocument(firstName: String, lastName: String, dorm: String){
+func CreateUserDetailsDocument(firstName: String, lastName: String, dorm: String, onError:  @escaping (_ errorMessage: String?) -> Void){
     let ref = Firestore.firestore()
     let user = Auth.auth().currentUser?.uid
 
@@ -68,6 +69,7 @@ func CreateUserDetailsDocument(firstName: String, lastName: String, dorm: String
             "Dorm": dorm,
         ]){ err in
             if let err = err {
+                onError(err.localizedDescription)
                 print("Error writing user info: \(err)")
             } else {
                 let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
@@ -79,6 +81,22 @@ func CreateUserDetailsDocument(firstName: String, lastName: String, dorm: String
             }
         }
     } else {
-        print("Could not unwrap email")
+        print("Could not unwrap UID")
     }
+}
+
+func uploadProfilePicture(profileImage: UIImage, handler: @escaping AuthDataResultCallback){
+    let storage = Storage.storage()
+    let user = Auth.auth().currentUser?.uid
+    
+    storage.reference().child(user!).putData(profileImage.jpegData(compressionQuality: 0.1)!, metadata: nil){
+        (_,error) in
+        if error != nil{
+            print("Error hit")
+            print(error?.localizedDescription)
+        } else {
+            print("SUCCESS")
+        }
+    }
+    
 }

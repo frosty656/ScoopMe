@@ -17,17 +17,17 @@ struct ViewCurrentRides: View {
             List{
                 ForEach(rideList.data) { i in
                     HStack{
-                        Text(i.location)
+                        Text("\(i.location)\n -> \(i.destination)")
                         
                         
-                            Text("Driver: " + (i.driver["Name"] ?? ""))
+                            //Text("Driver: " + (i.driver["Name"] ?? ""))
                             
                             
                             Text("Leaving: \(self.getHours(date: i.leaveTime))")
                         
                         NavigationLink(destination: RideDetails(ride: i)){
                             Text("")
-                        }
+                        }.frame(width: 10, height: 10)
                     }
                 }
             }.navigationBarTitle("Rides: ")
@@ -36,7 +36,7 @@ struct ViewCurrentRides: View {
     
     func getHours(date: Date) -> String{
         let formatter1 = DateFormatter()
-        formatter1.dateFormat = "HH:mm"
+        formatter1.dateFormat = "h:mm a"
         
         return (formatter1.string(from: date))
     }

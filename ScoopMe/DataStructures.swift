@@ -5,7 +5,6 @@ struct LocationData : Identifiable {
     var name: String
     var longitude: Double
     var latitude: Double
-    var distance: Double
 }
 
 struct User: Identifiable {
@@ -38,5 +37,6 @@ struct Ride: Identifiable {
     let riders: [[String: String]]
     let seats: Int
     let location: String
+    let destination: String
     let leaveTime: Date
 }

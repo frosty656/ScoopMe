@@ -14,14 +14,13 @@ class getLocations : ObservableObject{
                 print((err?.localizedDescription)!)
                 return
             }
-            
+
             for i in snap!.documents{
                 let nameData = LocationData(
-                    id: i.documentID,
+                    id: i.documentID+"key",
                     name: i.get("Location") as! String,
-                    longitude: i.get("longitude") as! Double,
-                    latitude: i.get("latitude") as! Double,
-                    distance: i.get("Distance") as! Double)
+                    longitude: i.get("Longitude") as! Double,
+                    latitude: i.get("Latitude") as! Double)
                 self.data.append(nameData)
             }
         }
@@ -83,6 +82,7 @@ class getCurrentRides : ObservableObject{
                     riders: i.get("Riders") as! [[String: String]],
                     seats: i.get("Seats") as! Int,
                     location: i.get("Location") as! String,
+                    destination: i.get("Destination") as! String,
                     leaveTime: (i.get("LeavingTime") as! Timestamp).dateValue()
                 )
                 self.data.append(nameData)

@@ -19,6 +19,9 @@ struct RiderProfile: View {
     var body: some View {
         NavigationView{
             VStack(){
+                
+                ProfilePicture(userID: userInfo.user.id)
+                
                 Text("\(userInfo.user.firstName)")
                 Text("\(userInfo.user.lastName)")
                 Text("\(userInfo.user.dorm)")

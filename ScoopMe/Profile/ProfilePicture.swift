@@ -7,22 +7,55 @@
 //
 
 import SwiftUI
+import Firebase
+import SDWebImageSwiftUI
 
 struct ProfilePicture: View {
-    var image: Image
+    
+    @ObservedObject var imageLink: getProfileImage
+    
+    init(userID: String? = ""){
+        if userID == ""{
+            imageLink = getProfileImage()
+        } else {
+            imageLink = getProfileImage(userID: userID)
+        }
+        
+    }
 
     var body: some View {
-        image
-            .resizable()
-            .scaledToFit()
-            .clipShape(Circle())
-            .overlay(Circle().stroke(Color.white, lineWidth: 4))
-            .shadow(radius: 10)
+        VStack(){
+
+            if(imageLink.pathString != ""){
+                AnimatedImage(url: URL(string: imageLink.pathString)!)
+                //.placeholder(UIImage(named: "User"))
+                .resizable()
+                .scaledToFit()
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                .shadow(radius: 10)
+            } else {
+                
+            }
+        }
+    }
+}
+
+struct loader : UIViewRepresentable{
+    func makeUIView(context: UIViewRepresentableContext<loader>) -> UIActivityIndicatorView {
+        
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.startAnimating()
+        return indicator
+    }
+    
+    func updateUIView(_ uiView: loader.UIViewType, context: UIViewRepresentableContext<loader>) {
+        
     }
 }
 
 struct ProfilePicture_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePicture(image: Image("User"))
+        ProfilePicture()
     }
 }

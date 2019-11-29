@@ -14,7 +14,7 @@ struct RideDetails: View {
     var body: some View {
         VStack(){
             Text("Name: " + (ride.driver["Name"] ?? ""))
-            Text("Location: " + ride.location)
+            Text("From: " + ride.location + " to " + ride.destination)
             Text("Seats: \(ride.seats)")
             Text("Passengers: ")
             
@@ -59,6 +59,7 @@ struct RideDetails_Previews: PreviewProvider {
                 riders: [["Person1ID": "Person1ID", "Person1Name": "Person1Name"], ["Person2": "Person2", "Person2Name": "Person2Name"], ["Person3": "Person3", "Person3Name": "Person3Name"]],
                 seats: 4,
                 location: "Target",
+                destination: "Walmart",
                 leaveTime: NSDate() as Date)
         )
     }

@@ -15,17 +15,26 @@ struct NewRide: View {
     
     @State private var selectedDate = Date()
     @State private var seats = 4
+    @State private var selectionDestination = 4
+    @State var locationList = ["Arena","Gym","Lincoln","Conway","Hampton","Windsor","Tuckerman","Manadnock","26-C","Library","Gustafson Center","Belknap Hall","Robert Frost","Dining Hall","ACC","Hospitality","Student Center","Green Center","Exeter Hall","Stark Hall","Washingtin","New Castle","Larkin Field","Webster Hall","Ceta Annex","Ceta Building","Baseball Field","Softball Field","Kingston","Rockingham"]
     
-    //Picker limits
+
     var body: some View {
         NavigationView{
             VStack(){
+                
+                Text("Where are you leaving from?")
+                Picker(selection: $selectionDestination, label: Text("")){
+                    ForEach(0 ..< locationList.count){
+                        Text(self.locationList[$0]).tag($0)
+                    }
+                }.labelsHidden()
                 Text("Enter the time you are leaving")
                 DatePicker(
                     "",
                     selection: $selectedDate,
                     displayedComponents: .hourAndMinute
-                )
+                ).labelsHidden()
                 
                 HStack(){
                     Text("Avaiable Seats: ")
@@ -49,22 +58,23 @@ struct NewRide: View {
                 Button("Drive Here") {
                     NewRideDeclaration(ride: Ride(
                     id: "",
-                    driver: ["ID":Auth.auth().currentUser!.uid,"Name":"NAME GOES HERE"],
+                    driver: ["ID":"","Name":""], //Leave Blank
                     riders: [["":""]],
                     seats: self.seats,
-                    location: self.location.name,
+                    location: self.locationList[self.selectionDestination],
+                    destination: self.location.name,
                     leaveTime: self.selectedDate
                     ))
                 }
-                
-                Spacer()
+                    
             }
-        }
+        }.navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 
 struct NewRide_Previews: PreviewProvider {
     static var previews: some View {
-        NewRide(location: LocationData(id: "Temp", name: "Target", longitude: 3, latitude: -71.460710, distance: 43.045370))
+        NewRide(location: LocationData(id: "Temp", name: "Target", longitude: 3, latitude: -71.460710))
     }
 }

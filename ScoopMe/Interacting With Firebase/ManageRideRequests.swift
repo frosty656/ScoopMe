@@ -15,6 +15,7 @@ func NewRideDeclaration(ride: Ride) {
     if let unwrappedUser = user {
         ref.collection("Rides").document().setData([
             "Location": ride.location,
+            "Destination": ride.destination,
             "Driver": ["ID": unwrappedUser, "Name": Auth.auth().currentUser!.displayName],
             "LeavingTime": ride.leaveTime,
             "Seats": ride.seats,

@@ -25,11 +25,7 @@ struct LocationDetails: View {
                     .offset(y: -35)
                     .padding(.bottom, -45)
                 
-                HStack(){
-                    Text("\(location.distance, specifier: "%.2f") mi")
-                        .font(.system(size: 30))
-                    Spacer()
-                }
+
                 Spacer()
                 HStack(){
                     
@@ -57,6 +53,6 @@ struct LocationDetails: View {
 
 struct LocationDetails_Previews: PreviewProvider {
     static var previews: some View {
-        LocationDetails(location: LocationData(id: "Temp", name: "Target", longitude: 3, latitude: -71.460710, distance: 43.045370))
+        LocationDetails(location: LocationData(id: "Temp", name: "Target", longitude: 3, latitude: -71.460710))
     }
 }

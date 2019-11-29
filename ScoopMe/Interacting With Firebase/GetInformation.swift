@@ -1,6 +1,7 @@
 import Firebase
 import SwiftUI
 
+
 class getLocations : ObservableObject{
     @Published var data = [LocationData]()
     
@@ -13,14 +14,13 @@ class getLocations : ObservableObject{
                 print((err?.localizedDescription)!)
                 return
             }
-            
+
             for i in snap!.documents{
                 let nameData = LocationData(
-                    id: i.documentID,
+                    id: i.documentID+"key",
                     name: i.get("Location") as! String,
-                    longitude: i.get("longitude") as! Double,
-                    latitude: i.get("latitude") as! Double,
-                    distance: i.get("Distance") as! Double)
+                    longitude: i.get("Longitude") as! Double,
+                    latitude: i.get("Latitude") as! Double)
                 self.data.append(nameData)
             }
         }
@@ -28,7 +28,7 @@ class getLocations : ObservableObject{
 }
 
 class getCurrentUserInformation : ObservableObject {
-    @Published var user: User = User(firstName: "", lastName: "", dorm: "")
+    @Published var user: User = User(id: "", firstName: "", lastName: "", dorm: "")
 
     var currentUser = Auth.auth().currentUser?.uid
 
@@ -50,6 +50,7 @@ class getCurrentUserInformation : ObservableObject {
             if let document = snap {
                 print("USER PROFILE INFO GATHERED")
                 self.user = User(
+                    id: self.currentUser!,
                     firstName: document.get("first_name") as! String,
                     lastName: document.get("last_name") as! String,
                     dorm: document.get("Dorm") as! String)
@@ -81,6 +82,7 @@ class getCurrentRides : ObservableObject{
                     riders: i.get("Riders") as! [[String: String]],
                     seats: i.get("Seats") as! Int,
                     location: i.get("Location") as! String,
+                    destination: i.get("Destination") as! String,
                     leaveTime: (i.get("LeavingTime") as! Timestamp).dateValue()
                 )
                 self.data.append(nameData)
@@ -140,7 +142,7 @@ class getMulptipleUsersNames : ObservableObject{
 }
 
 class GetUserInformation : ObservableObject{
-    @Published var user: User = User(firstName: "", lastName: "", dorm: "")
+    @Published var user: User = User(id: "", firstName: "", lastName: "", dorm: "")
 
     init(currentUser: String){
         let db = Firebase.Firestore.firestore().collection("Users")
@@ -155,6 +157,7 @@ class GetUserInformation : ObservableObject{
             if let document = snap {
                 print("USER PROFILE INFO GATHERED")
                 self.user = User(
+                    id: currentUser,
                     firstName: document.get("first_name") as! String,
                     lastName: document.get("last_name") as! String,
                     dorm: document.get("Dorm") as! String)
@@ -162,6 +165,30 @@ class GetUserInformation : ObservableObject{
             else {
                 print("User does not exist")
             }
+        }
+    }
+}
+
+class getProfileImage : ObservableObject {
+    @Published var pathString = ""
+    
+    init(userID: String? = ""){
+        
+        var user = userID
+        if userID == ""{
+            print("Getting Current User")
+            user = Auth.auth().currentUser!.uid
+        }
+    
+        let storage = Storage.storage().reference()
+        
+        storage.child(user!).downloadURL{
+            (url, err) in
+            if err != nil {
+                print(err!.localizedDescription)
+                return
+            }
+            self.pathString = "\(url!)"
         }
     }
 }

@@ -14,6 +14,9 @@ struct CreateDriver: View {
     @State var licencePlate: String = ""
     @State var color: String = ""
     @State var isShowing = true // toggle state
+    @State var errorMessage = ""
+    
+
 
     
     var body: some View {
@@ -32,7 +35,10 @@ struct CreateDriver: View {
                 
                 //On success go to homepage
                 Button(action: {
-                    CreateDriverDetails(licencePlate: self.licencePlate, car: self.car, color: self.color)
+                    CreateDriverDetails(licencePlate: self.licencePlate, car: self.car, color: self.color){
+                        err in
+                        self.errorMessage = err!
+                    }
                     
                 }) {
                     Text("Become Driver")

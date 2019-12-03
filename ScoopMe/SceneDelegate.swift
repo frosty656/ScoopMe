@@ -24,10 +24,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         //user is already logged in so go to the home page
-        
-        
+        //test@snhu.edu
+        //testpassword
         //remove this later
-        Auth.auth().signIn(withEmail: "test@snhu.edu", password: "testpassword") { user, error in
+        Auth.auth().signIn(withEmail: "", password: "") { user, error in
              if let error = error
              {
                 print(error.localizedDescription)
@@ -44,11 +44,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
 
             if Auth.auth().currentUser != nil {
-                window.rootViewController = UIHostingController(rootView: Tabs())
+                window.rootViewController = UIHostingController(rootView: MotherView().environmentObject(ViewRouter()))
             }
-                else {
+            else {
                 window.rootViewController = UIHostingController(rootView:
-                    Tabs())
+                    CreateAccount())
             }
             self.window = window
             window.makeKeyAndVisible()

@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct Tabs : View {
+    @EnvironmentObject var viewRouter: ViewRouter
+    
     var body: some View {
 
        TabView {
@@ -34,6 +36,6 @@ struct Tabs : View {
 
 struct TabbedView_Previews: PreviewProvider {
     static var previews: some View {
-        Tabs()
+        Tabs().environmentObject(ViewRouter())
     }
 }

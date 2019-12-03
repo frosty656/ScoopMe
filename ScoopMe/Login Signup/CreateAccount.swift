@@ -11,12 +11,13 @@ import Firebase
 
 struct CreateAccount: View {
     
+    @EnvironmentObject var viewRouter: ViewRouter
     @State var emailAddress: String = ""
     @State var password: String = ""
     @State var passwordConfirm: String = ""
     @State var errorText: String = ""
     @State var becomeDriver = false // toggle state
-
+    @State private var isAlert = false
     
     var body: some View {
         NavigationView{
@@ -35,9 +36,11 @@ struct CreateAccount: View {
                         (result, error) in
                         if error != nil{
                             self.errorText = error!.localizedDescription
+                            self.isAlert = true
                             return
                         } else {
                             //GO TO CREATE USER DETAILS
+                            self.viewRouter.currentPage = "page2"
                             self.emailAddress = ""
                             self.password = ""
                             self.passwordConfirm = ""
@@ -45,7 +48,9 @@ struct CreateAccount: View {
                     }
                     
                 }) {
-                    Text("Create Account")
+                    NextButtonContent()
+                }.alert(isPresented: $isAlert) { () -> Alert in
+                    Alert(title: Text("Error"), message: Text("Invalid Credentials Please Try Again"), dismissButton: .default(Text("Okay")))
                 }
                 //If success and wants to be driver go to create driver page
                 
@@ -61,8 +66,22 @@ struct CreateAccount: View {
     }
 }
 
+#if DEBUG
 struct CreateAccount_Previews: PreviewProvider {
     static var previews: some View {
-        CreateAccount()
+        CreateAccount().environmentObject(ViewRouter())
     }
 }
+#endif
+
+struct NextButtonContent : View {
+    var body: some View {
+        return Text("Create Account")
+            .foregroundColor(.white)
+            .frame(width: 200, height: 50)
+            .background(Color.blue)
+            .cornerRadius(15)
+            .padding(.top, 50)
+    }
+}
+

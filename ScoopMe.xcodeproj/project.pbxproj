@@ -43,6 +43,8 @@
 		58F3C7A3238DCBAE00F4B29A /* CreateUserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F3C7A2238DCBAE00F4B29A /* CreateUserDetails.swift */; };
 		92193FE12358D9EC0082FA2A /* FancyLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92193FE02358D9EC0082FA2A /* FancyLogin.swift */; };
 		92193FE32358DA830082FA2A /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92193FE22358DA830082FA2A /* WelcomePage.swift */; };
+		92C823612396D856000DB78A /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C823602396D856000DB78A /* MotherView.swift */; };
+		92C823632396D875000DB78A /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C823622396D875000DB78A /* ViewRouter.swift */; };
 		D11DF82A5B9017C0EF656336 /* Pods_ScoopMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2E12BEF4E9CC019DDD1FDC /* Pods_ScoopMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +109,8 @@
 		64FCD03276E89CCC17863B1C /* Pods-ScoopMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoopMe.release.xcconfig"; path = "Target Support Files/Pods-ScoopMe/Pods-ScoopMe.release.xcconfig"; sourceTree = "<group>"; };
 		92193FE02358D9EC0082FA2A /* FancyLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyLogin.swift; sourceTree = "<group>"; };
 		92193FE22358DA830082FA2A /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
+		92C823602396D856000DB78A /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
+		92C823622396D875000DB78A /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,8 @@
 				5890DD5F23621A7B002F7819 /* CreateAccount.swift */,
 				58F3C7A2238DCBAE00F4B29A /* CreateUserDetails.swift */,
 				58536EA22371DBBE004B1FC5 /* CreateDriver.swift */,
+				92C823602396D856000DB78A /* MotherView.swift */,
+				92C823622396D875000DB78A /* ViewRouter.swift */,
 			);
 			path = "Login Signup";
 			sourceTree = "<group>";
@@ -484,10 +490,12 @@
 				58D8654E23314AA100796F54 /* Profile.swift in Sources */,
 				588FB5FF233126890075BC27 /* MapView.swift in Sources */,
 				5810CA97235FEDD400930513 /* DataStructures.swift in Sources */,
+				92C823612396D856000DB78A /* MotherView.swift in Sources */,
 				92193FE32358DA830082FA2A /* WelcomePage.swift in Sources */,
 				5810CA99235FEE2A00930513 /* LocationView.swift in Sources */,
 				582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */,
 				58B789F523748E9800D9C7D6 /* ChangeDorm.swift in Sources */,
+				92C823632396D875000DB78A /* ViewRouter.swift in Sources */,
 				58D8655123314BE400796F54 /* ProfilePicture.swift in Sources */,
 				58A5288A2343AA8100EF8873 /* ManageRideRequests.swift in Sources */,
 				581F3A64238C99EC00496103 /* NewRide.swift in Sources */,

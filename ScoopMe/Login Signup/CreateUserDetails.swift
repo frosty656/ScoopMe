@@ -10,12 +10,15 @@ import SwiftUI
 import FirebaseStorage
 
 struct CreateUserDetails: View {
+    
+    @EnvironmentObject var viewRouter: ViewRouter
     @State var shown = false
     @State var firstName: String = ""
     @State var lastName: String = ""
     @State var dorm: String = ""
     @State var errorMessage: String = ""
     @State var profileImage = UIImage()
+    @State private var isAlert = false
     
     var body: some View {
         NavigationView{
@@ -51,10 +54,15 @@ struct CreateUserDetails: View {
                         }
                     }
                     
+                    self.viewRouter.currentPage = "page3"
+                    
                 }) {
-                    Text("Create Details")
+                    NextButtonContent()
+                    
                 }
-                
+                .alert(isPresented: $isAlert) { () -> Alert in
+                Alert(title: Text("Error"), message: Text("Invalid Credentials Please Try Again"), dismissButton: .default(Text("Okay")))
+                }
                 Spacer()
             }.padding()
         }
@@ -63,11 +71,9 @@ struct CreateUserDetails: View {
 
 struct CreateUserDetails_Previews: PreviewProvider {
     static var previews: some View {
-        CreateUserDetails()
+        CreateUserDetails().environmentObject(ViewRouter())
     }
 }
-
-
 
 struct imagePicker: UIViewControllerRepresentable{
 

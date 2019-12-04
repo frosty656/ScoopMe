@@ -9,8 +9,8 @@
 import SwiftUI
 import Firebase
 struct Profile: View {
-    //Should query database for this information
     @ObservedObject var userInfo = getCurrentUserInformation()
+    @EnvironmentObject var viewRouter: ViewRouter
     
     
     var body: some View {
@@ -30,25 +30,15 @@ struct Profile: View {
             }
             .font(.system(size: 24))
             
-            Button(action:{
-                do{
-                    try Auth.auth().signOut()
-                } catch {
-                    
-                }
-                
-            }, label: {
-                Text("Log Out")
-            })
-            
-//            List(){
-//                Text("Target")
-//                Text("Walmart")
+//            Button(action:{
+//                self.viewRouter.currentPage = "Login"
 //
-//            }
-//        .navigationBarTitle(Text("Previous rides"))
-//            .font(.system(size: 24))
-        
+//                    print("Logged out")
+//
+//
+//            }, label: {
+//                Text("Log Out")
+//            })
             
         }.padding()
         

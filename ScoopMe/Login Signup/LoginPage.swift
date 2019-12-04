@@ -11,11 +11,23 @@ import Firebase
 import FirebaseAuth
 
 struct LoginPage: View {
-    
+    @EnvironmentObject var viewRouter: ViewRouter
     @Environment(\.presentationMode) var presentationMode
     @State var emailAddress: String = ""
     @State var password: String = ""
     @State var errorText: String = ""
+    
+    init(){
+        let user = Auth.auth().currentUser?.uid
+        
+        if user != nil {
+            do {
+                logOut()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     var body: some View {
         NavigationView{
@@ -24,16 +36,20 @@ struct LoginPage: View {
                 
                 TextField("SNHU Email", text: $emailAddress)
                 SecureField("Password", text: $password)
-
-                //On success go to homepage
                 
                 Button(action:{
-                    self.signUserIn(email: self.emailAddress, password: self.password)
-                    if self.errorText == "" {
-                        
+                    logIn(email: self.emailAddress, password: self.password){
+                        (result, error) in
+                        if error != nil{
+                            self.errorText = error!.localizedDescription
+                        } else {
+                            self.viewRouter.currentPage = "page3"
+                        }
                     }
+                    
                 }) {
                     Text("Login")
+                    
                 }
                 
 
@@ -43,18 +59,6 @@ struct LoginPage: View {
             }.padding()
         }
     }
-   func signUserIn(email: String, password: String) {
-       Auth.auth().signIn(withEmail: email, password: password) { user, error in
-            if let error = error
-            {
-               self.errorText = error.localizedDescription
-            } else {
-                print("User singed in")
-        }
-        
-
-       }
-   }
 }
 
 struct LoginSignUp_Previews: PreviewProvider {

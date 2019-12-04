@@ -23,6 +23,9 @@ struct MotherView : View {
             else if viewRouter.currentPage == "page3" {
                 Tabs()
                     .transition(.scale)
+            } else if viewRouter.currentPage == "Login" {
+                LoginPage()
+                    .transition(.scale)
             }
         }
     }

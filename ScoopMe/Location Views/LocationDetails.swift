@@ -13,7 +13,6 @@ struct LocationDetails: View {
     var location: LocationData
     
     var body: some View {
-        NavigationView{
             VStack(){
                 MapView(
                     latitude: location.latitude,
@@ -43,12 +42,14 @@ struct LocationDetails: View {
                                 .stroke(Color.blue, lineWidth: 3)
                         )
                     }
+                    
+                    
                 }.padding()
                 
                 Spacer()
             }
-        }
     }
+
 }
 
 struct LocationDetails_Previews: PreviewProvider {

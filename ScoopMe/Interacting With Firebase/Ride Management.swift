@@ -50,3 +50,32 @@ func joinRide(ride: Ride){
     }
 }
 
+
+class getCurrentRides : ObservableObject{
+    @Published var data = [Ride]()
+    
+    init(){
+        let db = Firebase.Firestore.firestore().collection("Rides").whereField("LeavingTime", isGreaterThan: Timestamp())
+        
+        db.addSnapshotListener{ (snap, err) in
+            if err != nil{
+                print((err?.localizedDescription)!)
+                return
+            }
+            
+            self.data.removeAll()
+            for i in snap!.documents{
+                let nameData = Ride(
+                    id: i.documentID,
+                    driver: i.get("Driver") as! [String: String],
+                    riders: i.get("Riders") as! [[String: String]],
+                    seats: i.get("Seats") as! Int,
+                    location: i.get("Location") as! String,
+                    destination: i.get("Destination") as! String,
+                    leaveTime: (i.get("LeavingTime") as! Timestamp).dateValue()
+                )
+                self.data.append(nameData)
+            }
+        }
+    }
+}

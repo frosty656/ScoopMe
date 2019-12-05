@@ -9,8 +9,10 @@
 import SwiftUI
 import Firebase
 struct Profile: View {
-    //Should query database for this information
     @ObservedObject var userInfo = getCurrentUserInformation()
+    @ObservedObject var driverInfo = getDriverInformation()
+
+    @EnvironmentObject var viewRouter: ViewRouter
     
     
     var body: some View {
@@ -26,29 +28,35 @@ struct Profile: View {
                     Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
                     Text(userInfo.user.dorm)
                 }
+                
                 Spacer()
             }
             .font(.system(size: 24))
             
-            Button(action:{
-                do{
-                    try Auth.auth().signOut()
-                } catch {
-                    
-                }
-                
-            }, label: {
-                Text("Log Out")
-            })
             
-//            List(){
-//                Text("Target")
-//                Text("Walmart")
+            if userInfo.user.isDriver{
+                   VStack(){
+                    Text("Me me driver")
+                    Text("Drives a \(driverInfo.driver.carColor) \(driverInfo.driver.car)")
+
+                    if driverInfo.driver.livesOnCampus {
+                              Text("Resident")
+                          } else {
+                              Text("Communter")
+                          }
+                   }.font(.system(size: 24))
+               }
+            
+            
+//            Button(action:{
+//                self.viewRouter.currentPage = "Login"
 //
-//            }
-//        .navigationBarTitle(Text("Previous rides"))
-//            .font(.system(size: 24))
-        
+//                    print("Logged out")
+//
+//
+//            }, label: {
+//                Text("Log Out")
+//            })
             
         }.padding()
         

@@ -11,50 +11,51 @@ import Firebase
 import FirebaseAuth
 
 struct LoginPage: View {
-    
+    @EnvironmentObject var viewRouter: ViewRouter
     @Environment(\.presentationMode) var presentationMode
     @State var emailAddress: String = ""
     @State var password: String = ""
     @State var errorText: String = ""
     
+//    init(){
+//        let user = Auth.auth().currentUser?.uid
+//
+//        if user != nil {
+//            do {
+//                logOut()
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
+    
     var body: some View {
-        NavigationView{
-            VStack(){
-                Text("\(errorText)")
-                
-                TextField("SNHU Email", text: $emailAddress)
-                SecureField("Password", text: $password)
-
-                //On success go to homepage
-                
-                Button(action:{
-                    self.signUserIn(email: self.emailAddress, password: self.password)
-                    if self.errorText == "" {
-                        
+        VStack(){
+            Text("\(errorText)")
+            
+            TextField("SNHU Email", text: $emailAddress)
+            SecureField("Password", text: $password)
+            
+            Button(action:{
+                logIn(email: self.emailAddress, password: self.password){
+                    (result, error) in
+                    if error != nil{
+                        self.errorText = error!.localizedDescription
+                    } else {
+                        self.viewRouter.currentPage = "Tabs"
                     }
-                }) {
-                    Text("Login")
                 }
                 
-
-                NavigationLink("Create Account",destination: CreateAccount())
-                    .navigationBarTitle("")
-                    .navigationBarHidden(true)
-            }.padding()
-        }
+            }) {
+                Text("Login")
+                
+            }
+            
+            Button(action: {self.viewRouter.currentPage = "CreateAccount"}){
+                    Text("Create Account")
+            }
+        }.padding()
     }
-   func signUserIn(email: String, password: String) {
-       Auth.auth().signIn(withEmail: email, password: password) { user, error in
-            if let error = error
-            {
-               self.errorText = error.localizedDescription
-            } else {
-                print("User singed in")
-        }
-        
-
-       }
-   }
 }
 
 struct LoginSignUp_Previews: PreviewProvider {

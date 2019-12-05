@@ -9,44 +9,47 @@
 import SwiftUI
 
 struct CreateDriver: View {
-    
+    @EnvironmentObject var viewRouter: ViewRouter
     @State var car: String = ""
     @State var licencePlate: String = ""
     @State var color: String = ""
     @State var isShowing = true // toggle state
     @State var errorMessage = ""
     
-
-
-    
     var body: some View {
-        NavigationView{
+//        NavigationView{
             VStack{
-                Text("Type of Car")
-                TextField("Ford Escape", text: $car)
+
+                TextField("Car Type", text: $car)
                 
-                Text("Car Color")
-                TextField("Blue", text: $color)
+                TextField("Car Color", text: $color)
                 
-                Text("Licence Plate")
-                TextField("ABC123", text: $licencePlate)
+                TextField("Licence Plate", text: $licencePlate)
                 
                 Toggle("I live on campus", isOn: $isShowing)
                 
                 //On success go to homepage
                 Button(action: {
-                    CreateDriverDetails(licencePlate: self.licencePlate, car: self.car, color: self.color){
+                    var success = true
+                    CreateDriverDetails(licencePlate: self.licencePlate, car: self.car, color: self.color, livesOnCampus: self.isShowing){
                         err in
                         self.errorMessage = err!
+                        success = false
+                        print("Driver Details Failed")
+                    }
+                    
+                    if(success){
+                        print("Going to tabs")
+                        self.viewRouter.currentPage = "Tabs"
                     }
                     
                 }) {
                     Text("Become Driver")
                 }
                 
-            }.padding(50)
+            }.padding()
         }
-    }
+ //   }
 }
 
 struct CreateDriver_Previews: PreviewProvider {

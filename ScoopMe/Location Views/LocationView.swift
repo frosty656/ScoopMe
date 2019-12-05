@@ -17,12 +17,12 @@ struct LocationView: View {
                     HStack{
                         Text(i.name)
                             .frame(width: 150)
-                            .font(.system(size: 32))
+                            .font(.system(size: 24))
 
                         Spacer()
 
-                        MapView(latitude: i.latitude, longitude: i.longitude)
-                            .frame(width: 50, height: 50)
+                       // MapView(latitude: i.latitude, longitude: i.longitude)
+                       //     .frame(width: 50, height: 50)
 
                         
                         NavigationLink(destination: LocationDetails(location: i)){
@@ -30,7 +30,7 @@ struct LocationView: View {
                         }
                     }
                 }
-            }
+            }.navigationBarTitle("Locations")
         }
     }
 }

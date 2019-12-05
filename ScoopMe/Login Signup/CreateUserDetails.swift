@@ -10,64 +10,71 @@ import SwiftUI
 import FirebaseStorage
 
 struct CreateUserDetails: View {
+    
+    @EnvironmentObject var viewRouter: ViewRouter
     @State var shown = false
     @State var firstName: String = ""
     @State var lastName: String = ""
     @State var dorm: String = ""
     @State var errorMessage: String = ""
     @State var profileImage = UIImage()
+    @State var becomeDriver = false // toggle state
     
     var body: some View {
-        NavigationView{
-            VStack{
-                Image(uiImage: profileImage)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 200, height: 200)
-                .clipped()
-                
-                Button(action: {
-                    self.shown.toggle()
-                }){
-                    Text("Upload Profile Picture")
-                }.sheet(isPresented: $shown){
-                    imagePicker(isPresented: self.$shown, selectedImage: self.$profileImage)
+        VStack{
+            Image(uiImage: profileImage)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 200, height: 200)
+            .clipped()
+            
+            Button(action: {
+                self.shown.toggle()
+            }){
+                Text("Upload Profile Picture")
+            }.sheet(isPresented: $shown){
+                imagePicker(isPresented: self.$shown, selectedImage: self.$profileImage)
+            }
+            
+            TextField("first name", text: $firstName)
+            TextField("last name", text: $lastName)
+            TextField("dorm", text: $dorm)
+            Toggle("I want to be a driver", isOn: $becomeDriver)
+            
+            Button(action: {
+                CreateUserDetailsDocument(firstName: self.firstName, lastName: self.lastName, dorm: self.dorm, isDriver: self.becomeDriver){
+                    err in
+                    self.errorMessage = err!
                 }
                 
-                TextField("first name", text: $firstName)
-                TextField("last name", text: $lastName)
-                TextField("dorm", text: $dorm)
-                
-                Button(action: {
-                    CreateUserDetailsDocument(firstName: self.firstName, lastName: self.lastName, dorm: self.dorm){
-                        err in
-                        self.errorMessage = err!
+                uploadProfilePicture(profileImage: self.profileImage){
+                    (_,error) in
+                    if error != nil{
+                        print("Error with profile image upload")
                     }
-                    
-                    uploadProfilePicture(profileImage: self.profileImage){
-                        (_,error) in
-                        if error != nil{
-                            print("Error with profile image upload")
-                        }
-                    }
-                    
-                }) {
-                    Text("Create Details")
+                }
+                if(self.becomeDriver){
+                    self.viewRouter.currentPage = "DriverDetails"
+                } else{
+                    self.viewRouter.currentPage = "Tabs"
                 }
                 
-                Spacer()
-            }.padding()
-        }
+                
+            }) {
+                NextButtonContent()
+                
+            }
+            Spacer()
+        }.padding()
     }
+    
 }
 
 struct CreateUserDetails_Previews: PreviewProvider {
     static var previews: some View {
-        CreateUserDetails()
+        CreateUserDetails().environmentObject(ViewRouter())
     }
 }
-
-
 
 struct imagePicker: UIViewControllerRepresentable{
 

@@ -20,57 +20,55 @@ struct NewRide: View {
     
 
     var body: some View {
-        NavigationView{
-            VStack(){
-                
-                Text("Where are you leaving from?")
-                Picker(selection: $selectionDestination, label: Text("")){
-                    ForEach(0 ..< locationList.count){
-                        Text(self.locationList[$0]).tag($0)
-                    }
-                }.labelsHidden()
-                Text("Enter the time you are leaving")
-                DatePicker(
-                    "",
-                    selection: $selectedDate,
-                    displayedComponents: .hourAndMinute
-                ).labelsHidden()
-                
-                HStack(){
-                    Text("Avaiable Seats: ")
+            ScrollView{
+                VStack(){
+                    
+                    Text("Where are you leaving from?")
+                    Picker(selection: $selectionDestination, label: Text("")){
+                        ForEach(0 ..< locationList.count){
+                            Text(self.locationList[$0]).tag($0)
+                        }
+                    }.labelsHidden()
+                    Text("Enter the time you are leaving")
+                    DatePicker(
+                        "",
+                        selection: $selectedDate,
+                        displayedComponents: .hourAndMinute
+                    ).labelsHidden()
+                    
+                    HStack(){
+                        Text("Avaiable Seats: ")
 
-                    Button("-"){
-                        if self.seats > 1 {
-                            self.seats -= 1
+                        Button("-"){
+                            if self.seats > 1 {
+                                self.seats -= 1
+                            }
+                        }
+
+                        Text("\(self.seats)")
+
+                        Button("+"){
+                            self.seats += 1
                         }
                     }
 
-                    Text("\(self.seats)")
-
-                    Button("+"){
-                        self.seats += 1
+                     Text("") //spacer
+                    
+                    
+                    Button("Drive Here") {
+                        NewRideDeclaration(ride: Ride(
+                        id: "",
+                        driver: ["ID":"","Name":""], //Leave Blank
+                        riders: [["":""]],
+                        seats: self.seats,
+                        location: self.locationList[self.selectionDestination],
+                        destination: self.location.name,
+                        leaveTime: self.selectedDate
+                        ))
                     }
                 }
-
-                 Text("") //spacer
-                
-                
-                Button("Drive Here") {
-                    NewRideDeclaration(ride: Ride(
-                    id: "",
-                    driver: ["ID":"","Name":""], //Leave Blank
-                    riders: [["":""]],
-                    seats: self.seats,
-                    location: self.locationList[self.selectionDestination],
-                    destination: self.location.name,
-                    leaveTime: self.selectedDate
-                    ))
-                }
-                    
             }
-        }.navigationBarTitle("")
-        .navigationBarHidden(true)
-    }
+        }
 }
 
 struct NewRide_Previews: PreviewProvider {

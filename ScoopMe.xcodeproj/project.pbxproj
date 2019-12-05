@@ -12,7 +12,7 @@
 		580C4B402370A3B400C0DFED /* RideDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C4B3F2370A3B400C0DFED /* RideDetails.swift */; };
 		5810CA97235FEDD400930513 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5810CA96235FEDD400930513 /* DataStructures.swift */; };
 		5810CA99235FEE2A00930513 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5810CA98235FEE2A00930513 /* LocationView.swift */; };
-		581EE7F12357512000194AD5 /* GetInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581EE7F02357512000194AD5 /* GetInformation.swift */; };
+		581EE7F12357512000194AD5 /* User Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581EE7F02357512000194AD5 /* User Information.swift */; };
 		581F3A64238C99EC00496103 /* NewRide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581F3A63238C99EC00496103 /* NewRide.swift */; };
 		581F3A66238C9A1300496103 /* RiderProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581F3A65238C9A1300496103 /* RiderProfile.swift */; };
 		582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E7278232AAEA9008665A7 /* AppDelegate.swift */; };
@@ -27,10 +27,10 @@
 		588FB60123312ED10075BC27 /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FB60023312ED10075BC27 /* LocationDetails.swift */; };
 		5890DD6023621A7B002F7819 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5890DD5F23621A7B002F7819 /* CreateAccount.swift */; };
 		589F6541238EC200005C0D1A /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 589F6540238EC200005C0D1A /* SDWebImageSwiftUI */; };
-		589F6543238F6220005C0D1A /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589F6542238F6220005C0D1A /* PullToRefresh.swift */; };
 		589F6546238F6275005C0D1A /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 589F6545238F6275005C0D1A /* SwiftUIPullToRefresh */; };
-		58A5288A2343AA8100EF8873 /* ManageRideRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A528892343AA8100EF8873 /* ManageRideRequests.swift */; };
-		58A5288C2343AC7200EF8873 /* CreateNewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5288B2343AC7200EF8873 /* CreateNewUser.swift */; };
+		58A5288C2343AC7200EF8873 /* Change User Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5288B2343AC7200EF8873 /* Change User Information.swift */; };
+		58A84A172398B8CA002E8D34 /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A84A162398B8CA002E8D34 /* ResetPassword.swift */; };
+		58A84A1923993778002E8D34 /* Ride Management.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A84A1823993778002E8D34 /* Ride Management.swift */; };
 		58B789F123748E9800D9C7D6 /* ChangeEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B789EC23748E9800D9C7D6 /* ChangeEmail.swift */; };
 		58B789F223748E9800D9C7D6 /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B789ED23748E9800D9C7D6 /* ChangePassword.swift */; };
 		58B789F323748E9800D9C7D6 /* ChangeCarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B789EE23748E9800D9C7D6 /* ChangeCarInfo.swift */; };
@@ -43,6 +43,8 @@
 		58F3C7A3238DCBAE00F4B29A /* CreateUserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F3C7A2238DCBAE00F4B29A /* CreateUserDetails.swift */; };
 		92193FE12358D9EC0082FA2A /* FancyLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92193FE02358D9EC0082FA2A /* FancyLogin.swift */; };
 		92193FE32358DA830082FA2A /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92193FE22358DA830082FA2A /* WelcomePage.swift */; };
+		92C823612396D856000DB78A /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C823602396D856000DB78A /* MotherView.swift */; };
+		92C823632396D875000DB78A /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C823622396D875000DB78A /* ViewRouter.swift */; };
 		D11DF82A5B9017C0EF656336 /* Pods_ScoopMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2E12BEF4E9CC019DDD1FDC /* Pods_ScoopMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +73,7 @@
 		580C4B3F2370A3B400C0DFED /* RideDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetails.swift; sourceTree = "<group>"; };
 		5810CA96235FEDD400930513 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		5810CA98235FEE2A00930513 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
-		581EE7F02357512000194AD5 /* GetInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInformation.swift; sourceTree = "<group>"; };
+		581EE7F02357512000194AD5 /* User Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User Information.swift"; sourceTree = "<group>"; };
 		581F3A63238C99EC00496103 /* NewRide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRide.swift; sourceTree = "<group>"; };
 		581F3A65238C9A1300496103 /* RiderProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderProfile.swift; sourceTree = "<group>"; };
 		582E7275232AAEA9008665A7 /* ScoopMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoopMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,9 +93,9 @@
 		588FB5FE233126890075BC27 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		588FB60023312ED10075BC27 /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
 		5890DD5F23621A7B002F7819 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
-		589F6542238F6220005C0D1A /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
-		58A528892343AA8100EF8873 /* ManageRideRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRideRequests.swift; sourceTree = "<group>"; };
-		58A5288B2343AC7200EF8873 /* CreateNewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewUser.swift; sourceTree = "<group>"; };
+		58A5288B2343AC7200EF8873 /* Change User Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Change User Information.swift"; sourceTree = "<group>"; };
+		58A84A162398B8CA002E8D34 /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
+		58A84A1823993778002E8D34 /* Ride Management.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ride Management.swift"; sourceTree = "<group>"; };
 		58B789EC23748E9800D9C7D6 /* ChangeEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmail.swift; sourceTree = "<group>"; };
 		58B789ED23748E9800D9C7D6 /* ChangePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		58B789EE23748E9800D9C7D6 /* ChangeCarInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeCarInfo.swift; sourceTree = "<group>"; };
@@ -107,6 +109,8 @@
 		64FCD03276E89CCC17863B1C /* Pods-ScoopMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoopMe.release.xcconfig"; path = "Target Support Files/Pods-ScoopMe/Pods-ScoopMe.release.xcconfig"; sourceTree = "<group>"; };
 		92193FE02358D9EC0082FA2A /* FancyLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyLogin.swift; sourceTree = "<group>"; };
 		92193FE22358DA830082FA2A /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
+		92C823602396D856000DB78A /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
+		92C823622396D875000DB78A /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +164,6 @@
 				580C4B3D2370A1D400C0DFED /* ViewCurrentRides.swift */,
 				580C4B3F2370A3B400C0DFED /* RideDetails.swift */,
 				581F3A65238C9A1300496103 /* RiderProfile.swift */,
-				589F6542238F6220005C0D1A /* PullToRefresh.swift */,
 			);
 			path = CurrentRides;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				5810CA98235FEE2A00930513 /* LocationView.swift */,
 				588FB60023312ED10075BC27 /* LocationDetails.swift */,
 				581F3A63238C99EC00496103 /* NewRide.swift */,
+				588FB5FE233126890075BC27 /* MapView.swift */,
 			);
 			path = "Location Views";
 			sourceTree = "<group>";
@@ -184,6 +188,8 @@
 				5890DD5F23621A7B002F7819 /* CreateAccount.swift */,
 				58F3C7A2238DCBAE00F4B29A /* CreateUserDetails.swift */,
 				58536EA22371DBBE004B1FC5 /* CreateDriver.swift */,
+				92C823602396D856000DB78A /* MotherView.swift */,
+				92C823622396D875000DB78A /* ViewRouter.swift */,
 			);
 			path = "Login Signup";
 			sourceTree = "<group>";
@@ -213,16 +219,16 @@
 		582E7277232AAEA9008665A7 /* ScoopMe */ = {
 			isa = PBXGroup;
 			children = (
-				58B789EB23748E8D00D9C7D6 /* New Group */,
+				58A84A152398B814002E8D34 /* Change Information */,
+				58B789EB23748E8D00D9C7D6 /* Updated UI */,
 				58A528882343AA5400EF8873 /* Interacting With Firebase */,
 				5810CA9B235FEE4200930513 /* Login Signup */,
 				580C4B3C2370A1AA00C0DFED /* CurrentRides */,
 				5810CA9A235FEE2F00930513 /* Location Views */,
 				58D8654F23314BC700796F54 /* Profile */,
-				582E7278232AAEA9008665A7 /* AppDelegate.swift */,
 				5810CA96235FEDD400930513 /* DataStructures.swift */,
+				582E7278232AAEA9008665A7 /* AppDelegate.swift */,
 				582E727A232AAEA9008665A7 /* SceneDelegate.swift */,
-				588FB5FE233126890075BC27 /* MapView.swift */,
 				58D44AFB23317DCF0051A764 /* Tabs.swift */,
 				58039ED3233510E100A307E7 /* GoogleService-Info.plist */,
 				582E727E232AAEAC008665A7 /* Assets.xcassets */,
@@ -262,14 +268,22 @@
 		58A528882343AA5400EF8873 /* Interacting With Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				58A528892343AA8100EF8873 /* ManageRideRequests.swift */,
-				58A5288B2343AC7200EF8873 /* CreateNewUser.swift */,
-				581EE7F02357512000194AD5 /* GetInformation.swift */,
+				58A5288B2343AC7200EF8873 /* Change User Information.swift */,
+				581EE7F02357512000194AD5 /* User Information.swift */,
+				58A84A1823993778002E8D34 /* Ride Management.swift */,
 			);
 			path = "Interacting With Firebase";
 			sourceTree = "<group>";
 		};
-		58B789EB23748E8D00D9C7D6 /* New Group */ = {
+		58A84A152398B814002E8D34 /* Change Information */ = {
+			isa = PBXGroup;
+			children = (
+				58A84A162398B8CA002E8D34 /* ResetPassword.swift */,
+			);
+			path = "Change Information";
+			sourceTree = "<group>";
+		};
+		58B789EB23748E8D00D9C7D6 /* Updated UI */ = {
 			isa = PBXGroup;
 			children = (
 				58B789EE23748E9800D9C7D6 /* ChangeCarInfo.swift */,
@@ -278,7 +292,7 @@
 				58B789EF23748E9800D9C7D6 /* ChangeNumber.swift */,
 				58B789ED23748E9800D9C7D6 /* ChangePassword.swift */,
 			);
-			path = "New Group";
+			path = "Updated UI";
 			sourceTree = "<group>";
 		};
 		58D8654F23314BC700796F54 /* Profile */ = {
@@ -474,22 +488,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				581EE7F12357512000194AD5 /* GetInformation.swift in Sources */,
-				589F6543238F6220005C0D1A /* PullToRefresh.swift in Sources */,
+				581EE7F12357512000194AD5 /* User Information.swift in Sources */,
 				580C4B402370A3B400C0DFED /* RideDetails.swift in Sources */,
 				58F3C7A3238DCBAE00F4B29A /* CreateUserDetails.swift in Sources */,
 				58B789F123748E9800D9C7D6 /* ChangeEmail.swift in Sources */,
-				58A5288C2343AC7200EF8873 /* CreateNewUser.swift in Sources */,
+				58A5288C2343AC7200EF8873 /* Change User Information.swift in Sources */,
 				58B789F323748E9800D9C7D6 /* ChangeCarInfo.swift in Sources */,
+				58A84A1923993778002E8D34 /* Ride Management.swift in Sources */,
 				58D8654E23314AA100796F54 /* Profile.swift in Sources */,
 				588FB5FF233126890075BC27 /* MapView.swift in Sources */,
 				5810CA97235FEDD400930513 /* DataStructures.swift in Sources */,
+				92C823612396D856000DB78A /* MotherView.swift in Sources */,
 				92193FE32358DA830082FA2A /* WelcomePage.swift in Sources */,
 				5810CA99235FEE2A00930513 /* LocationView.swift in Sources */,
+				58A84A172398B8CA002E8D34 /* ResetPassword.swift in Sources */,
 				582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */,
 				58B789F523748E9800D9C7D6 /* ChangeDorm.swift in Sources */,
+				92C823632396D875000DB78A /* ViewRouter.swift in Sources */,
 				58D8655123314BE400796F54 /* ProfilePicture.swift in Sources */,
-				58A5288A2343AA8100EF8873 /* ManageRideRequests.swift in Sources */,
 				581F3A64238C99EC00496103 /* NewRide.swift in Sources */,
 				58C08AD8233A689B004CFFA7 /* LoginPage.swift in Sources */,
 				58B789F223748E9800D9C7D6 /* ChangePassword.swift in Sources */,
@@ -667,6 +683,7 @@
 			baseConfigurationReference = 1EA6A46C5814C6E6AB37ED4A /* Pods-ScoopMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ScoopMe/Preview Content\"";
 				DEVELOPMENT_TEAM = 24V56L47P7;
@@ -678,6 +695,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = JCD.ScoopMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -688,6 +706,7 @@
 			baseConfigurationReference = 64FCD03276E89CCC17863B1C /* Pods-ScoopMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ScoopMe/Preview Content\"";
 				DEVELOPMENT_TEAM = 24V56L47P7;
@@ -699,6 +718,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = JCD.ScoopMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

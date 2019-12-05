@@ -22,14 +22,13 @@
 		582E7285232AAEAC008665A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 582E7283232AAEAC008665A7 /* LaunchScreen.storyboard */; };
 		582E7290232AAEAC008665A7 /* ScoopMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E728F232AAEAC008665A7 /* ScoopMeTests.swift */; };
 		582E729B232AAEAC008665A7 /* ScoopMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E729A232AAEAC008665A7 /* ScoopMeUITests.swift */; };
-		58536EA32371DBBE004B1FC5 /* CreateDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58536EA22371DBBE004B1FC5 /* CreateDriver.swift */; };
 		588FB5FF233126890075BC27 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FB5FE233126890075BC27 /* MapView.swift */; };
 		588FB60123312ED10075BC27 /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FB60023312ED10075BC27 /* LocationDetails.swift */; };
 		5890DD6023621A7B002F7819 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5890DD5F23621A7B002F7819 /* CreateAccount.swift */; };
 		589F6541238EC200005C0D1A /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 589F6540238EC200005C0D1A /* SDWebImageSwiftUI */; };
 		589F6546238F6275005C0D1A /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 589F6545238F6275005C0D1A /* SwiftUIPullToRefresh */; };
 		58A5288C2343AC7200EF8873 /* Change User Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5288B2343AC7200EF8873 /* Change User Information.swift */; };
-		58A84A172398B8CA002E8D34 /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A84A162398B8CA002E8D34 /* ResetPassword.swift */; };
+		58A84A172398B8CA002E8D34 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A84A162398B8CA002E8D34 /* ResetPasswordView.swift */; };
 		58A84A1923993778002E8D34 /* Ride Management.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A84A1823993778002E8D34 /* Ride Management.swift */; };
 		58B789F123748E9800D9C7D6 /* ChangeEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B789EC23748E9800D9C7D6 /* ChangeEmail.swift */; };
 		58B789F223748E9800D9C7D6 /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B789ED23748E9800D9C7D6 /* ChangePassword.swift */; };
@@ -89,12 +88,11 @@
 		582E7296232AAEAC008665A7 /* ScoopMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoopMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		582E729A232AAEAC008665A7 /* ScoopMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoopMeUITests.swift; sourceTree = "<group>"; };
 		582E729C232AAEAC008665A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58536EA22371DBBE004B1FC5 /* CreateDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDriver.swift; sourceTree = "<group>"; };
 		588FB5FE233126890075BC27 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		588FB60023312ED10075BC27 /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
 		5890DD5F23621A7B002F7819 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		58A5288B2343AC7200EF8873 /* Change User Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Change User Information.swift"; sourceTree = "<group>"; };
-		58A84A162398B8CA002E8D34 /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
+		58A84A162398B8CA002E8D34 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		58A84A1823993778002E8D34 /* Ride Management.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ride Management.swift"; sourceTree = "<group>"; };
 		58B789EC23748E9800D9C7D6 /* ChangeEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmail.swift; sourceTree = "<group>"; };
 		58B789ED23748E9800D9C7D6 /* ChangePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 				92193FE02358D9EC0082FA2A /* FancyLogin.swift */,
 				5890DD5F23621A7B002F7819 /* CreateAccount.swift */,
 				58F3C7A2238DCBAE00F4B29A /* CreateUserDetails.swift */,
-				58536EA22371DBBE004B1FC5 /* CreateDriver.swift */,
 				92C823602396D856000DB78A /* MotherView.swift */,
 				92C823622396D875000DB78A /* ViewRouter.swift */,
 			);
@@ -278,7 +275,7 @@
 		58A84A152398B814002E8D34 /* Change Information */ = {
 			isa = PBXGroup;
 			children = (
-				58A84A162398B8CA002E8D34 /* ResetPassword.swift */,
+				58A84A162398B8CA002E8D34 /* ResetPasswordView.swift */,
 			);
 			path = "Change Information";
 			sourceTree = "<group>";
@@ -501,7 +498,7 @@
 				92C823612396D856000DB78A /* MotherView.swift in Sources */,
 				92193FE32358DA830082FA2A /* WelcomePage.swift in Sources */,
 				5810CA99235FEE2A00930513 /* LocationView.swift in Sources */,
-				58A84A172398B8CA002E8D34 /* ResetPassword.swift in Sources */,
+				58A84A172398B8CA002E8D34 /* ResetPasswordView.swift in Sources */,
 				582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */,
 				58B789F523748E9800D9C7D6 /* ChangeDorm.swift in Sources */,
 				92C823632396D875000DB78A /* ViewRouter.swift in Sources */,
@@ -513,7 +510,6 @@
 				588FB60123312ED10075BC27 /* LocationDetails.swift in Sources */,
 				580C4B3E2370A1D400C0DFED /* ViewCurrentRides.swift in Sources */,
 				582E727B232AAEA9008665A7 /* SceneDelegate.swift in Sources */,
-				58536EA32371DBBE004B1FC5 /* CreateDriver.swift in Sources */,
 				581F3A66238C9A1300496103 /* RiderProfile.swift in Sources */,
 				58B789F423748E9800D9C7D6 /* ChangeNumber.swift in Sources */,
 				92193FE12358D9EC0082FA2A /* FancyLogin.swift in Sources */,

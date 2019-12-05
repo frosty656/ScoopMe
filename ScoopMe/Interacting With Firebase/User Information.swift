@@ -27,48 +27,9 @@ class getLocations : ObservableObject{
     }
 }
 
-class getDriverInformation: ObservableObject{
-    var userID: String = ""
-    @Published var driver: Driver = Driver(car: "", licencePlate: "", livesOnCampus: false, carColor: "")
-    
-    init(userIDtoGet: String? = ""){
-        if userIDtoGet == ""{
-            userID = Auth.auth().currentUser!.uid
-        } else {
-            userID = userIDtoGet!
-        }
-        
-        let db = Firebase.Firestore.firestore().collection("Drivers")
-        
-        db.document(userID).getDocument{
-            (snap, err) in
-            if err != nil{
-                print((err?.localizedDescription)!)
-                return
-            }
-            
-            if snap!.exists{
-                
-                if let document = snap {
-                    print("USER PROFILE INFO GATHERED")
-                    self.driver = Driver(
-                        car: document.get("carBrand") as! String,
-                        licencePlate: document.get("licencePlateNumber") as! String,
-                        livesOnCampus: document.get("livesOnCampus") as! Bool,
-                        carColor: document.get("colorOfCar") as! String)
-                }
-                else {
-                    print("User does not exist")
-                }
-            }
-        }
-        
-    }
-}
-
 
 class getCurrentUserInformation : ObservableObject {
-    @Published var user: User = User(id: "", firstName: "", lastName: "", dorm: "", isDriver: false)
+    @Published var user: User = User(id: "", firstName: "", lastName: "", dorm: "")
 
     var currentUser = Auth.auth().currentUser?.uid
 
@@ -93,8 +54,7 @@ class getCurrentUserInformation : ObservableObject {
                         id: self.currentUser!,
                         firstName: document.get("first_name") as! String,
                         lastName: document.get("last_name") as! String,
-                        dorm: document.get("Dorm") as! String,
-                        isDriver: document.get("isDriver") as! Bool)
+                        dorm: document.get("Dorm") as! String)
                 }
                 else {
                     print("User does not exist")
@@ -159,7 +119,7 @@ class getMulptipleUsersNames : ObservableObject{
 }
 
 class GetUserInformation : ObservableObject{
-    @Published var user: User = User(id: "", firstName: "", lastName: "", dorm: "", isDriver: false)
+    @Published var user: User = User(id: "", firstName: "", lastName: "", dorm: "")
 
     init(currentUser: String){
         let db = Firebase.Firestore.firestore().collection("Users")
@@ -177,8 +137,7 @@ class GetUserInformation : ObservableObject{
                         id: currentUser,
                         firstName: document.get("first_name") as! String,
                         lastName: document.get("last_name") as! String,
-                        dorm: document.get("Dorm") as! String,
-                        isDriver: document.get("isDriver") as! Bool)
+                        dorm: document.get("Dorm") as! String)
                 }
                 else {
                     print("User does not exist")

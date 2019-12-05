@@ -18,7 +18,6 @@ struct CreateUserDetails: View {
     @State var dorm: String = ""
     @State var errorMessage: String = ""
     @State var profileImage = UIImage()
-    @State var becomeDriver = false // toggle state
     
     var body: some View {
         VStack{
@@ -39,10 +38,9 @@ struct CreateUserDetails: View {
             TextField("first name", text: $firstName)
             TextField("last name", text: $lastName)
             TextField("dorm", text: $dorm)
-            Toggle("I want to be a driver", isOn: $becomeDriver)
             
             Button(action: {
-                CreateUserDetailsDocument(firstName: self.firstName, lastName: self.lastName, dorm: self.dorm, isDriver: self.becomeDriver){
+                CreateUserDetailsDocument(firstName: self.firstName, lastName: self.lastName, dorm: self.dorm){
                     err in
                     self.errorMessage = err!
                 }
@@ -53,11 +51,7 @@ struct CreateUserDetails: View {
                         print("Error with profile image upload")
                     }
                 }
-                if(self.becomeDriver){
-                    self.viewRouter.currentPage = "DriverDetails"
-                } else{
-                    self.viewRouter.currentPage = "Tabs"
-                }
+                self.viewRouter.currentPage = "Tabs"
                 
                 
             }) {

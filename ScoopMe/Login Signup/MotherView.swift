@@ -27,10 +27,14 @@ struct MotherView : View {
                 LoginPage()
                     .transition(.fade)
             }
-            else if viewRouter.currentPage == "DriverDetails" {
-                CreateDriver()
+            else if viewRouter.currentPage == "PasswordReset" {
+                ResetPasswordView()
                     .transition(.fade)
             }
+            
+            
+            
+            
         }
     }
 }

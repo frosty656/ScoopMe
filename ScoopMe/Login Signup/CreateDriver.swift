@@ -9,18 +9,15 @@
 import SwiftUI
 
 struct CreateDriver: View {
-    
+    @EnvironmentObject var viewRouter: ViewRouter
     @State var car: String = ""
     @State var licencePlate: String = ""
     @State var color: String = ""
     @State var isShowing = true // toggle state
     @State var errorMessage = ""
     
-
-
-    
     var body: some View {
-        NavigationView{
+//        NavigationView{
             VStack{
                 Text("Type of Car")
                 TextField("Ford Escape", text: $car)
@@ -35,18 +32,26 @@ struct CreateDriver: View {
                 
                 //On success go to homepage
                 Button(action: {
+                    var success = true
                     CreateDriverDetails(licencePlate: self.licencePlate, car: self.car, color: self.color){
                         err in
                         self.errorMessage = err!
+                        success = false
+                        print("Driver Details Failed")
+                    }
+                    
+                    if(success){
+                        print("Going to tabs")
+                        self.viewRouter.currentPage = "Tabs"
                     }
                     
                 }) {
                     Text("Become Driver")
                 }
                 
-            }.padding(50)
+            }.padding()
         }
-    }
+ //   }
 }
 
 struct CreateDriver_Previews: PreviewProvider {

@@ -20,7 +20,6 @@ struct NewRide: View {
     
 
     var body: some View {
-        NavigationView{
             ScrollView{
                 VStack(){
                     
@@ -67,12 +66,9 @@ struct NewRide: View {
                         leaveTime: self.selectedDate
                         ))
                     }
-                        
                 }
             }
-        }.navigationBarTitle("")
-        .navigationBarHidden(true)
-    }
+        }
 }
 
 struct NewRide_Previews: PreviewProvider {

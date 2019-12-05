@@ -12,7 +12,6 @@ struct WelcomePage: View {
     var cg = CGFloat(8)
     
     var body: some View {
-        NavigationView(){
                 
                 VStack{
                     
@@ -57,8 +56,6 @@ struct WelcomePage: View {
             
                 .navigationBarTitle("Welcome to RideShare")
             }
-        
-    }
 }
 
 struct WelcomePage_Previews: PreviewProvider {

@@ -18,55 +18,56 @@ struct CreateUserDetails: View {
     @State var dorm: String = ""
     @State var errorMessage: String = ""
     @State var profileImage = UIImage()
-    @State private var isAlert = false
+    @State var becomeDriver = false // toggle state
     
     var body: some View {
-        NavigationView{
-            VStack{
-                Image(uiImage: profileImage)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 200, height: 200)
-                .clipped()
-                
-                Button(action: {
-                    self.shown.toggle()
-                }){
-                    Text("Upload Profile Picture")
-                }.sheet(isPresented: $shown){
-                    imagePicker(isPresented: self.$shown, selectedImage: self.$profileImage)
+        VStack{
+            Image(uiImage: profileImage)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 200, height: 200)
+            .clipped()
+            
+            Button(action: {
+                self.shown.toggle()
+            }){
+                Text("Upload Profile Picture")
+            }.sheet(isPresented: $shown){
+                imagePicker(isPresented: self.$shown, selectedImage: self.$profileImage)
+            }
+            
+            TextField("first name", text: $firstName)
+            TextField("last name", text: $lastName)
+            TextField("dorm", text: $dorm)
+            Toggle("I want to be a driver", isOn: $becomeDriver)
+            
+            Button(action: {
+                CreateUserDetailsDocument(firstName: self.firstName, lastName: self.lastName, dorm: self.dorm, isDriver: self.becomeDriver){
+                    err in
+                    self.errorMessage = err!
                 }
                 
-                TextField("first name", text: $firstName)
-                TextField("last name", text: $lastName)
-                TextField("dorm", text: $dorm)
-                
-                Button(action: {
-                    CreateUserDetailsDocument(firstName: self.firstName, lastName: self.lastName, dorm: self.dorm){
-                        err in
-                        self.errorMessage = err!
+                uploadProfilePicture(profileImage: self.profileImage){
+                    (_,error) in
+                    if error != nil{
+                        print("Error with profile image upload")
                     }
-                    
-                    uploadProfilePicture(profileImage: self.profileImage){
-                        (_,error) in
-                        if error != nil{
-                            print("Error with profile image upload")
-                        }
-                    }
-                    
-                    self.viewRouter.currentPage = "page3"
-                    
-                }) {
-                    NextButtonContent()
-                    
                 }
-                .alert(isPresented: $isAlert) { () -> Alert in
-                Alert(title: Text("Error"), message: Text("Invalid Credentials Please Try Again"), dismissButton: .default(Text("Okay")))
+                if(self.becomeDriver){
+                    self.viewRouter.currentPage = "DriverDetails"
+                } else{
+                    self.viewRouter.currentPage = "Tabs"
                 }
-                Spacer()
-            }.padding()
-        }
+                
+                
+            }) {
+                NextButtonContent()
+                
+            }
+            Spacer()
+        }.padding()
     }
+    
 }
 
 struct CreateUserDetails_Previews: PreviewProvider {

@@ -11,6 +11,15 @@ import FirebaseFirestore
 import FirebaseStorage
 import FirebaseAuth
 
+func ResetPassword(email: String,  onError:  @escaping (_ errorMessage: String?) -> Void){
+    Auth.auth().sendPasswordReset(withEmail: email){
+        (err) in
+        if err != nil {
+            onError(err!.localizedDescription)
+        }
+    }
+}
+
 func CreateUser(email: String, password: String, handler: @escaping AuthDataResultCallback){
     Auth.auth().createUser(withEmail: email, password: password, completion: handler)
 }
@@ -58,7 +67,7 @@ func CreateDriverDetails(licencePlate: String, car: String, color: String,  onEr
 }
 
 
-func CreateUserDetailsDocument(firstName: String, lastName: String, dorm: String, onError:  @escaping (_ errorMessage: String?) -> Void){
+func CreateUserDetailsDocument(firstName: String, lastName: String, dorm: String, isDriver: Bool,onError:  @escaping (_ errorMessage: String?) -> Void){
     let ref = Firestore.firestore()
     let user = Auth.auth().currentUser?.uid
 
@@ -67,6 +76,7 @@ func CreateUserDetailsDocument(firstName: String, lastName: String, dorm: String
             "first_name": firstName,
             "last_name": lastName,
             "Dorm": dorm,
+            "isDriver": isDriver
         ]){ err in
             if let err = err {
                 onError(err.localizedDescription)

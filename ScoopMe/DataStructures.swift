@@ -12,6 +12,7 @@ struct User: Identifiable {
     let firstName: String
     let lastName: String
     let dorm: String
+    let isDriver: Bool
 }
 
 

@@ -14,18 +14,22 @@ struct MotherView : View {
     
     var body: some View {
         VStack {
-            if viewRouter.currentPage == "page1" {
+            if viewRouter.currentPage == "CreateAccount" {
                 CreateAccount()
-            } else if viewRouter.currentPage == "page2" {
+            } else if viewRouter.currentPage == "UserDetails" {
                 CreateUserDetails()
-                    .transition(.scale)
+                    .transition(.fade)
             }
-            else if viewRouter.currentPage == "page3" {
+            else if viewRouter.currentPage == "Tabs" {
                 Tabs()
                     .transition(.scale)
             } else if viewRouter.currentPage == "Login" {
                 LoginPage()
-                    .transition(.scale)
+                    .transition(.fade)
+            }
+            else if viewRouter.currentPage == "DriverDetails" {
+                CreateDriver()
+                    .transition(.fade)
             }
         }
     }

@@ -16,11 +16,8 @@ struct CreateAccount: View {
     @State var password: String = ""
     @State var passwordConfirm: String = ""
     @State var errorText: String = ""
-    @State var becomeDriver = false // toggle state
-    @State private var isAlert = false
     
     var body: some View {
-        NavigationView{
             VStack{
                 
                 Text(self.errorText)
@@ -29,18 +26,17 @@ struct CreateAccount: View {
                 SecureField("Password", text: $password)
                 SecureField("Password", text: $passwordConfirm)
                 
-                Toggle("I want to be a driver", isOn: $becomeDriver)
+                
                 
                 Button(action: {
                     CreateUser(email: self.emailAddress, password: self.password){
                         (result, error) in
                         if error != nil{
                             self.errorText = error!.localizedDescription
-                            self.isAlert = true
                             return
                         } else {
                             //GO TO CREATE USER DETAILS
-                            self.viewRouter.currentPage = "page2"
+                            self.viewRouter.currentPage = "UserDetails"
                             self.emailAddress = ""
                             self.password = ""
                             self.passwordConfirm = ""
@@ -49,20 +45,17 @@ struct CreateAccount: View {
                     
                 }) {
                     NextButtonContent()
-                }.alert(isPresented: $isAlert) { () -> Alert in
-                    Alert(title: Text("Error"), message: Text("Invalid Credentials Please Try Again"), dismissButton: .default(Text("Okay")))
                 }
                 //If success and wants to be driver go to create driver page
                 
                 //If success and no driver then go to homepage
                 
                 
-                NavigationLink("Login", destination: LoginPage())
-                .navigationBarTitle("")
-                .navigationBarHidden(true)
+                Button(action: {self.viewRouter.currentPage = "Login"}){
+                        Text("Login")
+                }
                 
             }
-        }
     }
 }
 

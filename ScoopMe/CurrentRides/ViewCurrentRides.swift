@@ -18,12 +18,9 @@ struct ViewCurrentRides: View {
                 ForEach(rideList.data) { i in
                     HStack{
                         Text("\(i.location)\n -> \(i.destination)")
-                        
-                        
-                            //Text("Driver: " + (i.driver["Name"] ?? ""))
                             
                             
-                            Text("Leaving: \(self.getHours(date: i.leaveTime))")
+                        Text("Leaving: \(self.getHours(date: i.leaveTime))")
                         
                         NavigationLink(destination: RideDetails(ride: i)){
                             Text("")

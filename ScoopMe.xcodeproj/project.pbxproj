@@ -217,14 +217,15 @@
 		582E7277232AAEA9008665A7 /* ScoopMe */ = {
 			isa = PBXGroup;
 			children = (
-				58B789EB23748E8D00D9C7D6 /* New Group */,
+				58A84A152398B814002E8D34 /* Change Information */,
+				58B789EB23748E8D00D9C7D6 /* Updated UI */,
 				58A528882343AA5400EF8873 /* Interacting With Firebase */,
 				5810CA9B235FEE4200930513 /* Login Signup */,
 				580C4B3C2370A1AA00C0DFED /* CurrentRides */,
 				5810CA9A235FEE2F00930513 /* Location Views */,
 				58D8654F23314BC700796F54 /* Profile */,
-				582E7278232AAEA9008665A7 /* AppDelegate.swift */,
 				5810CA96235FEDD400930513 /* DataStructures.swift */,
+				582E7278232AAEA9008665A7 /* AppDelegate.swift */,
 				582E727A232AAEA9008665A7 /* SceneDelegate.swift */,
 				58D44AFB23317DCF0051A764 /* Tabs.swift */,
 				58039ED3233510E100A307E7 /* GoogleService-Info.plist */,
@@ -272,7 +273,14 @@
 			path = "Interacting With Firebase";
 			sourceTree = "<group>";
 		};
-		58B789EB23748E8D00D9C7D6 /* New Group */ = {
+		58A84A152398B814002E8D34 /* Change Information */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Change Information";
+			sourceTree = "<group>";
+		};
+		58B789EB23748E8D00D9C7D6 /* Updated UI */ = {
 			isa = PBXGroup;
 			children = (
 				58B789EE23748E9800D9C7D6 /* ChangeCarInfo.swift */,
@@ -281,7 +289,7 @@
 				58B789EF23748E9800D9C7D6 /* ChangeNumber.swift */,
 				58B789ED23748E9800D9C7D6 /* ChangePassword.swift */,
 			);
-			path = "New Group";
+			path = "Updated UI";
 			sourceTree = "<group>";
 		};
 		58D8654F23314BC700796F54 /* Profile */ = {

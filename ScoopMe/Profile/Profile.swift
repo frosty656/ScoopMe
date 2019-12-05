@@ -10,40 +10,56 @@ import SwiftUI
 import Firebase
 struct Profile: View {
     @ObservedObject var userInfo = getCurrentUserInformation()
-
+    @State var showSettings = false
     @EnvironmentObject var viewRouter: ViewRouter
     
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+    }
     
     var body: some View {
         NavigationView{
-            VStack  (){
-                ProfilePicture()
+            ZStack{
+                Color.init(red: 30/255, green: 50/255, blue: 70/255)
+                .edgesIgnoringSafeArea(.all)
+                
+                VStack  (){
                     
-                    .frame(width: 300, height: 150)
-                    .offset(x: -100, y: 0)
-                HStack(){
+                    ProfilePicture()
+                        .frame(width: 300, height: 150)
                     
-                    VStack(){
+                    HStack(){
                         
-                        Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
-                        Text(userInfo.user.dorm)
+                        VStack(){
+                            
+                            Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
+                                .foregroundColor(.white)
+                            Text(userInfo.user.dorm)
+                                .foregroundColor(.white)
+                        }
+                        
+                        Spacer()
                     }
+                    .font(.system(size: 24))
                     
                     Spacer()
-                }
-                .font(.system(size: 24))
-                
-                
-                Button(action:{
-                    self.viewRouter.currentPage = "PasswordReset"
-    
-    
-                }, label: {
-                    Text("Reset Password")
-                })
-                
-            }.padding()
+                }.padding()
+                .navigationBarTitle("Profile")
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        self.showSettings.toggle()
+                    }){
+                        Image("icons8-ios-50")
+                        .resizable()
+                        .frame(width: 32.0, height: 32.0)
+                        .padding()
+                        .foregroundColor(Color(.white))
+                    }.sheet(isPresented: $showSettings, content: {SettingsView()})
+                )
+            }
         }
+        
+        
         
     }
 }
@@ -53,4 +69,25 @@ struct Profile_Previews: PreviewProvider {
         Profile()
         
     }
+}
+
+struct SettingsView: View{
+    
+    var body: some View{
+        NavigationView{
+            ZStack{
+                NavigationView{
+                    VStack{
+                        List{
+                            NavigationLink(destination: ResetPasswordView()){
+                                Text("Reset Password")
+                            }
+                        }
+                    }
+                .navigationBarTitle("Settings")
+                }
+            }
+        }
+    }
+    
 }

@@ -71,10 +71,6 @@ struct CreateAccount_Previews: PreviewProvider {
 struct NextButtonContent : View {
     var body: some View {
         return Text("Create Account")
-            .foregroundColor(.white)
-            .background(Color.blue)
-            .cornerRadius(15)
-            .padding(.top, 50)
     }
 }
 

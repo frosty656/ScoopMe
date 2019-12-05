@@ -19,21 +19,19 @@ struct CreateDriver: View {
     var body: some View {
 //        NavigationView{
             VStack{
-                Text("Type of Car")
-                TextField("Ford Escape", text: $car)
+
+                TextField("Car Type", text: $car)
                 
-                Text("Car Color")
-                TextField("Blue", text: $color)
+                TextField("Car Color", text: $color)
                 
-                Text("Licence Plate")
-                TextField("ABC123", text: $licencePlate)
+                TextField("Licence Plate", text: $licencePlate)
                 
                 Toggle("I live on campus", isOn: $isShowing)
                 
                 //On success go to homepage
                 Button(action: {
                     var success = true
-                    CreateDriverDetails(licencePlate: self.licencePlate, car: self.car, color: self.color){
+                    CreateDriverDetails(licencePlate: self.licencePlate, car: self.car, color: self.color, livesOnCampus: self.isShowing){
                         err in
                         self.errorMessage = err!
                         success = false

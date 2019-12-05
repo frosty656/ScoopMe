@@ -30,7 +30,7 @@ struct LocationView: View {
                         }
                     }
                 }
-            }
+            }.navigationBarTitle("Locations")
         }
     }
 }

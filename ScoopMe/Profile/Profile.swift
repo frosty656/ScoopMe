@@ -10,6 +10,8 @@ import SwiftUI
 import Firebase
 struct Profile: View {
     @ObservedObject var userInfo = getCurrentUserInformation()
+    @ObservedObject var driverInfo = getDriverInformation()
+
     @EnvironmentObject var viewRouter: ViewRouter
     
     
@@ -26,9 +28,25 @@ struct Profile: View {
                     Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
                     Text(userInfo.user.dorm)
                 }
+                
                 Spacer()
             }
             .font(.system(size: 24))
+            
+            
+            if userInfo.user.isDriver{
+                   VStack(){
+                    Text("Me me driver")
+                    Text("Drives a \(driverInfo.driver.carColor) \(driverInfo.driver.car)")
+
+                    if driverInfo.driver.livesOnCampus {
+                              Text("Resident")
+                          } else {
+                              Text("Communter")
+                          }
+                   }.font(.system(size: 24))
+               }
+            
             
 //            Button(action:{
 //                self.viewRouter.currentPage = "Login"

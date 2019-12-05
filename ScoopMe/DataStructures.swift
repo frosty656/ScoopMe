@@ -21,10 +21,8 @@ struct Driver: Hashable
 {
     let car: String
     let licencePlate: String
-    let seats: Int
-    let age: Int
-//        let profilePicture: Image?
-//        let carImage: Image?
+    let livesOnCampus: Bool
+    let carColor: String
 }
 
 struct usersName: Hashable {

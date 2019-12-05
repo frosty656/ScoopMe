@@ -18,44 +18,44 @@ struct CreateAccount: View {
     @State var errorText: String = ""
     
     var body: some View {
-            VStack{
-                
-                Text(self.errorText)
-                
-                TextField("SNHU Email", text: $emailAddress)
-                SecureField("Password", text: $password)
-                SecureField("Password", text: $passwordConfirm)
-                
-                
-                
-                Button(action: {
-                    CreateUser(email: self.emailAddress, password: self.password){
-                        (result, error) in
-                        if error != nil{
-                            self.errorText = error!.localizedDescription
-                            return
-                        } else {
-                            //GO TO CREATE USER DETAILS
-                            self.viewRouter.currentPage = "UserDetails"
-                            self.emailAddress = ""
-                            self.password = ""
-                            self.passwordConfirm = ""
-                        }
+        VStack{
+            
+            Text(self.errorText)
+            
+            TextField("SNHU Email", text: $emailAddress)
+            SecureField("Password", text: $password)
+            SecureField("Password", text: $passwordConfirm)
+            
+            
+            
+            Button(action: {
+                CreateUser(email: self.emailAddress, password: self.password){
+                    (result, error) in
+                    if error != nil{
+                        self.errorText = error!.localizedDescription
+                        return
+                    } else {
+                        //GO TO CREATE USER DETAILS
+                        self.viewRouter.currentPage = "UserDetails"
+                        self.emailAddress = ""
+                        self.password = ""
+                        self.passwordConfirm = ""
                     }
-                    
-                }) {
-                    NextButtonContent()
-                }
-                //If success and wants to be driver go to create driver page
-                
-                //If success and no driver then go to homepage
-                
-                
-                Button(action: {self.viewRouter.currentPage = "Login"}){
-                        Text("Login")
                 }
                 
+            }) {
+                NextButtonContent()
             }
+            //If success and wants to be driver go to create driver page
+            
+            //If success and no driver then go to homepage
+            
+            
+            Button(action: {self.viewRouter.currentPage = "Login"}){
+                    Text("Login")
+            }
+            
+        }
     }
 }
 
@@ -71,7 +71,6 @@ struct NextButtonContent : View {
     var body: some View {
         return Text("Create Account")
             .foregroundColor(.white)
-            .frame(width: 200, height: 50)
             .background(Color.blue)
             .cornerRadius(15)
             .padding(.top, 50)

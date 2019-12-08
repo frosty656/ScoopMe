@@ -13,50 +13,62 @@ struct Profile: View {
     @State var showSettings = false
     @EnvironmentObject var viewRouter: ViewRouter
     
-    init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-    }
-    
     var body: some View {
         NavigationView{
-            ZStack{
-                Color.init(red: 30/255, green: 50/255, blue: 70/255)
-                .edgesIgnoringSafeArea(.all)
                 
-                VStack  (){
-                    
-                    ProfilePicture()
-                        .frame(width: 300, height: 150)
-                    
-                    HStack(){
-                        
-                        VStack(){
-                            
-                            Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
-                                .foregroundColor(.white)
-                            Text(userInfo.user.dorm)
-                                .foregroundColor(.white)
-                        }
-                        
-                        Spacer()
-                    }
-                    .font(.system(size: 24))
-                    
+            VStack  (){
+                
+                HStack(){
                     Spacer()
-                }.padding()
-                .navigationBarTitle("Profile")
-                .navigationBarItems(trailing:
-                    Button(action: {
-                        self.showSettings.toggle()
-                    }){
-                        Image("icons8-ios-50")
-                        .resizable()
-                        .frame(width: 32.0, height: 32.0)
-                        .padding()
-                        .foregroundColor(Color(.white))
-                    }.sheet(isPresented: $showSettings, content: {SettingsView()})
-                )
-            }
+                    NavigationLink(destination: SettingsView()){
+                    Image("icons8-ios-50")
+                    .resizable()
+                    .frame(width: 32.0, height: 32.0)
+                    .padding()
+                    }
+                }
+                
+                ProfilePicture()
+                    .frame(width: 300, height: 150)
+                
+                HStack(){
+                    
+                    VStack(){
+                        
+                        Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
+                            
+                        Text(userInfo.user.dorm)
+                        
+                        
+                            
+                    }
+                    
+                    
+                }
+                .font(.system(size: 24))
+                
+                Spacer()
+            }.padding()
+            .navigationBarTitle("Profile")
+//            .navigationBarItems(trailing:
+//                NavigationLink(destination: SettingsView()){
+//                    Image("icons8-ios-50")
+//                    .resizable()
+//                    .frame(width: 32.0, height: 32.0)
+//                    .padding()
+//                })
+                
+//                Button(action: {
+//                    self.showSettings.toggle()
+//                }){
+//                    Image("icons8-ios-50")
+//                    .resizable()
+//                    .frame(width: 32.0, height: 32.0)
+//                    .padding()
+//                    //.foregroundColor(Color(.white))
+//                }.sheet(isPresented: $showSettings, content: {SettingsView(isShowing: self.showSettings)})
+            
+            
         }
         
         
@@ -71,23 +83,3 @@ struct Profile_Previews: PreviewProvider {
     }
 }
 
-struct SettingsView: View{
-    
-    var body: some View{
-        NavigationView{
-            ZStack{
-                NavigationView{
-                    VStack{
-                        List{
-                            NavigationLink(destination: ResetPasswordView()){
-                                Text("Reset Password")
-                            }
-                        }
-                    }
-                .navigationBarTitle("Settings")
-                }
-            }
-        }
-    }
-    
-}

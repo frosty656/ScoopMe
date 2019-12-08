@@ -11,8 +11,9 @@ import MapKit
 
 struct LocationDetails: View {
     var location: LocationData
-    
+    @Environment(\.presentationMode) var locationsVisible
     var body: some View {
+        NavigationView{
             VStack(){
                 MapView(
                     latitude: location.latitude,
@@ -28,7 +29,7 @@ struct LocationDetails: View {
                 Spacer()
                 HStack(){
                     
-                    NavigationLink(destination: NewRide(location: location)){
+                    NavigationLink(destination: NewRide(location: location, LocaitonViewUp: locationsVisible)){
                         Text("Drive to")
                         .fontWeight(.bold)
                         .font(.system(size: 24))
@@ -48,6 +49,7 @@ struct LocationDetails: View {
                 
                 Spacer()
             }
+        }
     }
 
 }

@@ -26,7 +26,7 @@ struct ResetPasswordView: View {
             }){
                 Text("Reset Password")
             }
-        }
+        }.padding()
     }
 }
 

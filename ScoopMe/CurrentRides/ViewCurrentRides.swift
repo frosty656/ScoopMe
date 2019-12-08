@@ -27,7 +27,7 @@ struct ViewCurrentRides: View {
                         }.frame(width: 10, height: 10)
                     }
                 }
-            }.navigationBarTitle("Rides: ")
+            }.navigationBarTitle("Rides:")
         }
     }
     

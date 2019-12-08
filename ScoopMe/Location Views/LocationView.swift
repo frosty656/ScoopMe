@@ -10,6 +10,7 @@ import SwiftUI
 
 struct LocationView: View {
     @ObservedObject var locationList = getLocations()
+     @State var showLocationDetails = false
     var body: some View {
         NavigationView{
             List{
@@ -25,12 +26,18 @@ struct LocationView: View {
                        //     .frame(width: 50, height: 50)
 
                         
-                        NavigationLink(destination: LocationDetails(location: i)){
+//                        NavigationLink(destination: LocationDetails(location: i)){
+//                            Text("")
+//                        }
+                        
+                        Button(action: {self.showLocationDetails.toggle()}){
                             Text("")
-                        }
+                            
+                        }.sheet(isPresented: self.$showLocationDetails, content: {LocationDetails(location: i)})
                     }
                 }
-            }.navigationBarTitle("Locations")
+            }
+            .navigationBarTitle("Locations")
         }
     }
 }

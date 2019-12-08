@@ -20,6 +20,10 @@ func ResetPassword(email: String,  onError:  @escaping (_ errorMessage: String?)
     }
 }
 
+func getProfileeImage(){
+    //` qAuth.auth().currentUser.
+}
+
 func CreateUser(email: String, password: String, handler: @escaping AuthDataResultCallback){
     Auth.auth().createUser(withEmail: email, password: password, completion: handler)
 }

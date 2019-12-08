@@ -13,28 +13,33 @@ struct NewRide: View {
     
     var location: LocationData
     
+    @Binding var LocaitonViewUp: PresentationMode
     @State private var selectedDate = Date()
-    @State private var seats = 4
+    @State private var seats = 3
     @State private var selectionDestination = 4
     @State var locationList = ["Arena","Gym","Lincoln","Conway","Hampton","Windsor","Tuckerman","Manadnock","26-C","Library","Gustafson Center","Belknap Hall","Robert Frost","Dining Hall","ACC","Hospitality","Student Center","Green Center","Exeter Hall","Stark Hall","Washingtin","New Castle","Larkin Field","Webster Hall","Ceta Annex","Ceta Building","Baseball Field","Softball Field","Kingston","Rockingham"]
     
-
+    
     var body: some View {
             ScrollView{
                 VStack(){
-                    
                     Text("Where are you leaving from?")
                     Picker(selection: $selectionDestination, label: Text("")){
                         ForEach(0 ..< locationList.count){
                             Text(self.locationList[$0]).tag($0)
                         }
                     }.labelsHidden()
+                    
+                    
                     Text("Enter the time you are leaving")
+                    
                     DatePicker(
                         "",
                         selection: $selectedDate,
                         displayedComponents: .hourAndMinute
-                    ).labelsHidden()
+                    )
+                    .labelsHidden()
+                    
                     
                     HStack(){
                         Text("Avaiable Seats: ")
@@ -53,8 +58,7 @@ struct NewRide: View {
                     }
 
                      Text("") //spacer
-                    
-                    
+
                     Button("Drive Here") {
                         NewRideDeclaration(ride: Ride(
                         id: "",
@@ -65,14 +69,16 @@ struct NewRide: View {
                         destination: self.location.name,
                         leaveTime: self.selectedDate
                         ))
+                        
+                        self.LocaitonViewUp.dismiss()
                     }
                 }
             }
         }
 }
 
-struct NewRide_Previews: PreviewProvider {
-    static var previews: some View {
-        NewRide(location: LocationData(id: "Temp", name: "Target", longitude: 3, latitude: -71.460710))
-    }
-}
+//struct NewRide_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewRide(location: LocationData(id: "Temp", name: "Target", longitude: 3, latitude: -71.460710))
+//    }
+//}

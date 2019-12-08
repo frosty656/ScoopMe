@@ -11,7 +11,7 @@ import SwiftUI
 struct RiderProfile: View {
     
     @ObservedObject var userInfo: GetUserInformation
-    //@ObservedObject var driverInfo: getDriverInformation
+    //re@ObservedObject var driverInfo: getDriverInformation
     
     init(ride: [String: String]){
         self.userInfo =  GetUserInformation(currentUser: ride["RiderID"]!)

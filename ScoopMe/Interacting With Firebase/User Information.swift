@@ -170,3 +170,12 @@ class getProfileImage : ObservableObject {
         }
     }
 }
+
+
+func currentlyLoggedIn() -> String{
+    if Auth.auth().currentUser != nil {
+      return "Tabs"
+    } else {
+      return "Login"
+    }
+}

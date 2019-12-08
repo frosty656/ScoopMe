@@ -13,8 +13,9 @@ import SwiftUI
 class ViewRouter: ObservableObject {
     
     let objectWillChange = PassthroughSubject<ViewRouter,Never>()
+
     
-    var currentPage: String = "Login" {
+    var currentPage: String = currentlyLoggedIn() {
         didSet {
             withAnimation() {
                 objectWillChange.send(self)

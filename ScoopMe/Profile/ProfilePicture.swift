@@ -20,7 +20,6 @@ struct ProfilePicture: View {
         } else {
             imageLink = getProfileImage(userID: userID)
         }
-        
     }
 
     var body: some View {
@@ -28,7 +27,7 @@ struct ProfilePicture: View {
 
             if(imageLink.pathString != ""){
                 AnimatedImage(url: URL(string: imageLink.pathString)!)
-                //.placeholder(UIImage(named: "User"))
+                .placeholder(UIImage(named: "User"))
                 .resizable()
                 .scaledToFit()
                 .clipShape(Circle())

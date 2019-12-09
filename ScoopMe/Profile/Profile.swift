@@ -20,12 +20,23 @@ struct Profile: View {
                 
                 HStack(){
                     Spacer()
+                    
                     NavigationLink(destination: SettingsView()){
-                    Image("icons8-ios-50")
-                    .resizable()
-                    .frame(width: 32.0, height: 32.0)
-                    .padding()
+                        Image("icons8-ios-50")
+                        .resizable()
+                        .frame(width: 32.0, height: 32.0)
+                        .padding()
                     }
+                    
+//                    Button(action: {
+//                        self.showSettings.toggle()
+//                    }){
+//                        Image("icons8-ios-50")
+//                        .resizable()
+//                        .frame(width: 32.0, height: 32.0)
+//                        .padding()
+//                        //.foregroundColor(Color(.white))
+//                    }.sheet(isPresented: $showSettings, content: {SettingsView()})
                 }
                 
                 ProfilePicture()
@@ -38,12 +49,8 @@ struct Profile: View {
                         Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
                             
                         Text(userInfo.user.dorm)
-                        
-                        
-                            
+
                     }
-                    
-                    
                 }
                 .font(.system(size: 24))
                 
@@ -51,13 +58,6 @@ struct Profile: View {
             }.padding()
             .navigationBarTitle("Profile")
 //            .navigationBarItems(trailing:
-//                NavigationLink(destination: SettingsView()){
-//                    Image("icons8-ios-50")
-//                    .resizable()
-//                    .frame(width: 32.0, height: 32.0)
-//                    .padding()
-//                })
-                
 //                Button(action: {
 //                    self.showSettings.toggle()
 //                }){
@@ -66,14 +66,11 @@ struct Profile: View {
 //                    .frame(width: 32.0, height: 32.0)
 //                    .padding()
 //                    //.foregroundColor(Color(.white))
-//                }.sheet(isPresented: $showSettings, content: {SettingsView(isShowing: self.showSettings)})
-            
-            
+//                }.sheet(isPresented: $showSettings, content: {SettingsView(performLogout: self.$performLogout)})
+//            )
         }
-        
-        
-        
     }
+    
 }
 
 struct Profile_Previews: PreviewProvider {
@@ -82,4 +79,3 @@ struct Profile_Previews: PreviewProvider {
         
     }
 }
-

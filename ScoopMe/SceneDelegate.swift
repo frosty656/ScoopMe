@@ -23,20 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents.
         
         
-        //user is already logged in so go to the home page
-        //test@snhu.edu
-        //testpassword
-        //remove this later
-        Auth.auth().signIn(withEmail: "", password: "") { user, error in
-             if let error = error
-             {
-                print(error.localizedDescription)
-             } else {
-                 print("User singed in")
-         }
-         
-
-        }
+  
         
 
         // Use a UIHostingController as window root view controller.

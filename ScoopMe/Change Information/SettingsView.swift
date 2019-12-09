@@ -10,11 +10,10 @@ import SwiftUI
 
 
 struct SettingsView: View{
-    
-    @EnvironmentObject var viewRouter: ViewRouter
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var viewRouter: ViewRouter
     var body: some View{
-        NavigationView{
+       // NavigationView{
 
                     VStack{
                         List{
@@ -34,10 +33,9 @@ struct SettingsView: View{
                                 Text("Change Name")
                             }
                             Button(action: {
-                                
-                                
-                                //self.presentationMode.wrappedValue.dismiss()
+                                self.presentationMode.wrappedValue.dismiss()
                                 self.viewRouter.currentPage = "Login"
+                                
                                 
                                 
                             }){
@@ -49,13 +47,13 @@ struct SettingsView: View{
                 .navigationBarTitle("Settings")
                 
             
-        }
+       // }
     }
     
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
-}
+//struct SettingsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SettingsView()
+//    }
+//}

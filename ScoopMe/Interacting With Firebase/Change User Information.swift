@@ -99,15 +99,17 @@ func CreateUserDetailsDocument(firstName: String, lastName: String, dorm: String
     }
 }
 
-func uploadProfilePicture(profileImage: UIImage, handler: @escaping AuthDataResultCallback){
+func uploadProfilePicture(profileImage: UIImage? = UIImage(named: "User"), handler: @escaping AuthDataResultCallback){
     let storage = Storage.storage()
     let user = Auth.auth().currentUser?.uid
     
-    storage.reference().child(user!).putData(profileImage.jpegData(compressionQuality: 0.1)!, metadata: nil){
+
+    
+    storage.reference().child(user!).putData(profileImage!.jpegData(compressionQuality: 0.5)!, metadata: nil){
         (_,error) in
         if error != nil{
             print("Error hit")
-            print(error?.localizedDescription)
+            print(error!.localizedDescription)
         } else {
             print("SUCCESS")
         }

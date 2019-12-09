@@ -177,7 +177,6 @@
 				58C08AD7233A689B004CFFA7 /* LoginPage.swift */,
 				5890DD5F23621A7B002F7819 /* CreateAccount.swift */,
 				58F3C7A2238DCBAE00F4B29A /* CreateUserDetails.swift */,
-				92C823602396D856000DB78A /* NavigationControl.swift */,
 			);
 			path = "Login Signup";
 			sourceTree = "<group>";
@@ -213,6 +212,7 @@
 				580C4B3C2370A1AA00C0DFED /* CurrentRides */,
 				5810CA9A235FEE2F00930513 /* Location Views */,
 				58D8654F23314BC700796F54 /* Profile */,
+				92C823602396D856000DB78A /* NavigationControl.swift */,
 				5810CA96235FEDD400930513 /* DataStructures.swift */,
 				582E7278232AAEA9008665A7 /* AppDelegate.swift */,
 				582E727A232AAEA9008665A7 /* SceneDelegate.swift */,

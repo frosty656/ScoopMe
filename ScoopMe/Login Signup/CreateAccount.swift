@@ -29,6 +29,17 @@ struct CreateAccount: View {
             
             
             Button(action: {
+                
+                if(self.password != self.passwordConfirm){
+                    self.errorText = "Passwords do not match"
+                    return
+                }
+                
+                if(self.emailAddress.isEmpty || self.password.isEmpty || self.passwordConfirm.isEmpty){
+                    self.errorText = "Please fill out all information"
+                    return
+                }
+                
                 CreateUser(email: self.emailAddress, password: self.password){
                     (result, error) in
                     if error != nil{

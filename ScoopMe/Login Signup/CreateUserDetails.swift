@@ -40,6 +40,11 @@ struct CreateUserDetails: View {
             TextField("dorm", text: $dorm)
             
             Button(action: {
+                
+                if(self.firstName.isEmpty || self.lastName.isEmpty || self.dorm.isEmpty){
+                    self.errorMessage = "Please enter all information"
+                    return
+                }
                 CreateUserDetailsDocument(firstName: self.firstName, lastName: self.lastName, dorm: self.dorm){
                     err in
                     self.errorMessage = err!

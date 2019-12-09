@@ -10,7 +10,6 @@ import SwiftUI
 
 
 struct SettingsView: View{
-    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var viewRouter: ViewRouter
     var body: some View{
        // NavigationView{
@@ -33,11 +32,7 @@ struct SettingsView: View{
                                 Text("Change Name")
                             }
                             Button(action: {
-                                self.presentationMode.wrappedValue.dismiss()
                                 self.viewRouter.currentPage = "Login"
-                                
-                                
-                                
                             }){
                                 Text("Sign Out")
                             }

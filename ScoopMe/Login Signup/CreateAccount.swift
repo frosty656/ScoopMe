@@ -47,10 +47,6 @@ struct CreateAccount: View {
             }) {
                 NextButtonContent()
             }
-            //If success and wants to be driver go to create driver page
-            
-            //If success and no driver then go to homepage
-            
             
             Button(action: {self.viewRouter.currentPage = "Login"}){
                     Text("Login")

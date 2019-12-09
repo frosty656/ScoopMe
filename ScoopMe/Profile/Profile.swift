@@ -27,17 +27,6 @@ struct Profile: View {
                         .frame(width: 32.0, height: 32.0)
                         .padding()
                     }
-                    
-//                    Button(action: {
-//                        self.showSettings.toggle()
-//                    }){
-//                        Image("icons8-ios-50")
-//                        .resizable()
-//                        .frame(width: 32.0, height: 32.0)
-//                        .padding()
-//                        //.foregroundColor(Color(.white))
-//                    }.sheet(isPresented: $showSettings, content: {SettingsView()})
-                }
                 
                 ProfilePicture()
                     .frame(width: 300, height: 150)

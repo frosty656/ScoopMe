@@ -21,14 +21,6 @@ struct LocationView: View {
                             .font(.system(size: 24))
 
                         Spacer()
-
-                       // MapView(latitude: i.latitude, longitude: i.longitude)
-                       //     .frame(width: 50, height: 50)
-
-                        
-//                        NavigationLink(destination: LocationDetails(location: i)){
-//                            Text("")
-//                        }
                         
                         Button(action: {self.showLocationDetails.toggle()}){
                             Text("")

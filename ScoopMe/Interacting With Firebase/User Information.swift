@@ -152,6 +152,10 @@ class getProfileImage : ObservableObject {
     
     init(userID: String? = ""){
         
+        if Auth.auth().currentUser?.uid == nil{
+            return
+        }
+        
         var user = userID
         if userID == ""{
             print("Getting Current User")

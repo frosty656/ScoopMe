@@ -29,7 +29,7 @@ struct LocationDetails: View {
                 Spacer()
                 HStack(){
                     
-                    NavigationLink(destination: NewRide(location: location, LocaitonViewUp: locationsVisible)){
+                    NavigationLink(destination: NewRide(location: location, LocationViewUp: locationsVisible)){
                         Text("Drive to")
                         .fontWeight(.bold)
                         .font(.system(size: 24))

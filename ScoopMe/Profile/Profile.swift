@@ -15,50 +15,36 @@ struct Profile: View {
     
     var body: some View {
         NavigationView{
-                
-            VStack  (){
-                
+            VStack (){
+                ProfilePicture()
+                    .frame(width: 300, height: 150)
+
                 HStack(){
-                    Spacer()
-                    
-                    NavigationLink(destination: SettingsView()){
-                        Image("icons8-ios-50")
-                        .resizable()
-                        .frame(width: 32.0, height: 32.0)
-                        .padding()
+
+                    VStack(){
+
+                        Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
+
+                        Text(userInfo.user.dorm)
+
                     }
                 }
-                
-                    ProfilePicture()
-                        .frame(width: 300, height: 150)
-                    
-                    HStack(){
-                        
-                        VStack(){
-                            
-                            Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
-                                
-                            Text(userInfo.user.dorm)
+                .font(.system(size: 24))
 
-                        }
-                    }
-                    .font(.system(size: 24))
-                    
-                    Spacer()
+                Spacer()
                 
             }.padding()
             .navigationBarTitle("Profile")
-//            .navigationBarItems(trailing:
-//                Button(action: {
-//                    self.showSettings.toggle()
-//                }){
-//                    Image("icons8-ios-50")
-//                    .resizable()
-//                    .frame(width: 32.0, height: 32.0)
-//                    .padding()
-//                    //.foregroundColor(Color(.white))
-//                }.sheet(isPresented: $showSettings, content: {SettingsView(performLogout: self.$performLogout)})
-//            )
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.showSettings.toggle()
+                }){
+                    Image("icons8-ios-50")
+                    .resizable()
+                    .frame(width: 32.0, height: 32.0)
+                    .padding()
+                }.sheet(isPresented: $showSettings, content: {SettingsView().environmentObject(self.viewRouter)})
+            )
         }
     }
     

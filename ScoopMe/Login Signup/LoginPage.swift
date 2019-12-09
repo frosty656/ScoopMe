@@ -18,17 +18,17 @@ struct LoginPage: View {
     @State var errorText: String = ""
     @State var value: CGFloat = 0
     
-//    init(){
-//        let user = Auth.auth().currentUser?.uid
-//
-//        if user != nil {
-//            do {
-//                logOut()
-//            } catch {
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
+    init(){
+        let user = Auth.auth().currentUser?.uid
+
+        if user != nil {
+            do {
+                logOut()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     var body: some View {
         VStack(){

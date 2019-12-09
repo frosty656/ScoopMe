@@ -11,40 +11,48 @@ import SwiftUI
 
 struct SettingsView: View{
     @EnvironmentObject var viewRouter: ViewRouter
-    var body: some View{
-       // NavigationView{
+    @Environment(\.presentationMode) var settingsVisible
 
-                    VStack{
-                        List{
-                            NavigationLink(destination: ResetPasswordView()){
-                                Text("Reset Password")
-                            }
-                            NavigationLink(destination: ChangeEmailView()){
-                                Text("Change Email")
-                            }
-                            NavigationLink(destination: ChangeProfileImage()){
-                                Text("Change Profile Image")
-                            }
-                            NavigationLink(destination: ChangeDormView()){
-                                Text("Change Dorm")
-                            }
-                            NavigationLink(destination: ChangeNameView()){
-                                Text("Change Name")
-                            }
-                            Button(action: {
-                                self.viewRouter.currentPage = "Login"
-                            }){
-                                Text("Sign Out")
-                            }
-                            
-                        }
-                    }
-                .navigationBarTitle("Settings")
+    var body: some View{
+        
+        NavigationView{
+            VStack{
                 
-            
-       // }
+                List{
+                
+                    NavigationLink(destination: ResetPasswordView()){
+                        Text("Reset Password")
+                    }
+                    
+                    NavigationLink(destination: ChangeEmailView()){
+                        Text("Change Email")
+                    }
+                    
+                    NavigationLink(destination: ChangeProfileImage()){
+                        Text("Change Profile Image")
+                    }
+                        
+                    NavigationLink(destination: ChangeDormView()){
+                        Text("Change Dorm")
+                    }
+
+                    NavigationLink(destination: ChangeNameView()){
+                        Text("Change Name")
+                        }
+                        
+                    Button(action: {
+                        self.settingsVisible.wrappedValue.dismiss()
+                        self.viewRouter.currentPage = "Login"
+                    }){
+                        Text("Sign Out")
+                    }
+                }
+
+            }
+            .navigationBarTitle("Settings")
+        }
+
     }
-    
 }
 
 //struct SettingsView_Previews: PreviewProvider {

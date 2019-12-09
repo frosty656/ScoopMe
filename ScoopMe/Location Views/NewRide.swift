@@ -13,7 +13,7 @@ struct NewRide: View {
     
     var location: LocationData
     
-    @Binding var LocaitonViewUp: PresentationMode
+    @Binding var LocationViewUp: PresentationMode
     @State private var selectedDate = Date()
     @State private var seats = 3
     @State private var selectionDestination = 4
@@ -70,7 +70,7 @@ struct NewRide: View {
                         leaveTime: self.selectedDate
                         ))
                         
-                        self.LocaitonViewUp.dismiss()
+                        self.LocationViewUp.dismiss()
                     }
                 }
             }

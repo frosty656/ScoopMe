@@ -8,6 +8,10 @@
 
 import SwiftUI
 
+class ViewRouter: ObservableObject {
+   @Published var currentPage: String = currentlyLoggedIn()
+}
+
 struct MotherView : View {
     
     @EnvironmentObject var viewRouter: ViewRouter

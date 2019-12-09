@@ -27,23 +27,25 @@ struct Profile: View {
                         .frame(width: 32.0, height: 32.0)
                         .padding()
                     }
-                
-                ProfilePicture()
-                    .frame(width: 300, height: 150)
-                
-                HStack(){
-                    
-                    VStack(){
-                        
-                        Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
-                            
-                        Text(userInfo.user.dorm)
-
-                    }
                 }
-                .font(.system(size: 24))
                 
-                Spacer()
+                    ProfilePicture()
+                        .frame(width: 300, height: 150)
+                    
+                    HStack(){
+                        
+                        VStack(){
+                            
+                            Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
+                                
+                            Text(userInfo.user.dorm)
+
+                        }
+                    }
+                    .font(.system(size: 24))
+                    
+                    Spacer()
+                
             }.padding()
             .navigationBarTitle("Profile")
 //            .navigationBarItems(trailing:

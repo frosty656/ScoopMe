@@ -16,6 +16,7 @@ struct LoginPage: View {
     @State var emailAddress: String = ""
     @State var password: String = ""
     @State var errorText: String = ""
+    @State var value: CGFloat = 0
     
 //    init(){
 //        let user = Auth.auth().currentUser?.uid
@@ -54,7 +55,9 @@ struct LoginPage: View {
             Button(action: {self.viewRouter.currentPage = "CreateAccount"}){
                     Text("Create Account")
             }
-        }.padding()
+        
+        }
+        .padding()
     }
 }
 

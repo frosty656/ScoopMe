@@ -16,14 +16,14 @@ struct SettingsView: View{
 
     var body: some View{
         
-       // NavigationView{
+        NavigationView{
             VStack{
                 
                 List{
                     
-                    Button("Reset Password"){
-                        self.viewIsUp.toggle()
-                    }.sheet(isPresented: $viewIsUp, content: {ResetPasswordView()})
+                    NavigationLink(destination: ResetPasswordView()){
+                        Text("Reset Password")
+                    }
                     
                     NavigationLink(destination: ChangeEmailView()){
                         Text("Change Email")
@@ -51,7 +51,7 @@ struct SettingsView: View{
 
             }
             .navigationBarTitle("Settings")
-       // }
+        }
 
     }
 }

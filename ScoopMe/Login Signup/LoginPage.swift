@@ -13,6 +13,7 @@ import FirebaseAuth
 struct LoginPage: View {
     @EnvironmentObject var viewRouter: ViewRouter
     @Environment(\.presentationMode) var presentationMode
+    @State var resetPasswordUp = false
     @State var emailAddress: String = ""
     @State var password: String = ""
     @State var errorText: String = ""
@@ -31,33 +32,38 @@ struct LoginPage: View {
     }
     
     var body: some View {
-        VStack(){
-            Text("\(errorText)")
-            
-            TextField("SNHU Email", text: $emailAddress)
-            SecureField("Password", text: $password)
-            
-            Button(action:{
-                logIn(email: self.emailAddress, password: self.password){
-                    (result, error) in
-                    if error != nil{
-                        self.errorText = error!.localizedDescription
-                    } else {
-                        self.viewRouter.currentPage = "Tabs"
+        NavigationView{
+            VStack(){
+                Text("\(errorText)")
+                
+                TextField("SNHU Email", text: $emailAddress)
+                SecureField("Password", text: $password)
+                
+                Button("Login") {
+                    logIn(email: self.emailAddress, password: self.password){
+                        (result, error) in
+                        if error != nil{
+                            self.errorText = error!.localizedDescription
+                        } else {
+                            self.viewRouter.currentPage = "Tabs"
+                        }
                     }
                 }
+                    
                 
-            }) {
-                Text("Login")
                 
+                Button("Create Account"){
+                        self.viewRouter.currentPage = "CreateAccount"
+                }
+                Text("")
+                Button(action: {
+                    self.resetPasswordUp.toggle()
+                }){
+                    Text("Reset Password")
+                }.sheet(isPresented: $resetPasswordUp, content: {ResetPasswordView()})
             }
-            
-            Button(action: {self.viewRouter.currentPage = "CreateAccount"}){
-                    Text("Create Account")
-            }
-        
+            .padding()
         }
-        .padding()
     }
 }
 

@@ -16,6 +16,10 @@ struct Profile: View {
     var body: some View {
         NavigationView{
             VStack (){
+                if(userInfo.user.firstName.isEmpty || userInfo.user.lastName.isEmpty || userInfo.user.dorm.isEmpty){
+                    
+                }
+                
                 ProfilePicture()
                     .frame(width: 300, height: 150)
 

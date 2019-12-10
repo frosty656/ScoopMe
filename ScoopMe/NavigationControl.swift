@@ -31,7 +31,7 @@ struct MotherView : View {
                 LoginPage()
                     .transition(.fade)
             }
-            else if viewRouter.currentPage == "PasswordReset" {
+            else if viewRouter.currentPage == "ResetPassword" {
                 ResetPasswordView()
                     .transition(.fade)
             }

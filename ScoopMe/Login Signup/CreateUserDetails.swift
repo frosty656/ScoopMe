@@ -13,6 +13,7 @@ struct CreateUserDetails: View {
     
     @EnvironmentObject var viewRouter: ViewRouter
     @State var shown = false
+    @State var userIsCommuter = false
     @State var firstName: String = ""
     @State var lastName: String = ""
     @State var dorm: String = ""
@@ -36,15 +37,34 @@ struct CreateUserDetails: View {
             }
             
             TextField("first name", text: $firstName)
+            
             TextField("last name", text: $lastName)
-            TextField("dorm", text: $dorm)
+            
+            Toggle(isOn: $userIsCommuter) {
+                Text("I am a commuter")
+            }.padding()
+            
+            if(userIsCommuter){
+                TextField("dorm", text: $dorm)
+            }
             
             Button(action: {
                 
-                if(self.firstName.isEmpty || self.lastName.isEmpty || self.dorm.isEmpty){
-                    self.errorMessage = "Please enter all information"
-                    return
+                
+                
+                if(self.userIsCommuter){
+                    if(self.firstName.isEmpty || self.lastName.isEmpty){
+                        self.errorMessage = "Please enter all information"
+                        return
+                    }
+                    self.dorm = "Commuter"
+                } else {
+                    if(self.firstName.isEmpty || self.lastName.isEmpty || self.dorm.isEmpty){
+                        self.errorMessage = "Please enter all information"
+                        return
+                    }
                 }
+                
                 CreateUserDetailsDocument(firstName: self.firstName, lastName: self.lastName, dorm: self.dorm){
                     err in
                     self.errorMessage = err!

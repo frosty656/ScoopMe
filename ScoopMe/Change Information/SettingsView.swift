@@ -12,17 +12,18 @@ import SwiftUI
 struct SettingsView: View{
     @EnvironmentObject var viewRouter: ViewRouter
     @Environment(\.presentationMode) var settingsVisible
+    @State var viewIsUp = false
 
     var body: some View{
         
-        NavigationView{
+       // NavigationView{
             VStack{
                 
                 List{
-                
-                    NavigationLink(destination: ResetPasswordView()){
-                        Text("Reset Password")
-                    }
+                    
+                    Button("Reset Password"){
+                        self.viewIsUp.toggle()
+                    }.sheet(isPresented: $viewIsUp, content: {ResetPasswordView()})
                     
                     NavigationLink(destination: ChangeEmailView()){
                         Text("Change Email")
@@ -50,7 +51,7 @@ struct SettingsView: View{
 
             }
             .navigationBarTitle("Settings")
-        }
+       // }
 
     }
 }

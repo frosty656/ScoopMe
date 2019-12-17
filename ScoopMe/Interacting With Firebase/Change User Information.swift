@@ -24,6 +24,13 @@ func getProfileeImage(){
     //` qAuth.auth().currentUser.
 }
 
+func updateEmail(email: String, onError:  @escaping (_ errorMessage: String?) -> Void){
+    Auth.auth().currentUser?.updateEmail(to: email){
+        (error) in
+        onError(error?.localizedDescription)
+    }
+}
+
 func CreateUser(email: String, password: String, handler: @escaping AuthDataResultCallback){
     Auth.auth().createUser(withEmail: email, password: password, completion: handler)
 }

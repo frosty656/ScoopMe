@@ -12,7 +12,8 @@ import SDWebImageSwiftUI
 
 struct ProfilePicture: View {
     
-    @ObservedObject var imageLink: getProfileImage
+    @ObservedObject var imageLink : getProfileImage
+    @State var noProfileImage = false
     
     init(userID: String? = ""){
         if userID == ""{
@@ -21,35 +22,27 @@ struct ProfilePicture: View {
             imageLink = getProfileImage(userID: userID)
         }
     }
-
+    
     var body: some View {
         VStack(){
 
             if(imageLink.pathString != ""){
                 AnimatedImage(url: URL(string: imageLink.pathString)!)
-                .placeholder(UIImage(named: "User"))
-                .resizable()
-                .scaledToFit()
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                .shadow(radius: 10)
+                    .placeholder(UIImage(named: "User"))
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                    .shadow(radius: 10)
             } else {
                 
+                Image(uiImage: UIImage(named: "User")!)
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
             }
         }
-    }
-}
-
-struct loader : UIViewRepresentable{
-    func makeUIView(context: UIViewRepresentableContext<loader>) -> UIActivityIndicatorView {
-        
-        let indicator = UIActivityIndicatorView(style: .large)
-        indicator.startAnimating()
-        return indicator
-    }
-    
-    func updateUIView(_ uiView: loader.UIViewType, context: UIViewRepresentableContext<loader>) {
-        
     }
 }
 

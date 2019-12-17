@@ -13,9 +13,11 @@ struct RideDetails: View {
     
     var body: some View {
         VStack(){
+            Text("Leaving at \(ride.leaveTime)")
             Text("Name: " + (ride.driver["Name"] ?? ""))
-            Text("From: " + ride.location + " to " + ride.destination)
+            Text("From: " + ride.location + " to " + ride.destination)  
             Text("Seats: \(ride.seats)")
+            
             Text("Passengers: ")
             
             List{
@@ -33,7 +35,7 @@ struct RideDetails: View {
                 }) {
                 Text("  Join  ")
                 .fontWeight(.bold)
-                .font(.system(size: 24))
+                //.font(.system(size: 24))
                 .padding(2)
                 .background(Color.blue)
                 .cornerRadius(40)
@@ -47,20 +49,5 @@ struct RideDetails: View {
            
         }
         
-    }
-}
-
-struct RideDetails_Previews: PreviewProvider {
-    static var previews: some View {
-        RideDetails(
-            ride: Ride(
-                id: "312312312312",
-                driver: ["Name": "Jacob", "ID": "WOOAAHHHID"],
-                riders: [["Person1ID": "Person1ID", "Person1Name": "Person1Name"], ["Person2": "Person2", "Person2Name": "Person2Name"], ["Person3": "Person3", "Person3Name": "Person3Name"]],
-                seats: 4,
-                location: "Target",
-                destination: "Walmart",
-                leaveTime: NSDate() as Date)
-        )
     }
 }

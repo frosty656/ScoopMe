@@ -17,17 +17,17 @@ struct LoginPage: View {
     @State var password: String = ""
     @State var errorText: String = ""
     
-//    init(){
-//        let user = Auth.auth().currentUser?.uid
-//
-//        if user != nil {
-//            do {
-//                logOut()
-//            } catch {
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
+    init(){
+        let user = Auth.auth().currentUser?.uid
+
+        if user != nil {
+            do {
+                logOut()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     var body: some View {
         VStack(){

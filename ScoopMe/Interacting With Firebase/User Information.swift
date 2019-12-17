@@ -30,12 +30,12 @@ class getLocations : ObservableObject{
 
 class getCurrentUserInformation : ObservableObject {
     @Published var user: User = User(id: "", firstName: "", lastName: "", dorm: "")
-
+    
     var currentUser = Auth.auth().currentUser?.uid
 
-    init(){
+    init(onError:  @escaping (_ errorMessage: String?) -> Void){
         let db = Firebase.Firestore.firestore().collection("Users")
-
+        print("Getting Current User")
         if currentUser == nil {
             print("User Not singed in")
             return
@@ -45,11 +45,12 @@ class getCurrentUserInformation : ObservableObject {
             (snap, err) in
             if err != nil{
                 print((err?.localizedDescription)!)
+                onError((err?.localizedDescription)!)
                 return
             }
             if snap!.exists{
                 if let document = snap {
-                    print("USER PROFILE INFO GATHERED")
+                    print("Profile Info Gathered")
                     self.user = User(
                         id: self.currentUser!,
                         firstName: document.get("first_name") as! String,
@@ -148,13 +149,20 @@ class GetUserInformation : ObservableObject{
 }
 
 class getProfileImage : ObservableObject {
+    
     @Published var pathString = ""
     
     init(userID: String? = ""){
-        
+
+        //,onError:  @escaping (_ errorMessage: String?) -> Void
+        if Auth.auth().currentUser?.uid == nil{
+            return
+        }
+
         var user = userID
         if userID == ""{
-            print("Getting Current User")
+            print("Getting Current Users Profile Image")
+            
             user = Auth.auth().currentUser!.uid
         }
     
@@ -164,8 +172,10 @@ class getProfileImage : ObservableObject {
             (url, err) in
             if err != nil {
                 print(err!.localizedDescription)
+                //onError(err!.localizedDescription)
                 return
             }
+            print("Downloaded the image again")
             self.pathString = "\(url!)"
         }
     }

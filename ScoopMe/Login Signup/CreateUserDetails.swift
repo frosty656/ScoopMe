@@ -12,12 +12,13 @@ import FirebaseStorage
 struct CreateUserDetails: View {
     
     @EnvironmentObject var viewRouter: ViewRouter
-    @State var shown = false
     @State var firstName: String = ""
     @State var lastName: String = ""
     @State var dorm: String = ""
     @State var errorMessage: String = ""
     @State var profileImage = UIImage()
+    @State var showImagePicker = false
+    @State var PickerUp = false
     
     var body: some View {
         VStack{
@@ -28,18 +29,46 @@ struct CreateUserDetails: View {
             .clipped()
             
             Button(action: {
-                self.shown.toggle()
+                self.showImagePicker.toggle()
             }){
                 Text("Upload Profile Picture")
-            }.sheet(isPresented: $shown){
-                imagePicker(isPresented: self.$shown, selectedImage: self.$profileImage)
+            }.sheet(isPresented: $showImagePicker){
+                imagePicker(isPresented: self.$showImagePicker, selectedImage: self.$profileImage)
             }
             
             TextField("first name", text: $firstName)
             TextField("last name", text: $lastName)
-            TextField("dorm", text: $dorm)
+
+            
+            Text("Dorm: " + self.dorm)
+                
+                
+                Button(action: {
+                   self.PickerUp.toggle()
+                }){
+                        Text("Choose Dorm")
+                }.sheet(isPresented: $PickerUp, content: {LocationPicker(location: self.$dorm)})
+                
+                
             
             Button(action: {
+                self.errorMessage = ""
+                if(self.firstName.isEmpty){
+                    self.errorMessage.append("Please enter first name")
+                }
+                if(self.lastName.isEmpty){
+                    self.errorMessage.append("\nPlease enter last name")
+                }
+                if( self.dorm.isEmpty){
+                    self.errorMessage.append("\nPlease enter dorm")
+                }
+
+                
+                if(self.errorMessage != ""){
+                    return
+                }
+                
+
                 CreateUserDetailsDocument(firstName: self.firstName, lastName: self.lastName, dorm: self.dorm){
                     err in
                     self.errorMessage = err!

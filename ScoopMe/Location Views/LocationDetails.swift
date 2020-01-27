@@ -24,11 +24,8 @@ struct LocationDetails: View {
                     .font(.system(size: 50))
                     .offset(y: -35)
                     .padding(.bottom, -45)
-                
-
                 Spacer()
                 HStack(){
-                    
                     NavigationLink(destination: NewRide(location: location, LocaitonViewUp: locationsVisible)){
                         Text("Drive to")
                         .fontWeight(.bold)
@@ -43,15 +40,11 @@ struct LocationDetails: View {
                                 .stroke(Color.blue, lineWidth: 3)
                         )
                     }
-                    
-                    
                 }.padding()
-                
                 Spacer()
             }
         }
     }
-
 }
 
 struct LocationDetails_Previews: PreviewProvider {

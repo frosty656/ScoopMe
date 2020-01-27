@@ -1,5 +1,4 @@
-import Firebase
-
+import Foundation
 struct LocationData : Identifiable {
     var id: String
     var name: String

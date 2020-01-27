@@ -14,6 +14,7 @@ struct NewRide: View {
     var location: LocationData
     
     @Binding var LocaitonViewUp: PresentationMode
+    
     @State private var selectedDate = Date()
     @State private var seats = 3
     @State private var selectionDestination = 4
@@ -30,7 +31,6 @@ struct NewRide: View {
                         }
                     }.labelsHidden()
                     
-                    
                     Text("Enter the time you are leaving")
                     
                     DatePicker(
@@ -39,7 +39,6 @@ struct NewRide: View {
                         displayedComponents: .hourAndMinute
                     )
                     .labelsHidden()
-                    
                     
                     HStack(){
                         Text("Avaiable Seats: ")
@@ -57,7 +56,7 @@ struct NewRide: View {
                         }
                     }
 
-                     Text("") //spacer
+                    Text("") //spacer
 
                     Button("Drive Here") {
                         NewRideDeclaration(ride: Ride(
@@ -76,9 +75,3 @@ struct NewRide: View {
             }
         }
 }
-
-//struct NewRide_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NewRide(location: LocationData(id: "Temp", name: "Target", longitude: 3, latitude: -71.460710))
-//    }
-//}

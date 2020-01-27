@@ -8,11 +8,13 @@
 
 import SwiftUI
 import Firebase
+import SDWebImageSwiftUI
 struct Profile: View {
     //This needs to change to only run once
     @ObservedObject var userInfo: getCurrentUserInformation
     @State private var showSettings = false
     @EnvironmentObject var viewRouter: ViewRouter
+    @ObservedObject var imageLink = getProfileImage()
     
     init(){
         userInfo = getCurrentUserInformation(){
@@ -23,14 +25,25 @@ struct Profile: View {
     
     var body: some View {
         NavigationView{
-
             VStack(){
-
-                ProfilePicture()
-                        .frame(width: 300, height: 150)
-                    
+                
+                if(imageLink.pathString != ""){
+                   AnimatedImage(url: URL(string: imageLink.pathString)!)
+                       .placeholder(UIImage(named: "User"))
+                       .resizable()
+                       .scaledToFit()
+                       .clipShape(Circle())
+                       .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                       .shadow(radius: 10)
+               } else {
+                   Image(uiImage: UIImage(named: "User")!)
+                       .resizable()
+                       .scaledToFit()
+                       .clipShape(Circle())
+                       .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                       .shadow(radius: 10)
+               }
                     HStack(){
-                        
                         VStack(){
                             
                             Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
@@ -40,15 +53,10 @@ struct Profile: View {
                     }
                     .font(.system(size: 24))
                     Spacer()
-                }.padding()
-
-
-
-        
-        
-        .padding()
-        .navigationBarTitle("Profile")
-        .navigationBarItems(trailing:
+                }
+                .padding()
+                .navigationBarTitle("Profile")
+                .navigationBarItems(trailing:
             Button(action: {
                 self.showSettings.toggle()
             }){

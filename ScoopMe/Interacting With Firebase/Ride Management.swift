@@ -36,7 +36,6 @@ func joinRide(ride: Ride){
     let db = Firebase.Firestore.firestore().collection("Rides")
     let currentUser = Auth.auth().currentUser!
     
-    
     let item = ["RiderName": currentUser.displayName, "RiderID": currentUser.uid]
     
     db.document(ride.id).updateData(
@@ -49,7 +48,6 @@ func joinRide(ride: Ride){
         }
     }
 }
-
 
 class getCurrentRides : ObservableObject{
     @Published var data = [Ride]()

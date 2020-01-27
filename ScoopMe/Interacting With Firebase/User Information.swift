@@ -14,15 +14,14 @@ class getLocations : ObservableObject{
                 print((err?.localizedDescription)!)
                 return
             }
-                for i in snap!.documents{
-                    let nameData = LocationData(
-                        id: i.documentID+"key",
-                        name: i.get("Location") as! String,
-                        longitude: i.get("Longitude") as! Double,
-                        latitude: i.get("Latitude") as! Double)
-                    self.data.append(nameData)
-                }
-            
+            for i in snap!.documents{
+                let nameData = LocationData(
+                    id: i.documentID+"key",
+                    name: i.get("Location") as! String,
+                    longitude: i.get("Longitude") as! Double,
+                    latitude: i.get("Latitude") as! Double)
+                self.data.append(nameData)
+            }
         }
     }
 }
@@ -175,7 +174,6 @@ class getProfileImage : ObservableObject {
                 //onError(err!.localizedDescription)
                 return
             }
-            print("Downloaded the image again")
             self.pathString = "\(url!)"
         }
     }

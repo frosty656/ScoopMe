@@ -18,15 +18,6 @@
           "revision": "fab4ec467604d9b929d64fd32b1d11e38c026b47",
           "version": "0.8.6"
         }
-      },
-      {
-        "package": "SwiftUIPullToRefresh",
-        "repositoryURL": "https://github.com/AppPear/SwiftUI-PullToRefresh",
-        "state": {
-          "branch": null,
-          "revision": "5850f1ead6c4931015231bde26f38b9f543342aa",
-          "version": "1.0.0"
-        }
       }
     ]
   },

@@ -30,3 +30,4 @@ struct MapView_Previews: PreviewProvider {
         MapView(latitude: 43.040800, longitude: -71.474460)
     }
 }
+

@@ -10,7 +10,9 @@ import SwiftUI
 
 struct LocationView: View {
     @ObservedObject var locationList = getLocations()
-     @State var showLocationDetails = false
+    
+    @State var showLocationDetails = false
+    
     var body: some View {
         NavigationView{
             List{

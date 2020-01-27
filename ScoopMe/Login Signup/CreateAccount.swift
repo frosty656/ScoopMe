@@ -52,7 +52,7 @@ struct CreateAccount: View {
                     Text("Login")
             }
             
-        }
+        }.padding()
     }
 }
 

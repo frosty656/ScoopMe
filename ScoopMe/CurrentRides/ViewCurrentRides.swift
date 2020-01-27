@@ -19,7 +19,6 @@ struct ViewCurrentRides: View {
                     HStack{
                         Text("\(i.location)\n -> \(i.destination)")
                             
-                            
                         Text("Leaving: \(self.getHours(date: i.leaveTime))")
                         
                         NavigationLink(destination: RideDetails(ride: i)){

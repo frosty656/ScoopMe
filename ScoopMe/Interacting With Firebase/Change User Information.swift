@@ -12,16 +12,14 @@ import FirebaseStorage
 import FirebaseAuth
 
 func ResetPassword(email: String,  onError:  @escaping (_ errorMessage: String?) -> Void){
+    print("Resetting Password")
     Auth.auth().sendPasswordReset(withEmail: email){
         (err) in
         if err != nil {
             onError(err!.localizedDescription)
         }
     }
-}
-
-func getProfileeImage(){
-    //` qAuth.auth().currentUser.
+    print("All done reset")
 }
 
 func updateEmail(email: String, onError:  @escaping (_ errorMessage: String?) -> Void){
@@ -75,7 +73,6 @@ func CreateDriverDetails(licencePlate: String, car: String, color: String, lives
     } else {
         print("Could not unwrap email")
     }
-
 }
 
 
@@ -113,8 +110,7 @@ func uploadProfilePicture(profileImage: UIImage, handler: @escaping AuthDataResu
     storage.reference().child(user!).putData(profileImage.jpegData(compressionQuality: 0.1)!, metadata: nil){
         (_,error) in
         if error != nil{
-            print("Error hit")
-            print(error?.localizedDescription)
+            print(error!.localizedDescription)
         } else {
             print("SUCCESS")
         }

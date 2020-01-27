@@ -7,8 +7,10 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct RiderProfile: View {
+    @ObservedObject var imageLink = getProfileImage()
     
     @ObservedObject var userInfo: GetUserInformation
     
@@ -20,7 +22,23 @@ struct RiderProfile: View {
         NavigationView{
             VStack(){
                 
-                ProfilePicture(userID: userInfo.user.id)
+                if(imageLink.pathString != ""){
+                    AnimatedImage(url: URL(string: imageLink.pathString)!)
+                        .placeholder(UIImage(named: "User"))
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                        .shadow(radius: 10)
+                } else {
+                    Image(uiImage: UIImage(named: "User")!)
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                        .shadow(radius: 10)
+                }
+                
                 
                 Text("\(userInfo.user.firstName)")
                 Text("\(userInfo.user.lastName)")

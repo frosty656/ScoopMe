@@ -50,7 +50,9 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>To get current rides close to the user</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>To get current rides close to the user</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

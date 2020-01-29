@@ -7,12 +7,18 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct Tabs : View {
     @EnvironmentObject var viewRouter: ViewRouter
+    let locationManager = CLLocationManager()
+    
+    init(){
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+    }
     
     var body: some View {
-
        TabView {
             ViewCurrentRides()
                 .tabItem {
@@ -24,7 +30,12 @@ struct Tabs : View {
                     Image(systemName: "mappin.and.ellipse")
                     Text("Locations")
                 }
-        Profile()
+            Directions()
+                .tabItem {
+                    Image(systemName: "map")
+                    Text("MapView")
+                }
+            Profile()
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")

@@ -28,7 +28,7 @@ class getLocations : ObservableObject{
 
 
 class getCurrentUserInformation : ObservableObject {
-    @Published var user: User = User(id: "", firstName: "", lastName: "", dorm: "")
+    @Published var user: User = User(id: "", firstName: "", lastName: "")
     
     var currentUser = Auth.auth().currentUser?.uid
 
@@ -53,8 +53,7 @@ class getCurrentUserInformation : ObservableObject {
                     self.user = User(
                         id: self.currentUser!,
                         firstName: document.get("first_name") as! String,
-                        lastName: document.get("last_name") as! String,
-                        dorm: document.get("Dorm") as! String)
+                        lastName: document.get("last_name") as! String)
                 }
                 else {
                     print("User does not exist")
@@ -119,7 +118,7 @@ class getMulptipleUsersNames : ObservableObject{
 }
 
 class GetUserInformation : ObservableObject{
-    @Published var user: User = User(id: "", firstName: "", lastName: "", dorm: "")
+    @Published var user: User = User(id: "", firstName: "", lastName: "")
 
     init(currentUser: String){
         let db = Firebase.Firestore.firestore().collection("Users")
@@ -136,8 +135,7 @@ class GetUserInformation : ObservableObject{
                     self.user = User(
                         id: currentUser,
                         firstName: document.get("first_name") as! String,
-                        lastName: document.get("last_name") as! String,
-                        dorm: document.get("Dorm") as! String)
+                        lastName: document.get("last_name") as! String)
                 }
                 else {
                     print("User does not exist")

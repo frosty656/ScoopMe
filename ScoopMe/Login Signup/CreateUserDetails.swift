@@ -40,17 +40,6 @@ struct CreateUserDetails: View {
             TextField("last name", text: $lastName)
 
             
-            Text("Dorm: " + self.dorm)
-                
-                
-                Button(action: {
-                   self.PickerUp.toggle()
-                }){
-                        Text("Choose Dorm")
-                }.sheet(isPresented: $PickerUp, content: {LocationPicker(location: self.$dorm)})
-                
-                
-            
             Button(action: {
                 self.errorMessage = ""
                 if(self.firstName.isEmpty){
@@ -59,17 +48,13 @@ struct CreateUserDetails: View {
                 if(self.lastName.isEmpty){
                     self.errorMessage.append("\nPlease enter last name")
                 }
-                if( self.dorm.isEmpty){
-                    self.errorMessage.append("\nPlease enter dorm")
-                }
-
                 
                 if(self.errorMessage != ""){
                     return
                 }
                 
 
-                CreateUserDetailsDocument(firstName: self.firstName, lastName: self.lastName, dorm: self.dorm){
+                CreateUserDetailsDocument(firstName: self.firstName, lastName: self.lastName){
                     err in
                     self.errorMessage = err!
                 }

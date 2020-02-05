@@ -15,7 +15,7 @@ struct RideDetails: View {
         VStack(){
             Text("Leaving at \(ride.leaveTime)")
             Text("Name: " + (ride.driver["Name"] ?? ""))
-            Text("From: " + ride.location + " to " + ride.destination)  
+            Text("From: " + ride.locationName + " to " + ride.destinationName)  
             Text("Seats: \(ride.seats)")
             
             Text("Passengers: ")
@@ -23,7 +23,7 @@ struct RideDetails: View {
             List{
                 ForEach(ride.riders, id: \.self){ i in
                     VStack(){
-                        Text("\(i["RiderName"] ?? "")")
+                        Text("\(i["riderName"] ?? "")")
                         NavigationLink(destination: RiderProfile(ride: i)){Text("")}
                         
                     }

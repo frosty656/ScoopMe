@@ -76,15 +76,14 @@ func CreateDriverDetails(licencePlate: String, car: String, color: String, lives
 }
 
 
-func CreateUserDetailsDocument(firstName: String, lastName: String, dorm: String,onError:  @escaping (_ errorMessage: String?) -> Void){
+func CreateUserDetailsDocument(firstName: String, lastName: String,onError:  @escaping (_ errorMessage: String?) -> Void){
     let ref = Firestore.firestore()
     let user = Auth.auth().currentUser?.uid
 
     if let unwrappedUser = user {
         ref.collection("Users").document(unwrappedUser).setData([
             "first_name": firstName,
-            "last_name": lastName,
-            "Dorm": dorm
+            "last_name": lastName
         ]){ err in
             if let err = err {
                 onError(err.localizedDescription)

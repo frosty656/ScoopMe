@@ -1,4 +1,5 @@
 import Foundation
+import Firebase
 struct LocationData : Identifiable {
     var id: String
     var name: String
@@ -10,7 +11,6 @@ struct User: Identifiable {
     let id: String
     let firstName: String
     let lastName: String
-    let dorm: String
 }
 
 struct usersName: Hashable {
@@ -23,7 +23,9 @@ struct Ride: Identifiable {
     let driver: [String: String]
     let riders: [[String: String]]
     let seats: Int
-    let location: String
-    let destination: String
+    let locationName: String
+    let destinationName: String
+    let locationGeoPoint: GeoPoint
+    let destinationGeoPoint: GeoPoint
     let leaveTime: Date
 }

@@ -25,12 +25,12 @@ struct Tabs : View {
                     Image(systemName: "house")
                     Text("Home")
                 }
-            LocationView()
-                .tabItem {
-                    Image(systemName: "mappin.and.ellipse")
-                    Text("Locations")
-                }
-            Directions()
+//            LocationView()
+//                .tabItem {
+//                    Image(systemName: "mappin.and.ellipse")
+//                    Text("Locations")
+//                }
+            SearchForLocation()
                 .tabItem {
                     Image(systemName: "map")
                     Text("MapView")

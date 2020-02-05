@@ -15,7 +15,7 @@ struct RiderProfile: View {
     @ObservedObject var userInfo: GetUserInformation
     
     init(ride: [String: String]){
-        self.userInfo =  GetUserInformation(currentUser: ride["RiderID"]!)
+        self.userInfo =  GetUserInformation(currentUser: ride["riderID"]!)
     }
     
     var body: some View {
@@ -51,6 +51,6 @@ struct RiderProfile: View {
 
 struct RiderProfile_Previews: PreviewProvider {
     static var previews: some View {
-        RiderProfile(ride: ["Ridername": "Hello"])
+        RiderProfile(ride: ["ridername": "Hello"])
     }
 }

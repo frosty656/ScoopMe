@@ -42,7 +42,6 @@ struct RiderProfile: View {
                 
                 Text("\(userInfo.user.firstName)")
                 Text("\(userInfo.user.lastName)")
-                Text("\(userInfo.user.dorm)")
             }
         }
     }

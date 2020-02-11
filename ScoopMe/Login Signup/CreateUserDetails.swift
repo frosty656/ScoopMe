@@ -34,12 +34,12 @@ struct CreateUserDetails: View {
                 Text("Upload Profile Picture")
             }.sheet(isPresented: $showImagePicker){
                 imagePicker(isPresented: self.$showImagePicker, selectedImage: self.$profileImage)
+                //Have image croppped to square
             }
             
             TextField("first name", text: $firstName)
             TextField("last name", text: $lastName)
 
-            
             Button(action: {
                 self.errorMessage = ""
                 if(self.firstName.isEmpty){

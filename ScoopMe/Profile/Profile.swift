@@ -47,8 +47,6 @@ struct Profile: View {
                         VStack(){
                             
                             Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
-                                
-                            Text(userInfo.user.dorm)
                         }
                     }
                     .font(.system(size: 24))

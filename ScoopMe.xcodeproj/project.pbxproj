@@ -41,7 +41,6 @@
 		58B534AD23B804D5004D2341 /* MainLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B534AC23B804D5004D2341 /* MainLocationView.swift */; };
 		58BA981623998417009DA48F /* ChangeEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BA981523998417009DA48F /* ChangeEmailView.swift */; };
 		58BA98182399842C009DA48F /* ChangeProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BA98172399842C009DA48F /* ChangeProfileImage.swift */; };
-		58BA981A23998478009DA48F /* ChangeDormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BA981923998478009DA48F /* ChangeDormView.swift */; };
 		58BA981C23998496009DA48F /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BA981B23998496009DA48F /* ChangeNameView.swift */; };
 		58C08AD8233A689B004CFFA7 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C08AD7233A689B004CFFA7 /* LoginPage.swift */; };
 		58C85E3A23E74DB5007D3985 /* SearchForLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C85E3923E74DB5007D3985 /* SearchForLocation.swift */; };
@@ -113,7 +112,6 @@
 		58B534AC23B804D5004D2341 /* MainLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLocationView.swift; sourceTree = "<group>"; };
 		58BA981523998417009DA48F /* ChangeEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailView.swift; sourceTree = "<group>"; };
 		58BA98172399842C009DA48F /* ChangeProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileImage.swift; sourceTree = "<group>"; };
-		58BA981923998478009DA48F /* ChangeDormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDormView.swift; sourceTree = "<group>"; };
 		58BA981B23998496009DA48F /* ChangeNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
 		58C08AD7233A689B004CFFA7 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		58C85E3923E74DB5007D3985 /* SearchForLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForLocation.swift; sourceTree = "<group>"; };
@@ -307,7 +305,6 @@
 				58A84A162398B8CA002E8D34 /* ResetPasswordView.swift */,
 				58BA981523998417009DA48F /* ChangeEmailView.swift */,
 				58BA98172399842C009DA48F /* ChangeProfileImage.swift */,
-				58BA981923998478009DA48F /* ChangeDormView.swift */,
 				58BA981B23998496009DA48F /* ChangeNameView.swift */,
 				587B934523A82BA100C4B2F7 /* SettingsView.swift */,
 			);
@@ -516,7 +513,6 @@
 				587B934623A82BA200C4B2F7 /* SettingsView.swift in Sources */,
 				580C4B402370A3B400C0DFED /* RideDetails.swift in Sources */,
 				58BA981623998417009DA48F /* ChangeEmailView.swift in Sources */,
-				58BA981A23998478009DA48F /* ChangeDormView.swift in Sources */,
 				585BAB2E23A2970500CD617A /* LocationPicker.swift in Sources */,
 				58A84A1923993778002E8D34 /* Ride Management.swift in Sources */,
 				587B934A23A82C4300C4B2F7 /* User Information.swift in Sources */,

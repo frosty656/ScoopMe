@@ -28,10 +28,6 @@ struct SettingsView: View{
                     NavigationLink(destination: ChangeProfileImage()){
                         Text("Change Profile Image")
                     }
-                        
-                    NavigationLink(destination: ChangeDormView()){
-                        Text("Change Dorm")
-                    }
 
                     NavigationLink(destination: ChangeNameView()){
                         Text("Change Name")

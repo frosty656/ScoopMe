@@ -49,6 +49,8 @@ struct DeclareRideView: View {
             }
             Divider()
             Button("Declare Ride"){
+                
+                //Check ride time vs current time
                 self.declareRide()
                 self.locationsVisible.wrappedValue.dismiss()
             }

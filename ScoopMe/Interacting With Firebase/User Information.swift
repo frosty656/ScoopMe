@@ -151,15 +151,12 @@ class getProfileImage : ObservableObject {
     
     init(userID: String? = ""){
 
-        //,onError:  @escaping (_ errorMessage: String?) -> Void
         if Auth.auth().currentUser?.uid == nil{
             return
         }
 
         var user = userID
         if userID == ""{
-            print("Getting Current Users Profile Image")
-            
             user = Auth.auth().currentUser!.uid
         }
     
@@ -169,7 +166,6 @@ class getProfileImage : ObservableObject {
             (url, err) in
             if err != nil {
                 print(err!.localizedDescription)
-                //onError(err!.localizedDescription)
                 return
             }
             self.pathString = "\(url!)"

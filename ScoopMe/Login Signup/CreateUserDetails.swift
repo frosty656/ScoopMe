@@ -46,7 +46,7 @@ struct CreateUserDetails: View {
                     self.errorMessage.append("Please enter first name")
                 }
                 if(self.lastName.isEmpty){
-                    self.errorMessage.append("\nPlease enter last name")
+                    self.errorMessage.append("\n Please enter last name")
                 }
                 
                 if(self.errorMessage != ""){

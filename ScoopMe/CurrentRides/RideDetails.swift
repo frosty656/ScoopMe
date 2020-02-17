@@ -13,12 +13,12 @@ struct RideDetails: View {
     
     var body: some View {
         VStack(){
-            Text("Leaving at \(ride.leaveTime)")
-            Text("Name: " + (ride.driver["Name"] ?? ""))
-            Text("From: " + ride.locationName + " to " + ride.destinationName)  
-            Text("Seats: \(ride.seats)")
+            Text("\("Leaving at".localized): \(ride.leaveTime)")
+            Text("\("Name".localized): " + (ride.driver["Name"] ?? ""))
+            Text("\("From".localized): " + ride.locationName + " to " + ride.destinationName)
+            Text("\("Seats".localized): \(ride.seats)")
             
-            Text("Passengers: ")
+            Text("\("Passengers".localized):")
             
             List{
                 ForEach(ride.riders, id: \.self){ i in
@@ -33,9 +33,8 @@ struct RideDetails: View {
             Button(action: {
                 joinRide(ride: self.ride)
                 }) {
-                Text("  Join  ")
+                Text("Join")
                 .fontWeight(.bold)
-                //.font(.system(size: 24))
                 .padding(2)
                 .background(Color.blue)
                 .cornerRadius(40)

@@ -26,7 +26,6 @@ struct Profile: View {
     var body: some View {
         NavigationView{
             VStack(){
-                
                 if(imageLink.pathString != ""){
                    AnimatedImage(url: URL(string: imageLink.pathString)!)
                        .placeholder(UIImage(named: "User"))
@@ -64,6 +63,7 @@ struct Profile: View {
                 .padding()
             }.sheet(isPresented: $showSettings)
             {SettingsView().environmentObject(self.viewRouter)})
+            
         }
     }
 }

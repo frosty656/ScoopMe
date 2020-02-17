@@ -35,7 +35,7 @@ struct WelcomePage: View {
                     .padding()
                 
                 NavigationLink(destination: FancyLogin()){
-                    Text("   Driver   ")
+                    Text("Driver")
                         .foregroundColor(Color.init(red: 30/255, green: 50/255, blue: 70/255))
                         .padding()
                         .background(Color.init(red: 255/255, green: 255/255, blue: 255/255))

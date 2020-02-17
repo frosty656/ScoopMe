@@ -33,7 +33,7 @@ struct DeclareRideView: View {
             .labelsHidden()
             
             HStack(){
-                Text("Avaiable Seats: ")
+                Text("Avaiable Seats:")
 
                 Button("-"){
                     if self.seats > 1 {

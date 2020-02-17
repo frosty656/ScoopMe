@@ -19,14 +19,14 @@ struct ViewCurrentRides: View {
                     HStack{
                         Text("\(i.locationName)\n -> \(i.destinationName)")
                             
-                        Text("Leaving: \(self.getHours(date: i.leaveTime))")
+                        Text(" \("Leaving".localized): \(self.getHours(date: i.leaveTime))")
                         
                         NavigationLink(destination: RideDetails(ride: i)){
                             Text("")
                         }.frame(width: 10, height: 10)
                     }
                 }
-            }.navigationBarTitle("Rides:")
+            }.navigationBarTitle("\("Rides".localized):")
         }
     }
     

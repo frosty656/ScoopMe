@@ -22,7 +22,9 @@ struct Directions: View {
                 .font(.largeTitle)
             Text("\(location.placemark.title ?? "")")
                 .font(.subheadline)
-            Text("Distance: \((distance / 1000)*0.6213712, specifier: "%.2f")mi")
+
+            Text(" \("Distance".localized): \((distance / 1000)*0.6213712, specifier: "%.2f")mi")
+            
             Spacer()
             
             Button("Drive Here"){

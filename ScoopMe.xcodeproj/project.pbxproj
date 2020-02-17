@@ -36,13 +36,13 @@
 		589F6541238EC200005C0D1A /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 589F6540238EC200005C0D1A /* SDWebImageSwiftUI */; };
 		58A84A172398B8CA002E8D34 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A84A162398B8CA002E8D34 /* ResetPasswordView.swift */; };
 		58A84A1923993778002E8D34 /* Ride Management.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A84A1823993778002E8D34 /* Ride Management.swift */; };
-		58AE3FBC23DB792A00E5B958 /* deleteme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE3FBB23DB792A00E5B958 /* deleteme.swift */; };
 		58AFBBD523E1D3D10094E132 /* Maps and Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AFBBD423E1D3D10094E132 /* Maps and Location.swift */; };
 		58B534AD23B804D5004D2341 /* MainLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B534AC23B804D5004D2341 /* MainLocationView.swift */; };
 		58BA981623998417009DA48F /* ChangeEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BA981523998417009DA48F /* ChangeEmailView.swift */; };
 		58BA98182399842C009DA48F /* ChangeProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BA98172399842C009DA48F /* ChangeProfileImage.swift */; };
 		58BA981C23998496009DA48F /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BA981B23998496009DA48F /* ChangeNameView.swift */; };
 		58C08AD8233A689B004CFFA7 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C08AD7233A689B004CFFA7 /* LoginPage.swift */; };
+		58C5AB7023F6EDB400E5ACBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C5AB7223F6EDB400E5ACBC /* Localizable.strings */; };
 		58C85E3A23E74DB5007D3985 /* SearchForLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C85E3923E74DB5007D3985 /* SearchForLocation.swift */; };
 		58D44AFC23317DD00051A764 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D44AFB23317DCF0051A764 /* Tabs.swift */; };
 		58E261EB23E08A4E009874FB /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E261EA23E08A4E009874FB /* Directions.swift */; };
@@ -74,6 +74,9 @@
 		1EA6A46C5814C6E6AB37ED4A /* Pods-ScoopMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoopMe.debug.xcconfig"; path = "Target Support Files/Pods-ScoopMe/Pods-ScoopMe.debug.xcconfig"; sourceTree = "<group>"; };
 		2F2E12BEF4E9CC019DDD1FDC /* Pods_ScoopMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScoopMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58039ED3233510E100A307E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5804BD2A23F6EE9B006C256B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5804BD2B23F6EF30006C256B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5804BD2C23F72A51006C256B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		580A3BD123E865DE00A4971D /* DeclareRideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclareRideView.swift; sourceTree = "<group>"; };
 		580C4B3D2370A1D400C0DFED /* ViewCurrentRides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCurrentRides.swift; sourceTree = "<group>"; };
 		580C4B3F2370A3B400C0DFED /* RideDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetails.swift; sourceTree = "<group>"; };
@@ -107,13 +110,14 @@
 		5890DD5F23621A7B002F7819 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		58A84A162398B8CA002E8D34 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		58A84A1823993778002E8D34 /* Ride Management.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ride Management.swift"; sourceTree = "<group>"; };
-		58AE3FBB23DB792A00E5B958 /* deleteme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteme.swift; sourceTree = "<group>"; };
 		58AFBBD423E1D3D10094E132 /* Maps and Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Maps and Location.swift"; sourceTree = "<group>"; };
 		58B534AC23B804D5004D2341 /* MainLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLocationView.swift; sourceTree = "<group>"; };
 		58BA981523998417009DA48F /* ChangeEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailView.swift; sourceTree = "<group>"; };
 		58BA98172399842C009DA48F /* ChangeProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileImage.swift; sourceTree = "<group>"; };
 		58BA981B23998496009DA48F /* ChangeNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
+		58BBDECC23FB0601008652ED /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58C08AD7233A689B004CFFA7 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		58C5AB7123F6EDB400E5ACBC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58C85E3923E74DB5007D3985 /* SearchForLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForLocation.swift; sourceTree = "<group>"; };
 		58D44AFB23317DCF0051A764 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		58E261EA23E08A4E009874FB /* Directions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 				5810CA9A235FEE2F00930513 /* Location Views */,
 				58D8654F23314BC700796F54 /* Profile */,
 				5810CA96235FEDD400930513 /* DataStructures.swift */,
+				58C5AB7223F6EDB400E5ACBC /* Localizable.strings */,
 				582E7278232AAEA9008665A7 /* AppDelegate.swift */,
 				582E727A232AAEA9008665A7 /* SceneDelegate.swift */,
 				58D44AFB23317DCF0051A764 /* Tabs.swift */,
@@ -323,7 +328,6 @@
 			isa = PBXGroup;
 			children = (
 				585BAB3323A29A8400CD617A /* Profile.swift */,
-				58AE3FBB23DB792A00E5B958 /* deleteme.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -419,6 +423,10 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
+				es,
+				ar,
+				de,
 			);
 			mainGroup = 582E726C232AAEA9008665A7;
 			packageReferences = (
@@ -440,6 +448,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58C5AB7023F6EDB400E5ACBC /* Localizable.strings in Resources */,
 				582E7285232AAEAC008665A7 /* LaunchScreen.storyboard in Resources */,
 				58039ED4233510E100A307E7 /* GoogleService-Info.plist in Resources */,
 				582E7282232AAEAC008665A7 /* Preview Assets.xcassets in Resources */,
@@ -523,7 +532,6 @@
 				5810CA99235FEE2A00930513 /* LocationView.swift in Sources */,
 				58A84A172398B8CA002E8D34 /* ResetPasswordView.swift in Sources */,
 				587B934423A8282800C4B2F7 /* CountdownView.swift in Sources */,
-				58AE3FBC23DB792A00E5B958 /* deleteme.swift in Sources */,
 				582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */,
 				58BA98182399842C009DA48F /* ChangeProfileImage.swift in Sources */,
 				587B934C23A82C6100C4B2F7 /* CreateUserDetails.swift in Sources */,
@@ -589,6 +597,18 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		58C5AB7223F6EDB400E5ACBC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58C5AB7123F6EDB400E5ACBC /* en */,
+				5804BD2A23F6EE9B006C256B /* fr */,
+				5804BD2B23F6EF30006C256B /* es */,
+				5804BD2C23F72A51006C256B /* ar */,
+				58BBDECC23FB0601008652ED /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -596,6 +616,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -656,6 +677,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

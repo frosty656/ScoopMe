@@ -25,7 +25,7 @@ struct ViewCurrentRides: View {
                             Text("")
                         }.frame(width: 10, height: 10)
                     }
-                }
+                }.onDelete(perform: deleteItems)
             }.navigationBarTitle("\("Rides".localized):")
         }
     }
@@ -35,6 +35,10 @@ struct ViewCurrentRides: View {
         formatter1.dateFormat = "h:mm a"
         
         return (formatter1.string(from: date))
+    }
+    
+    func deleteItems(at offsets: IndexSet){
+        rideList.data.remove(atOffsets: offsets)
     }
 }
 

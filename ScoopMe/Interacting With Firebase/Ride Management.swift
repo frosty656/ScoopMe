@@ -101,6 +101,7 @@ class getCurrentRides : ObservableObject{
                     leaveTime: (i.get("leaveTime") as! Timestamp).dateValue()
                 )
                 self.data.append(nameData)
+                
             }
         }
     }

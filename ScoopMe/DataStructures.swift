@@ -30,7 +30,6 @@ struct Ride: Identifiable {
     let leaveTime: Date
 }
 
-
 extension String {
     var localized: String {
         return NSLocalizedString(self, comment: "")

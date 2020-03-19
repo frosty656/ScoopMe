@@ -10,23 +10,34 @@ import SwiftUI
 import FirebaseAuth
 
 struct ViewCurrentRides: View {
-    @ObservedObject var rideList = getCurrentRides()
+    @ObservedObject var rideList = getCurrentRides(distance: 10)
+    @State var searchTerm = ""
     
     var body: some View {
         NavigationView{
-            List{
-                ForEach(rideList.data) { i in
-                    HStack{
-                        Text("\(i.locationName)\n -> \(i.destinationName)")
-                            
-                        Text(" \("Leaving".localized): \(self.getHours(date: i.leaveTime))")
+            VStack(){
+                
+                TextField("Destination To Search", text: $searchTerm)
+                
+                List{
+                    ForEach(rideList.data.filter({ride -> Bool in
+                        if searchTerm.isEmpty {return true}
                         
-                        NavigationLink(destination: RideDetails(ride: i)){
-                            Text("")
-                        }.frame(width: 10, height: 10)
+                        return ride.destinationName.lowercased().contains(searchTerm.lowercased())
+                    })) {
+                        ride in
+                          HStack{    
+                                Text("\(ride.locationName)\n -> \(ride.destinationName)")
+        
+                                Text(" \("Leaving".localized): \(self.getHours(date: ride.leaveTime))")
+        
+                                NavigationLink(destination: RideDetails(ride: ride)){
+                                    Text("")
+                                }.frame(width: 10, height: 10)
+                        }
                     }
-                }
-            }.navigationBarTitle("\("Rides".localized):")
+                }.navigationBarTitle("\("Rides".localized):")
+            }.padding()
         }
     }
     

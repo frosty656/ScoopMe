@@ -7,7 +7,7 @@ struct LiveMapView: UIViewRepresentable {
     func makeUIView(context: Context) -> MKMapView {
             MKMapView(frame: .zero)
     }
-
+    
     func updateUIView(_ view: MKMapView, context: Context) {
         view.showsUserLocation = true
         

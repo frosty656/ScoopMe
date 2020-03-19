@@ -53,7 +53,6 @@ struct CreateUserDetails: View {
                     return
                 }
                 
-
                 CreateUserDetailsDocument(firstName: self.firstName, lastName: self.lastName){
                     err in
                     self.errorMessage = err!

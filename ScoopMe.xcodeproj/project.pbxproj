@@ -12,8 +12,6 @@
 		580C4B3E2370A1D400C0DFED /* ViewCurrentRides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C4B3D2370A1D400C0DFED /* ViewCurrentRides.swift */; };
 		580C4B402370A3B400C0DFED /* RideDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C4B3F2370A3B400C0DFED /* RideDetails.swift */; };
 		5810CA97235FEDD400930513 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5810CA96235FEDD400930513 /* DataStructures.swift */; };
-		5810CA99235FEE2A00930513 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5810CA98235FEE2A00930513 /* LocationView.swift */; };
-		581F3A64238C99EC00496103 /* NewRide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581F3A63238C99EC00496103 /* NewRide.swift */; };
 		581F3A66238C9A1300496103 /* RiderProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581F3A65238C9A1300496103 /* RiderProfile.swift */; };
 		582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E7278232AAEA9008665A7 /* AppDelegate.swift */; };
 		582E727B232AAEA9008665A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E727A232AAEA9008665A7 /* SceneDelegate.swift */; };
@@ -30,14 +28,11 @@
 		587B934A23A82C4300C4B2F7 /* User Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B934923A82C4300C4B2F7 /* User Information.swift */; };
 		587B934C23A82C6100C4B2F7 /* CreateUserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B934B23A82C6100C4B2F7 /* CreateUserDetails.swift */; };
 		587B934E23A82C8000C4B2F7 /* Change User Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B934D23A82C8000C4B2F7 /* Change User Information.swift */; };
-		588FB5FF233126890075BC27 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FB5FE233126890075BC27 /* MapView.swift */; };
-		588FB60123312ED10075BC27 /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FB60023312ED10075BC27 /* LocationDetails.swift */; };
 		5890DD6023621A7B002F7819 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5890DD5F23621A7B002F7819 /* CreateAccount.swift */; };
 		589F6541238EC200005C0D1A /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 589F6540238EC200005C0D1A /* SDWebImageSwiftUI */; };
 		58A84A172398B8CA002E8D34 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A84A162398B8CA002E8D34 /* ResetPasswordView.swift */; };
 		58A84A1923993778002E8D34 /* Ride Management.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A84A1823993778002E8D34 /* Ride Management.swift */; };
 		58AFBBD523E1D3D10094E132 /* Maps and Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AFBBD423E1D3D10094E132 /* Maps and Location.swift */; };
-		58B534AD23B804D5004D2341 /* MainLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B534AC23B804D5004D2341 /* MainLocationView.swift */; };
 		58BA981623998417009DA48F /* ChangeEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BA981523998417009DA48F /* ChangeEmailView.swift */; };
 		58BA98182399842C009DA48F /* ChangeProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BA98172399842C009DA48F /* ChangeProfileImage.swift */; };
 		58BA981C23998496009DA48F /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BA981B23998496009DA48F /* ChangeNameView.swift */; };
@@ -81,8 +76,6 @@
 		580C4B3D2370A1D400C0DFED /* ViewCurrentRides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCurrentRides.swift; sourceTree = "<group>"; };
 		580C4B3F2370A3B400C0DFED /* RideDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetails.swift; sourceTree = "<group>"; };
 		5810CA96235FEDD400930513 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
-		5810CA98235FEE2A00930513 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
-		581F3A63238C99EC00496103 /* NewRide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRide.swift; sourceTree = "<group>"; };
 		581F3A65238C9A1300496103 /* RiderProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderProfile.swift; sourceTree = "<group>"; };
 		582E7275232AAEA9008665A7 /* ScoopMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoopMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		582E7278232AAEA9008665A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,13 +98,10 @@
 		587B934923A82C4300C4B2F7 /* User Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User Information.swift"; sourceTree = "<group>"; };
 		587B934B23A82C6100C4B2F7 /* CreateUserDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserDetails.swift; sourceTree = "<group>"; };
 		587B934D23A82C8000C4B2F7 /* Change User Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Change User Information.swift"; sourceTree = "<group>"; };
-		588FB5FE233126890075BC27 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		588FB60023312ED10075BC27 /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
 		5890DD5F23621A7B002F7819 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		58A84A162398B8CA002E8D34 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		58A84A1823993778002E8D34 /* Ride Management.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ride Management.swift"; sourceTree = "<group>"; };
 		58AFBBD423E1D3D10094E132 /* Maps and Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Maps and Location.swift"; sourceTree = "<group>"; };
-		58B534AC23B804D5004D2341 /* MainLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLocationView.swift; sourceTree = "<group>"; };
 		58BA981523998417009DA48F /* ChangeEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailView.swift; sourceTree = "<group>"; };
 		58BA98172399842C009DA48F /* ChangeProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileImage.swift; sourceTree = "<group>"; };
 		58BA981B23998496009DA48F /* ChangeNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
@@ -183,17 +173,6 @@
 			path = CurrentRides;
 			sourceTree = "<group>";
 		};
-		5810CA9A235FEE2F00930513 /* Location Views */ = {
-			isa = PBXGroup;
-			children = (
-				5810CA98235FEE2A00930513 /* LocationView.swift */,
-				588FB60023312ED10075BC27 /* LocationDetails.swift */,
-				581F3A63238C99EC00496103 /* NewRide.swift */,
-				588FB5FE233126890075BC27 /* MapView.swift */,
-			);
-			path = "Location Views";
-			sourceTree = "<group>";
-		};
 		5810CA9B235FEE4200930513 /* Login Signup */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,12 +214,10 @@
 			isa = PBXGroup;
 			children = (
 				587075BF23DF618300F3AF99 /* Live Map */,
-				58B534AB23B804BC004D2341 /* New Locations */,
 				58A84A152398B814002E8D34 /* Change Information */,
 				58A528882343AA5400EF8873 /* Interacting With Firebase */,
 				5810CA9B235FEE4200930513 /* Login Signup */,
 				580C4B3C2370A1AA00C0DFED /* CurrentRides */,
-				5810CA9A235FEE2F00930513 /* Location Views */,
 				58D8654F23314BC700796F54 /* Profile */,
 				5810CA96235FEDD400930513 /* DataStructures.swift */,
 				58C5AB7223F6EDB400E5ACBC /* Localizable.strings */,
@@ -314,14 +291,6 @@
 				587B934523A82BA100C4B2F7 /* SettingsView.swift */,
 			);
 			path = "Change Information";
-			sourceTree = "<group>";
-		};
-		58B534AB23B804BC004D2341 /* New Locations */ = {
-			isa = PBXGroup;
-			children = (
-				58B534AC23B804D5004D2341 /* MainLocationView.swift */,
-			);
-			path = "New Locations";
 			sourceTree = "<group>";
 		};
 		58D8654F23314BC700796F54 /* Profile */ = {
@@ -525,11 +494,9 @@
 				585BAB2E23A2970500CD617A /* LocationPicker.swift in Sources */,
 				58A84A1923993778002E8D34 /* Ride Management.swift in Sources */,
 				587B934A23A82C4300C4B2F7 /* User Information.swift in Sources */,
-				588FB5FF233126890075BC27 /* MapView.swift in Sources */,
 				5810CA97235FEDD400930513 /* DataStructures.swift in Sources */,
 				92C823612396D856000DB78A /* MotherView.swift in Sources */,
 				92193FE32358DA830082FA2A /* WelcomePage.swift in Sources */,
-				5810CA99235FEE2A00930513 /* LocationView.swift in Sources */,
 				58A84A172398B8CA002E8D34 /* ResetPasswordView.swift in Sources */,
 				587B934423A8282800C4B2F7 /* CountdownView.swift in Sources */,
 				582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */,
@@ -539,17 +506,14 @@
 				58AFBBD523E1D3D10094E132 /* Maps and Location.swift in Sources */,
 				585BAB3423A29A8400CD617A /* Profile.swift in Sources */,
 				92C823632396D875000DB78A /* ViewRouter.swift in Sources */,
-				581F3A64238C99EC00496103 /* NewRide.swift in Sources */,
 				58C08AD8233A689B004CFFA7 /* LoginPage.swift in Sources */,
 				58D44AFC23317DD00051A764 /* Tabs.swift in Sources */,
 				58BA981C23998496009DA48F /* ChangeNameView.swift in Sources */,
-				588FB60123312ED10075BC27 /* LocationDetails.swift in Sources */,
 				580C4B3E2370A1D400C0DFED /* ViewCurrentRides.swift in Sources */,
 				582E727B232AAEA9008665A7 /* SceneDelegate.swift in Sources */,
 				58E261EB23E08A4E009874FB /* Directions.swift in Sources */,
 				581F3A66238C9A1300496103 /* RiderProfile.swift in Sources */,
 				92193FE12358D9EC0082FA2A /* FancyLogin.swift in Sources */,
-				58B534AD23B804D5004D2341 /* MainLocationView.swift in Sources */,
 				587075C123DF619600F3AF99 /* Map.swift in Sources */,
 				580A3BD223E865DE00A4971D /* DeclareRideView.swift in Sources */,
 				5890DD6023621A7B002F7819 /* CreateAccount.swift in Sources */,

@@ -6,11 +6,15 @@
 //  Copyright © 2019 Jacob Frost. All rights reserved.
 //
 import Firebase
+import SwiftUI
+import MapKit
 
 func NewRideDeclaration(ride: Ride) {
     
     let ref = Firestore.firestore()
     let user = Auth.auth().currentUser?.uid
+    
+    //Also update the users current ride history
     
     if let unwrappedUser = user {
         ref.collection("Rides").document().setData([
@@ -53,9 +57,28 @@ func joinRide(ride: Ride){
 
 class getCurrentRides : ObservableObject{
     @Published var data = [Ride]()
-    
-    init(){
-        let db = Firebase.Firestore.firestore().collection("Rides").whereField("leaveTime", isGreaterThan: Timestamp())
+    @ObservedObject var location =  usersLocation()
+    init(distance: Double){
+        
+        let lat = 0.0144927536231884 //One mile
+        let lon = 0.0181818181818182 //One mile
+        
+        let latitude = location.currentLocation.latitude
+        let longitude = location.currentLocation.longitude
+        
+        let lowerLat = latitude - (lat * distance)
+        let lowerLon = longitude - (lon * distance)
+
+        let greaterLat = latitude + (lat * distance)
+        let greaterLon = longitude + (lon * distance)
+
+        let lesserGeopoint = GeoPoint(latitude: lowerLat, longitude: lowerLon)
+        let greaterGeopoint = GeoPoint(latitude: greaterLat, longitude: greaterLon)
+        
+        let db = Firebase.Firestore.firestore().collection("Rides")
+            .whereField("leaveTime", isGreaterThan: Timestamp())
+            .whereField("destinationGeoPoint", isLessThan: greaterGeopoint)
+            .whereField("destinationGeoPoint", isGreaterThan: lesserGeopoint)
         
         db.addSnapshotListener{ (snap, err) in
             if err != nil{

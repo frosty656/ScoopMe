@@ -37,8 +37,9 @@ struct ViewCurrentRides: View {
                         }
                     }
 
-                }.onDelete(perform: deleteItems)
+                }
             }.navigationBarTitle("\("Rides".localized):")
+            .padding()
         }
     }
     

@@ -77,8 +77,8 @@ class getCurrentRides : ObservableObject{
         
         let db = Firebase.Firestore.firestore().collection("Rides")
             .whereField("leaveTime", isGreaterThan: Timestamp())
-            .whereField("destinationGeoPoint", isLessThan: greaterGeopoint)
-            .whereField("destinationGeoPoint", isGreaterThan: lesserGeopoint)
+           // .whereField("destinationGeoPoint", isLessThan: greaterGeopoint)
+           // .whereField("destinationGeoPoint", isGreaterThan: lesserGeopoint)
         
         db.addSnapshotListener{ (snap, err) in
             if err != nil{

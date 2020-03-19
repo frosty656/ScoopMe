@@ -19,14 +19,40 @@ struct CreateAccount: View {
     
     var body: some View {
         VStack{
+            Text("Create an Account")
+                .font(.largeTitle)
+                .foregroundColor(.gray)
             
+            Text("Start sharing rides today")
+                .font(.caption)
+                .font(.system(size: 30))
+                .foregroundColor(Color(.systemTeal))
+                .bold()
+             
             Text(self.errorText)
+                .foregroundColor(Color(.systemRed))
             
-            TextField("SNHU Email", text: $emailAddress)
-            SecureField("Password", text: $password)
-            SecureField("Password", text: $passwordConfirm)
+            VStack(spacing: 30){
+                    
+                TextField("Email Address", text: $emailAddress)
+                    .padding(10)
+                    .font(.subheadline)
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.systemBlue), lineWidth: 1))
+                        
+                SecureField("Password", text: $password)
+                    .padding(10)
+                    .font(.subheadline)
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.systemBlue), lineWidth: 1))
+                
+                SecureField("Confirm password", text: $passwordConfirm)
+                    .padding(10)
+                    .font(.subheadline)
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.systemBlue), lineWidth: 1))
+                        
+            }.padding(.vertical, 50)
+            .padding(.trailing, 30)
             
-            
+            Spacer()
             
             Button(action: {
                 CreateUser(email: self.emailAddress, password: self.password){
@@ -46,11 +72,12 @@ struct CreateAccount: View {
                 
             }) {
                 NextButtonContent()
-            }
-            
+                
+            }.padding(20)
             Button(action: {self.viewRouter.currentPage = "Login"}){
                     Text("Login")
             }
+            Spacer()
             
         }.padding()
     }
@@ -66,7 +93,12 @@ struct CreateAccount_Previews: PreviewProvider {
 
 struct NextButtonContent : View {
     var body: some View {
-        return Text("Create Account")
+        Text("Create Account")
+                .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 60)
+                .font(.system(.headline))
+                .background(Color(.systemBlue))
+                .foregroundColor(.white)
+                .cornerRadius(5)
     }
 }
 

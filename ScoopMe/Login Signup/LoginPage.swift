@@ -32,11 +32,34 @@ struct LoginPage: View {
     
     var body: some View {
         NavigationView{
+            
             VStack(spacing: 20){
+                Text("Welcome to ScoopMe")
+                    .font(.system(size: 30, weight: .heavy))
+                    .foregroundColor(Color(.systemBlue))
+                
+                Text("Sign in to continue")
+                    .font(.body)
+                    .foregroundColor(.gray)
+                
                 Text("\(errorText)")
                 
-                TextField("SNHU Email", text: $emailAddress)
-                SecureField("Password", text: $password)
+                VStack(spacing: 30){
+                    
+                    TextField("Email Address", text: $emailAddress)
+                        .padding(10)
+                        .font(.subheadline)
+                        .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.systemBlue), lineWidth: 1))
+                        
+                    SecureField("Password", text: $password)
+                        .padding(10)
+                        .font(.subheadline)
+                        .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.systemBlue), lineWidth: 1))
+                        
+                }.padding(.vertical, 50)
+                .padding(20)
+                
+                Spacer()
                 
                 Button(action:{
                     logIn(email: self.emailAddress, password: self.password){
@@ -50,11 +73,23 @@ struct LoginPage: View {
                     
                 }) {
                     Text("Login")
+                        .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 60)
+                        .font(.system(.headline))
+                        .background(Color(.systemBlue))
+                        .foregroundColor(.white)
+                        .cornerRadius(5)
+                    Spacer()
                     
                 }
-
-                Button(action: {self.viewRouter.currentPage = "CreateAccount"}){
-                        Text("Create Account")
+                
+                HStack {
+                    Text("New User? ")
+                        .font(.subheadline)
+                        .foregroundColor(Color(.gray))
+                    Button(action: {self.viewRouter.currentPage = "CreateAccount"}){
+                            Text("Create Account")
+                                .font(.subheadline)
+                    }
                 }
                 
                 NavigationLink(destination: ResetPasswordView()){

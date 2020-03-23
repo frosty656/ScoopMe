@@ -41,15 +41,18 @@ struct Profile: View {
                        .clipShape(Circle())
                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
                        .shadow(radius: 10)
+                    Spacer()
                }
-                    HStack(){
-                        VStack(){
+                
+                
+                HStack(){
+                    
+                    VStack(alignment: .leading){
                             
                             Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
                         }
                     }
                     .font(.system(size: 24))
-                    Spacer()
                 }
                 .padding()
                 .navigationBarTitle("Profile")

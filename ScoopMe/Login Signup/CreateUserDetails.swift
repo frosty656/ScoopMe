@@ -37,9 +37,17 @@ struct CreateUserDetails: View {
                 //Have image croppped to square
             }
             
-            TextField("first name", text: $firstName)
-            TextField("last name", text: $lastName)
+            TextField("First name", text: $firstName)
+                .padding(15)
+                .font(.subheadline)
+                .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.systemBlue), lineWidth: 1))
+            TextField("Last name", text: $lastName)
+                .padding(15)
+                .font(.subheadline)
+                .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.systemBlue), lineWidth: 1))
 
+            Spacer()
+            
             Button(action: {
                 self.errorMessage = ""
                 if(self.firstName.isEmpty){

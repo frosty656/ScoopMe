@@ -85,23 +85,22 @@ class usersLocation : ObservableObject {
     }
 }
 
-class usersLocation123 : ObservableObject {
-    @Published var currentLocation: CLLocationCoordinate2D
-    let locationManager = CLLocationManager()
-    init(){
-        let status = CLLocationManager.authorizationStatus()
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        
-        if status == .authorizedAlways || status == .authorizedWhenInUse {
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-            currentLocation = locationManager.location?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)
-        } else {
-            currentLocation = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-        }
-    }
-}
+//class usersLocation123 : ObservableObject {
+//    @Published var currentLocation: CLLocationCoordinate2D
+//    let locationManager = CLLocationManager()
+//    init(){
+//        let status = CLLocationManager.authorizationStatus()
+//        locationManager.requestAlwaysAuthorization()
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//
+//        if status == .authorizedAlways || status == .authorizedWhenInUse {
+//            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+//            locationManager.startUpdatingLocation()
+//            currentLocation = locationManager.location?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)
+//        } else {
+//            currentLocation = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+//        }
+//    }
+//}
 

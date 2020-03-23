@@ -17,14 +17,14 @@ struct SearchForLocation: View {
        
         var body: some View {
            NavigationView{
-               ZStack(){
-                   LiveMapView()
+               VStack(){
+                mapViewSearchresults(locations: $searchResults)
                    VStack(){
                        HStack {
                            HStack {
                                Image(systemName: "magnifyingglass")
 
-                               TextField("search", text: $searchText, onEditingChanged: { isEditing in
+                               TextField("Search", text: $searchText, onEditingChanged: { isEditing in
                                    self.showCancelButton = true
                                    self.showSearch = true
                                }, onCommit: {
@@ -99,15 +99,15 @@ struct SearchForLocation: View {
            search.start { response, error in
                guard let response = response else {
                    print("Error: \(error?.localizedDescription ?? "Unknown error").")
-                    
+
                    return
                }
 
             self.searchResults.removeAll()
-            
+
                for item in response.mapItems {
                    self.searchResults.append(item)
-                
+
                }
            }
        }

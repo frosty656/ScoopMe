@@ -39,7 +39,7 @@ class getCurrentUserInformation : ObservableObject {
             print("User Not singed in")
             return
         }
-        
+        print("Declairing doc")
         db.document(currentUser!).getDocument{
             (snap, err) in
             if err != nil{
@@ -47,7 +47,9 @@ class getCurrentUserInformation : ObservableObject {
                 onError((err?.localizedDescription)!)
                 return
             }
+            print("before snap exists")
             if snap!.exists{
+                print("before doc snap")
                 if let document = snap {
                     print("Profile Info Gathered")
                     self.user = User(
@@ -58,6 +60,8 @@ class getCurrentUserInformation : ObservableObject {
                 else {
                     print("User does not exist")
                 }
+            } else {
+                print("No snap was found")
             }
         }
         
@@ -132,6 +136,7 @@ class GetUserInformation : ObservableObject{
             if snap!.exists{
                 if let document = snap {
                     print("USER PROFILE INFO GATHERED")
+                    print( document.get("first_name") as! String)
                     self.user = User(
                         id: currentUser,
                         firstName: document.get("first_name") as! String,

@@ -13,6 +13,7 @@
 		580C4B402370A3B400C0DFED /* RideDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C4B3F2370A3B400C0DFED /* RideDetails.swift */; };
 		5810CA97235FEDD400930513 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5810CA96235FEDD400930513 /* DataStructures.swift */; };
 		581F3A66238C9A1300496103 /* RiderProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581F3A65238C9A1300496103 /* RiderProfile.swift */; };
+		582DD6E4242931FC00AD0C72 /* GetLocationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582DD6E3242931FC00AD0C72 /* GetLocationInformation.swift */; };
 		582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E7278232AAEA9008665A7 /* AppDelegate.swift */; };
 		582E727B232AAEA9008665A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E727A232AAEA9008665A7 /* SceneDelegate.swift */; };
 		582E727F232AAEAC008665A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 582E727E232AAEAC008665A7 /* Assets.xcassets */; };
@@ -40,7 +41,7 @@
 		58C5AB7023F6EDB400E5ACBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C5AB7223F6EDB400E5ACBC /* Localizable.strings */; };
 		58C85E3A23E74DB5007D3985 /* SearchForLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C85E3923E74DB5007D3985 /* SearchForLocation.swift */; };
 		58D44AFC23317DD00051A764 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D44AFB23317DCF0051A764 /* Tabs.swift */; };
-		58E261EB23E08A4E009874FB /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E261EA23E08A4E009874FB /* Directions.swift */; };
+		58E261EB23E08A4E009874FB /* GetAndDisplayDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E261EA23E08A4E009874FB /* GetAndDisplayDirections.swift */; };
 		92193FE12358D9EC0082FA2A /* FancyLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92193FE02358D9EC0082FA2A /* FancyLogin.swift */; };
 		92193FE32358DA830082FA2A /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92193FE22358DA830082FA2A /* WelcomePage.swift */; };
 		92C823612396D856000DB78A /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C823602396D856000DB78A /* MotherView.swift */; };
@@ -77,6 +78,7 @@
 		580C4B3F2370A3B400C0DFED /* RideDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetails.swift; sourceTree = "<group>"; };
 		5810CA96235FEDD400930513 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		581F3A65238C9A1300496103 /* RiderProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderProfile.swift; sourceTree = "<group>"; };
+		582DD6E3242931FC00AD0C72 /* GetLocationInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationInformation.swift; sourceTree = "<group>"; };
 		582E7275232AAEA9008665A7 /* ScoopMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoopMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		582E7278232AAEA9008665A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		582E727A232AAEA9008665A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +112,7 @@
 		58C5AB7123F6EDB400E5ACBC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58C85E3923E74DB5007D3985 /* SearchForLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForLocation.swift; sourceTree = "<group>"; };
 		58D44AFB23317DCF0051A764 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
-		58E261EA23E08A4E009874FB /* Directions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
+		58E261EA23E08A4E009874FB /* GetAndDisplayDirections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAndDisplayDirections.swift; sourceTree = "<group>"; };
 		64FCD03276E89CCC17863B1C /* Pods-ScoopMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoopMe.release.xcconfig"; path = "Target Support Files/Pods-ScoopMe/Pods-ScoopMe.release.xcconfig"; sourceTree = "<group>"; };
 		92193FE02358D9EC0082FA2A /* FancyLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyLogin.swift; sourceTree = "<group>"; };
 		92193FE22358DA830082FA2A /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
@@ -265,8 +267,9 @@
 				587075C023DF619600F3AF99 /* Map.swift */,
 				58AFBBD423E1D3D10094E132 /* Maps and Location.swift */,
 				58C85E3923E74DB5007D3985 /* SearchForLocation.swift */,
-				58E261EA23E08A4E009874FB /* Directions.swift */,
+				58E261EA23E08A4E009874FB /* GetAndDisplayDirections.swift */,
 				580A3BD123E865DE00A4971D /* DeclareRideView.swift */,
+				582DD6E3242931FC00AD0C72 /* GetLocationInformation.swift */,
 			);
 			path = "Live Map";
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 			files = (
 				587B934623A82BA200C4B2F7 /* SettingsView.swift in Sources */,
 				580C4B402370A3B400C0DFED /* RideDetails.swift in Sources */,
+				582DD6E4242931FC00AD0C72 /* GetLocationInformation.swift in Sources */,
 				58BA981623998417009DA48F /* ChangeEmailView.swift in Sources */,
 				585BAB2E23A2970500CD617A /* LocationPicker.swift in Sources */,
 				58A84A1923993778002E8D34 /* Ride Management.swift in Sources */,
@@ -511,7 +515,7 @@
 				58BA981C23998496009DA48F /* ChangeNameView.swift in Sources */,
 				580C4B3E2370A1D400C0DFED /* ViewCurrentRides.swift in Sources */,
 				582E727B232AAEA9008665A7 /* SceneDelegate.swift in Sources */,
-				58E261EB23E08A4E009874FB /* Directions.swift in Sources */,
+				58E261EB23E08A4E009874FB /* GetAndDisplayDirections.swift in Sources */,
 				581F3A66238C9A1300496103 /* RiderProfile.swift in Sources */,
 				92193FE12358D9EC0082FA2A /* FancyLogin.swift in Sources */,
 				587075C123DF619600F3AF99 /* Map.swift in Sources */,

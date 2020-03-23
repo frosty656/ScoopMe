@@ -11,7 +11,7 @@ import Firebase
 import SDWebImageSwiftUI
 struct Profile: View {
     //This needs to change to only run once
-    @ObservedObject var userInfo: getCurrentUserInformation
+    @ObservedObject var userInfo : getCurrentUserInformation
     @State private var showSettings = false
     @EnvironmentObject var viewRouter: ViewRouter
     @ObservedObject var imageLink = getProfileImage()

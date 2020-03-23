@@ -35,7 +35,7 @@ struct LoginPage: View {
             
             VStack(spacing: 20){
                 Text("Welcome to ScoopMe")
-                    .font(.system(size: 30, weight: .heavy))
+                    .font(.system(size: 25, weight: .heavy))
                     .foregroundColor(Color(.systemBlue))
                 
                 Text("Sign in to continue")
@@ -83,7 +83,7 @@ struct LoginPage: View {
                 }
                 
                 HStack {
-                    Text("New User? ")
+                    Text("New User?")
                         .font(.subheadline)
                         .foregroundColor(Color(.gray))
                     Button(action: {self.viewRouter.currentPage = "CreateAccount"}){

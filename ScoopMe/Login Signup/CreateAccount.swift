@@ -50,11 +50,11 @@ struct CreateAccount: View {
                     .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.systemBlue), lineWidth: 1))
                         
             }.padding(.vertical, 50)
-            .padding(.trailing, 30)
+            //.padding(.trailing, 30)
             
-            Spacer()
             
-            Button(action: {
+            
+            Button("Create Account") {
                 CreateUser(email: self.emailAddress, password: self.password){
                     (result, error) in
                     if error != nil{
@@ -70,12 +70,14 @@ struct CreateAccount: View {
                     }
                 }
                 
-            }) {
-                NextButtonContent()
-                
-            }.padding(20)
-            Button(action: {self.viewRouter.currentPage = "Login"}){
-                    Text("Login")
+            }
+            .buttonStyle(NormalButton())
+            HStack{
+                Text("Already have an account?")
+                Button(action: {self.viewRouter.currentPage = "Login"}){
+                        Text("Login")
+                    
+                }
             }
             Spacer()
             
@@ -90,15 +92,3 @@ struct CreateAccount_Previews: PreviewProvider {
     }
 }
 #endif
-
-struct NextButtonContent : View {
-    var body: some View {
-        Text("Create Account")
-                .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 60)
-                .font(.system(.headline))
-                .background(Color(.systemBlue))
-                .foregroundColor(.white)
-                .cornerRadius(5)
-    }
-}
-

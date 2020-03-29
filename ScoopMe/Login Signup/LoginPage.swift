@@ -56,12 +56,10 @@ struct LoginPage: View {
                         .font(.subheadline)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.systemBlue), lineWidth: 1))
                         
-                }.padding(.vertical, 50)
-                .padding(20)
+                }//.padding(.vertical, 50)
+                //.padding(20)
                 
-                Spacer()
-                
-                Button(action:{
+                Button("Login"){
                     logIn(email: self.emailAddress, password: self.password){
                         (result, error) in
                         if error != nil{
@@ -71,16 +69,7 @@ struct LoginPage: View {
                         }
                     }
                     
-                }) {
-                    Text("Login")
-                        .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 60)
-                        .font(.system(.headline))
-                        .background(Color(.systemBlue))
-                        .foregroundColor(.white)
-                        .cornerRadius(5)
-                    Spacer()
-                    
-                }
+                }.buttonStyle(NormalButton())
                 
                 HStack {
                     Text("New User?")

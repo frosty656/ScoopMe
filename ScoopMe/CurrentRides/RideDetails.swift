@@ -13,8 +13,8 @@ struct RideDetails: View {
     
     var body: some View {
         VStack(){
-            Text("\("Leaving at".localized): \(ride.leaveTime)")
-            Text("\("Name".localized): " + (ride.driver["Name"] ?? ""))
+            Text("\("Leaving".localized): \(formatDate(dateToFormat: ride.leaveTime))")
+            Text("\("Driver".localized): " + (ride.driver["Name"] ?? ""))
             Text("\("From".localized): " + ride.locationName + " to " + ride.destinationName)
             Text("\("Seats".localized): \(ride.seats)")
             
@@ -30,23 +30,12 @@ struct RideDetails: View {
                 }
             }   
             
-            Button(action: {
+            Button("Join"){
                 joinRide(ride: self.ride)
-                }) {
-                Text("Join")
-                .fontWeight(.bold)
-                .padding(2)
-                .background(Color.blue)
-                .cornerRadius(40)
-                .foregroundColor(.white)
-                .padding(5)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 40)
-                        .stroke(Color.blue, lineWidth: 3)
-                )
-            }
+                    
+            }.buttonStyle(NormalButton())
            
-        }
+        }.padding()
         
     }
 }

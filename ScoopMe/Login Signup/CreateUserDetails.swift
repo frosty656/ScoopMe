@@ -46,9 +46,9 @@ struct CreateUserDetails: View {
                 .font(.subheadline)
                 .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.systemBlue), lineWidth: 1))
 
-            Spacer()
             
-            Button(action: {
+            
+            Button("Confirm"){
                 self.errorMessage = ""
                 if(self.firstName.isEmpty){
                     self.errorMessage.append("Please enter first name")
@@ -75,10 +75,7 @@ struct CreateUserDetails: View {
                 self.viewRouter.currentPage = "Tabs"
                 
                 
-            }) {
-                NextButtonContent()
-                
-            }
+            }.buttonStyle(NormalButton())
             Spacer()
         }.padding()
     }

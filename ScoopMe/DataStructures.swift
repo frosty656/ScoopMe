@@ -1,5 +1,6 @@
 import Foundation
 import Firebase
+import SwiftUI
 struct LocationData : Identifiable {
     var id: String
     var name: String
@@ -33,5 +34,16 @@ struct Ride: Identifiable {
 extension String {
     var localized: String {
         return NSLocalizedString(self, comment: "")
+    }
+}
+
+struct NormalButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 60)
+            .font(.system(.headline))
+            .background(Color(.systemBlue))
+            .foregroundColor(.white)
+            .cornerRadius(5)
     }
 }

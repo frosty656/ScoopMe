@@ -53,7 +53,7 @@ struct DeclareRideView: View {
                 //Check ride time vs current time
                 self.declareRide()
                 self.locationsVisible.wrappedValue.dismiss()
-            }
+            }.buttonStyle(NormalButton())
         }
     }
     

@@ -32,7 +32,9 @@ struct Directions: View {
             }
             .buttonStyle(NormalButton())
             
-        }.sheet(isPresented: self.$isUp, content: {DeclareRideView(locationDetails: self.location)})
+        }
+    .padding()
+        .sheet(isPresented: self.$isUp, content: {DeclareRideView(locationDetails: self.location)})
     }
 }
 
@@ -63,7 +65,7 @@ struct routeMapView :  UIViewRepresentable {
         destinationPin.title = "End"
         map.addAnnotation(destinationPin)
         
-        let region = MKCoordinateRegion(center: sourceCoordinate, latitudinalMeters: 100000, longitudinalMeters: 100000)
+        let region = MKCoordinateRegion(center: sourceCoordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
         map.region = region
         map.delegate = context.coordinator
         
@@ -82,7 +84,7 @@ struct routeMapView :  UIViewRepresentable {
             let polyline = direct?.routes.first?.polyline
             map.addOverlay(polyline!)
             map.setRegion(MKCoordinateRegion(polyline!.boundingMapRect), animated: true)
-            
+
             self.distance = direct?.routes.first?.distance as! Double / 1000
             
             print("Distance = \(self.distance)")

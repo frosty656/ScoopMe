@@ -17,8 +17,9 @@ struct SearchForLocation: View {
     
     var body: some View {
         NavigationView{
-            VStack(){
-                mapViewSearchresults(locations: $searchResults)
+            ZStack(){
+                mapViewSearchresults(locations: $searchResults )
+                
                 VStack(){
                     HStack {
                         HStack {
@@ -28,9 +29,9 @@ struct SearchForLocation: View {
                                 self.showCancelButton = true
                                 self.showSearch = true
                             }, onCommit: {
-                                print("onCommit")
                                 self.doSearch()
-                            }).foregroundColor(.primary)
+                            })
+                                .foregroundColor(.primary)
                             
                             Button(action: {
                                 self.searchText = ""
@@ -44,12 +45,10 @@ struct SearchForLocation: View {
                         .cornerRadius(10.0)
                         
                         if showCancelButton  {
-                            Button("Cancel") {
+                            Button("Hide") {
                                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
-                                self.searchText = ""
                                 self.showCancelButton = false
                                 self.showSearch = false
-                                self.searchResults.removeAll()
                             }
                             .foregroundColor(Color(.systemBlue))
                         }
@@ -66,8 +65,7 @@ struct SearchForLocation: View {
                                             Text("\(loc.name ?? "N/A")")
                                             Spacer()
                                         }
-                                        HStack(){
-                                            Text("\(loc.placemark.title?.components(separatedBy: ",")[0] ?? "N/A"),")
+                                        HStack(){    Text("\(loc.placemark.title?.components(separatedBy: ",")[0] ?? "N/A"),")
                                             Text("\(loc.placemark.title?.components(separatedBy: ",")[1] ?? "N/A")")
                                             Spacer()
                                         }.font(.body)
@@ -78,42 +76,35 @@ struct SearchForLocation: View {
                             }
                         }
                         .cornerRadius(10.0)
+                        .frame(height: 300)
                     }
                     Spacer()
                 }.padding()
             }
-                
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarHidden(true)
         }
     }
-    
+
     func doSearch() {
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = searchText
         let userLocation = usersLocation()
-        
-        searchRequest.region = MKCoordinateRegion(center: userLocation.currentLocation, latitudinalMeters: 100000, longitudinalMeters: 10000)
+
+        searchRequest.region = MKCoordinateRegion(center: userLocation.currentLocation, latitudinalMeters: 1000, longitudinalMeters: 1000)
+
         let search = MKLocalSearch(request: searchRequest)
         search.start { response, error in
             guard let response = response else {
                 print("Error: \(error?.localizedDescription ?? "Unknown error").")
-                
                 return
             }
-            
+
             self.searchResults.removeAll()
-            
+
             for item in response.mapItems {
                 self.searchResults.append(item)
-                
             }
         }
-    }
-}
-
-struct SearchForLocation_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchForLocation()
     }
 }

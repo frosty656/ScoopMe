@@ -54,6 +54,7 @@ struct DeclareRideView: View {
                 self.declareRide()
                 self.locationsVisible.wrappedValue.dismiss()
             }.buttonStyle(NormalButton())
+            .padding()
         }
     }
     
@@ -75,8 +76,3 @@ struct DeclareRideView: View {
     }
 }
 
-//struct DeclareRideView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DeclareRideView()
-//    }
-//}

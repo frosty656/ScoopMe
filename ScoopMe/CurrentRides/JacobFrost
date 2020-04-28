@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+//Jacob Frost
+//Programming Language Concepts Lab 9
+//Data types
+//void, int, char, double, float
+//Array, References, Pointers
+//Structers, Union, Enumeration
+
+union customUnion {
+   int custInt;
+   char custChar;
+}myUnion;
+
+struct customStruct
+{
+
+    int custInt;
+    float custFloat;
+} myStruct;
+
+void assignIntToTen(int* newInt){
+    printf("Reassigning integer...\n");
+    *newInt = 10;
+}
+
+int main()
+{
+    myUnion.custInt = 5;
+    myUnion.custChar = 'C';
+    myStruct.custInt = 4;
+    myStruct.custFloat = 10.0f;
+    int myInt = 1;
+    char myChar = 'H';
+    double myDouble = 2.2;
+    float myFloat = 3.3f;
+    int myArray[] = {4, 5, 6, 7, 8};
+    
+    //display all info
+    printf("The Union Consists Of:\n\tcustInt = %d\n\tcustChar = %d\n",myUnion.custInt, myUnion.custChar);
+    printf("The Struct Consists Of:\n\tcustInt = %d\n\tcustFloat = %f\n",myStruct.custInt, myStruct.custFloat);
+    printf("myInt = %d\n",myInt);
+    printf("myChar = %d\n",myChar);
+    printf("myDouble = %f\n",myDouble);
+    printf("myFloat = %f\n",myFloat);
+    printf("myArray consists of:\n");
+    for(int i = 0; i < 5; i++)
+    {
+      printf("\tmyArray[%d] = %d\n",i,myArray[i]);
+    }
+    assignIntToTen(&myInt);
+    printf("myInt = %d\n",myInt);
+    return 0;
+}

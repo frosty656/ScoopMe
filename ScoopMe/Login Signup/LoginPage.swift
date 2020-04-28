@@ -56,8 +56,7 @@ struct LoginPage: View {
                         .font(.subheadline)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.systemBlue), lineWidth: 1))
                         
-                }//.padding(.vertical, 50)
-                //.padding(20)
+                }
                 
                 Button("Login"){
                     logIn(email: self.emailAddress, password: self.password){

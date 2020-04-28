@@ -14,13 +14,22 @@ struct SearchForLocation: View {
     @State private var showSearch: Bool = false
     @State var searchText = ""
     @State var searchResults = [MKMapItem]()
+    @State var clickedItem: Int = 0
+    @State private var selection: String? = nil
+    @State private var shouldShowLocal: Int? = 0
     
     var body: some View {
         NavigationView{
             ZStack(){
-                mapViewSearchresults(locations: $searchResults )
+                if searchResults.count > 0 {
+                   // NavigationLink("", destination: Directions(location: searchResults[self.clickedItem]), isActive: self.$shouldShowLocal)
+                    
+                    NavigationLink(destination: Directions(location: searchResults[self.clickedItem]), tag: 1, selection: self.$shouldShowLocal, label: {Text("")})
+                }
+                mapViewSearchresults(locations: $searchResults, showDetails: self.$shouldShowLocal, choiceIndex: self.$clickedItem)
                 
                 VStack(){
+                    
                     HStack {
                         HStack {
                             Image(systemName: "magnifyingglass")
@@ -86,6 +95,17 @@ struct SearchForLocation: View {
         }
     }
 
+    func whatDidTheyClick() {
+        if selection == nil || selection == "" { return }
+        for i in Range(0 ... searchResults.count - 1){
+            if((searchResults[i].name?.contains("\(selection!)")) != nil){
+                clickedItem = i
+                
+                self.shouldShowLocal = 1
+            }
+        }
+    }
+    
     func doSearch() {
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = searchText

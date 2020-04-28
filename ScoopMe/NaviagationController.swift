@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import Foundation
+import Combine
 
 struct MotherView : View {
     
@@ -30,19 +32,22 @@ struct MotherView : View {
             else if viewRouter.currentPage == "PasswordReset" {
                 ResetPasswordView()
                     .transition(.fade)
-            }
-            
-            
-            
-            
+            }  
         }
     }
 }
 
-#if DEBUG
-struct MotherView_Previews : PreviewProvider {
-    static var previews: some View {
-        MotherView().environmentObject(ViewRouter())
+class ViewRouter: ObservableObject {
+    
+    let objectWillChange = PassthroughSubject<ViewRouter,Never>()
+
+    
+    var currentPage: String = currentlyLoggedIn() {
+        didSet {
+            withAnimation() {
+                objectWillChange.send(self)
+            }
+        }
     }
 }
-#endif
+

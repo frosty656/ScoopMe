@@ -35,6 +35,7 @@ struct Directions: View {
         }
     .padding()
         .sheet(isPresented: self.$isUp, content: {DeclareRideView(locationDetails: self.location)})
+    .navigationBarHidden(false)
     }
 }
 

@@ -16,7 +16,6 @@ struct ViewCurrentRides: View {
     var body: some View {
         NavigationView{
             VStack(){
-                
                 TextField("Destination To Search", text: $searchTerm)
                 
                 List{
@@ -26,20 +25,20 @@ struct ViewCurrentRides: View {
                         return ride.destinationName.lowercased().contains(searchTerm.lowercased())
                     })) {
                         ride in
-                          HStack{    
-                                Text("\(ride.locationName)\n -> \(ride.destinationName)")
-        
-                                Text(" \("Leaving".localized): \(self.getHours(date: ride.leaveTime))")
-        
-                                NavigationLink(destination: RideDetails(ride: ride)){
-                                    Text("")
-                                }.frame(width: 10, height: 10)
+                        HStack{
+                            Text("\(ride.locationName)\n -> \(ride.destinationName)")
+                            
+                            Text(" \("Leaving".localized): \(self.getHours(date: ride.leaveTime))")
+                            
+                            NavigationLink(destination: RideDetails(ride: ride)){
+                                Text("")
+                            }.frame(width: 10, height: 10)
                         }
                     }
-
+                    
                 }
             }.navigationBarTitle("\("Rides".localized):")
-            .padding()
+                .padding()
         }
     }
     

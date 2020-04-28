@@ -41,8 +41,7 @@
 		58C85E3A23E74DB5007D3985 /* SearchForLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C85E3923E74DB5007D3985 /* SearchForLocationView.swift */; };
 		58D44AFC23317DD00051A764 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D44AFB23317DCF0051A764 /* Tabs.swift */; };
 		58E261EB23E08A4E009874FB /* GetAndShowDirectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E261EA23E08A4E009874FB /* GetAndShowDirectionsView.swift */; };
-		92C823612396D856000DB78A /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C823602396D856000DB78A /* MotherView.swift */; };
-		92C823632396D875000DB78A /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C823622396D875000DB78A /* ViewRouter.swift */; };
+		92C823612396D856000DB78A /* NaviagationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C823602396D856000DB78A /* NaviagationController.swift */; };
 		D11DF82A5B9017C0EF656336 /* Pods_ScoopMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2E12BEF4E9CC019DDD1FDC /* Pods_ScoopMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,8 +109,7 @@
 		58D44AFB23317DCF0051A764 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		58E261EA23E08A4E009874FB /* GetAndShowDirectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAndShowDirectionsView.swift; sourceTree = "<group>"; };
 		64FCD03276E89CCC17863B1C /* Pods-ScoopMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoopMe.release.xcconfig"; path = "Target Support Files/Pods-ScoopMe/Pods-ScoopMe.release.xcconfig"; sourceTree = "<group>"; };
-		92C823602396D856000DB78A /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
-		92C823622396D875000DB78A /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		92C823602396D856000DB78A /* NaviagationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviagationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,8 +212,7 @@
 				5810CA96235FEDD400930513 /* DataStructures.swift */,
 				58C5AB7223F6EDB400E5ACBC /* Localizable.strings */,
 				582E7278232AAEA9008665A7 /* AppDelegate.swift */,
-				92C823602396D856000DB78A /* MotherView.swift */,
-				92C823622396D875000DB78A /* ViewRouter.swift */,
+				92C823602396D856000DB78A /* NaviagationController.swift */,
 				582E727A232AAEA9008665A7 /* SceneDelegate.swift */,
 				58D44AFB23317DCF0051A764 /* Tabs.swift */,
 				58039ED3233510E100A307E7 /* GoogleService-Info.plist */,
@@ -490,7 +487,7 @@
 				587B934A23A82C4300C4B2F7 /* User Information.swift in Sources */,
 				5810CA97235FEDD400930513 /* DataStructures.swift in Sources */,
 				584215EE2430DFAC0006424E /* Localize.swift in Sources */,
-				92C823612396D856000DB78A /* MotherView.swift in Sources */,
+				92C823612396D856000DB78A /* NaviagationController.swift in Sources */,
 				58A84A172398B8CA002E8D34 /* ResetPasswordView.swift in Sources */,
 				587B934423A8282800C4B2F7 /* CountdownView.swift in Sources */,
 				582E7279232AAEA9008665A7 /* AppDelegate.swift in Sources */,
@@ -499,7 +496,6 @@
 				587B934E23A82C8000C4B2F7 /* Change User Information.swift in Sources */,
 				58AFBBD523E1D3D10094E132 /* userLocation.swift in Sources */,
 				585BAB3423A29A8400CD617A /* Profile.swift in Sources */,
-				92C823632396D875000DB78A /* ViewRouter.swift in Sources */,
 				58C08AD8233A689B004CFFA7 /* LoginPage.swift in Sources */,
 				58D44AFC23317DD00051A764 /* Tabs.swift in Sources */,
 				58BA981C23998496009DA48F /* ChangeNameView.swift in Sources */,

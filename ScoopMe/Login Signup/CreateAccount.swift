@@ -50,10 +50,7 @@ struct CreateAccount: View {
                     .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.systemBlue), lineWidth: 1))
                         
             }.padding(.vertical, 50)
-            //.padding(.trailing, 30)
-            
-            
-            
+
             Button("Create Account") {
                 CreateUser(email: self.emailAddress, password: self.password){
                     (result, error) in
@@ -69,14 +66,12 @@ struct CreateAccount: View {
 
                     }
                 }
-                
             }
             .buttonStyle(NormalButton())
             HStack{
                 Text("Already have an account?")
                 Button(action: {self.viewRouter.currentPage = "Login"}){
                         Text("Login")
-                    
                 }
             }
             Spacer()

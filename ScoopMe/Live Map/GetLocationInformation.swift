@@ -1,13 +1,16 @@
 import SwiftUI
 import MapKit
 
+
 struct mapViewSearchresults :  UIViewRepresentable {
     @Binding var locations: [MKMapItem]
+    @Binding var showDetails: Int?
+    @Binding var choiceIndex: Int
+    
     let map = MKMapView()
     
-
-    func makeCoordinator() -> mapViewSearchresults.Coordinator {
-        return  mapViewSearchresults.Coordinator()
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
     }
 
     func makeUIView(context: UIViewRepresentableContext<mapViewSearchresults>) -> MKMapView {
@@ -21,42 +24,60 @@ struct mapViewSearchresults :  UIViewRepresentable {
         return map
     }
 
+    //This should have logic to only remove unnecessary ones and add new ones
+    //Do NOT touch ones that stay the same. No reason to redraw
     func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<mapViewSearchresults>) {
         
-        let allAnnotations = uiView.annotations
-        uiView.removeAnnotations(allAnnotations)
-        
+        if locations.count < 1 {
+            let allAnnotations = uiView.annotations
+            
+            uiView.removeAnnotations(allAnnotations)
+        }
+
         if locations.count > 0{
             
             for i in 0...locations.count - 1{
-                let location = MKPointAnnotation()
+                //Check if item already exists
                 
-                location.title = locations[i].placemark.title?.components(separatedBy: ",")[1] ?? "N/A"
+                let alreadyExists = uiView.annotations.first(where: {$0.coordinate.longitude == locations[i].placemark.coordinate.longitude && $0.coordinate.latitude == locations[i].placemark.coordinate.latitude})
                 
-                location.coordinate = locations[i].placemark.coordinate
-                
-                uiView.addAnnotation(location)
+                if alreadyExists == nil{
+                    let location = MKPointAnnotation()
+                      
+                    var title = locations[i].placemark.title?.components(separatedBy: ",")[1] ?? " N/A"
+                    
+                    title.removeFirst()
+                    
+                    location.title = title
+                    
+                    location.coordinate = locations[i].placemark.coordinate
+                    
+                    uiView.addAnnotation(location)
+                }
             }
         }
-        
-
-        
-
     }
-    
 
     class Coordinator : NSObject, MKMapViewDelegate{
-        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) ->
-            MKOverlayRenderer {
-                let render = MKPolylineRenderer(overlay: overlay)
-                render.strokeColor = .red
-                render.lineWidth = 4
-                return render
+        var parent: mapViewSearchresults
+        
+        init(_ parent: mapViewSearchresults){
+            self.parent = parent
+        }
+        
+        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {  
+            for i in Range(0 ... parent.locations.count - 1){
+                if((parent.locations[i].name?.contains(view.annotation!.title as! String)) != nil){
+                    parent.choiceIndex = i
+                    parent.showDetails = 1
+                }
             }
+        
+        }
     }
-
 }
 
+/*
 
 struct searchForLocations {
     @Binding var locationToSearchFor: String
@@ -67,3 +88,4 @@ struct searchForLocations {
     }
 }
 
+*/

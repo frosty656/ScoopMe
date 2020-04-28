@@ -21,7 +21,6 @@ struct RiderProfile: View {
     var body: some View {
         NavigationView{
             VStack(){
-                
                 if(imageLink.pathString != ""){
                     AnimatedImage(url: URL(string: imageLink.pathString)!)
                         .placeholder(UIImage(named: "User"))
@@ -38,7 +37,6 @@ struct RiderProfile: View {
                         .overlay(Circle().stroke(Color.white, lineWidth: 4))
                         .shadow(radius: 10)
                 }
-                
                 
                 Text("\(userInfo.user.firstName)")
                 Text("\(userInfo.user.lastName)")

@@ -17,7 +17,6 @@ struct RideDetails: View {
             Text("\("Driver".localized): " + (ride.driver["Name"] ?? ""))
             Text("\("From".localized): " + ride.locationName + " to " + ride.destinationName)
             Text("\("Seats".localized): \(ride.seats)")
-            
             Text("\("Passengers".localized):")
             
             List{
@@ -25,7 +24,6 @@ struct RideDetails: View {
                     VStack(){
                         Text("\(i["riderName"] ?? "")")
                         NavigationLink(destination: RiderProfile(ride: i)){Text("")}
-                        
                     }
                 }
             }   
@@ -34,7 +32,6 @@ struct RideDetails: View {
                 joinRide(ride: self.ride)
                     
             }.buttonStyle(NormalButton())
-           
         }.padding()
         
     }

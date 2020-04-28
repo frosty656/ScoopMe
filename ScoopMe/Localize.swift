@@ -8,9 +8,13 @@
 
 import Foundation
 
+
 func getLocalDistance(distance: Double) -> String {
     let formatter = MeasurementFormatter()
     let distanceInKilometers = Measurement(value: distance, unit: UnitLength.kilometers)
+    
+    //This should not really be included but must be used as an example
+    //formatter.locale = Locale(identifier: "es_MX")
     
     print(formatter.locale ?? "No Local Found")
     

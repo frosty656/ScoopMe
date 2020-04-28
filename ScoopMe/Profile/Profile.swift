@@ -27,45 +27,43 @@ struct Profile: View {
         NavigationView{
             VStack(){
                 if(imageLink.pathString != ""){
-                   AnimatedImage(url: URL(string: imageLink.pathString)!)
-                       .placeholder(UIImage(named: "User"))
-                       .resizable()
-                       .scaledToFit()
-                       .clipShape(Circle())
-                       .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                       .shadow(radius: 10)
-               } else {
-                   Image(uiImage: UIImage(named: "User")!)
-                       .resizable()
-                       .scaledToFit()
-                       .clipShape(Circle())
-                       .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                       .shadow(radius: 10)
+                    AnimatedImage(url: URL(string: imageLink.pathString)!)
+                        .placeholder(UIImage(named: "User"))
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                        .shadow(radius: 10)
+                } else {
+                    Image(uiImage: UIImage(named: "User")!)
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                        .shadow(radius: 10)
                     Spacer()
-               }
-                
-                
+                }
                 HStack(){
                     
                     VStack(alignment: .leading){
-                            
-                            Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
-                        }
+                        
+                        Text((userInfo.user.firstName) + " " + (userInfo.user.lastName))
                     }
-                    .font(.system(size: 24))
                 }
-                .padding()
-                .navigationBarTitle("Profile")
-                .navigationBarItems(trailing:
-            Button(action: {
-                self.showSettings.toggle()
-            }){
-                Image("icons8-ios-50")
-                .resizable()
-                .frame(width: 32.0, height: 32.0)
-                .padding()
-            }.sheet(isPresented: $showSettings)
-            {SettingsView().environmentObject(self.viewRouter)})
+                .font(.system(size: 24))
+            }
+            .padding()
+            .navigationBarTitle("Profile")
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.showSettings.toggle()
+                }){
+                    Image("icons8-ios-50")
+                        .resizable()
+                        .frame(width: 32.0, height: 32.0)
+                        .padding()
+                }.sheet(isPresented: $showSettings)
+                {SettingsView().environmentObject(self.viewRouter)})
             
         }
     }
